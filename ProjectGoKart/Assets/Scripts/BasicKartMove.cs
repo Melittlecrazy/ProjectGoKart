@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class BasicKartMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Rigidbody body;
+    private float forwardAmount;
+    private float currentSpeed;
+    public float speed = 1f;
+
+    private void Start()
     {
-        
+        body.transform.parent = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.position = body.transform.position;
+
+        forwardAmount = Input.GetAxis("Vertical");
+
+        if (forwardAmount != 0) Drive();
+
     }
+    private void FixedUpdate()
+    {
+        body.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
+    }
+
+    private void Drive()
+    {
+        currentSpeed = forwardAmount *= speed;
+    }
+    //void DriveBack()
+    //{
+    //    currentSpeed = forwardAmount *= speed;
+    //}
 }
