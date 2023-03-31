@@ -5,9 +5,12 @@ using UnityEngine;
 public class BasicKartMove : MonoBehaviour
 {
     [SerializeField] private Rigidbody body;
+    [SerializeField] private LayerMask ground;
     private float forwardAmount;
     private float currentSpeed;
-    public float speed = 1f;
+    [SerializeField] public float speed;
+    float turnAmount;
+    [SerializeField] public float turnSpeed;
 
     private void Start()
     {
@@ -19,9 +22,14 @@ public class BasicKartMove : MonoBehaviour
         transform.position = body.transform.position;
 
         forwardAmount = Input.GetAxis("Vertical");
+        turnAmount = Input.GetAxis("Horizontal");
 
         if (forwardAmount != 0) Drive();
 
+        else DriveNowhere();
+
+        Turning();
+        GroundHandler();
     }
     private void FixedUpdate()
     {
@@ -32,8 +40,21 @@ public class BasicKartMove : MonoBehaviour
     {
         currentSpeed = forwardAmount *= speed;
     }
-    //void DriveBack()
-    //{
-    //    currentSpeed = forwardAmount *= speed;
-    //}
+    void DriveNowhere()
+    {
+        currentSpeed = 0f;
+    }
+    //This is for tighter controls, might add it later.
+
+    void Turning()
+    {
+        float newRotation = turnAmount * turnSpeed * Time.deltaTime;
+        transform.Rotate(xAngle:0, yAngle:newRotation, zAngle:0, relativeTo:Space.World);
+    }
+    void GroundHandler()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position, -transform.up, out hit, 1, ground);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation, 0.01f);
+    }
 }
