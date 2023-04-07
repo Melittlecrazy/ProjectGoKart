@@ -21,12 +21,13 @@ public class BasicKartMove : MonoBehaviour
     {
         transform.position = body.transform.position;
 
-        forwardAmount = Input.GetAxis("Vertical");
+        //forwardAmount = Input.GetAxis("Vertical");
         turnAmount = Input.GetAxis("Horizontal");
 
-        if (forwardAmount != 0) Drive();
+        if (Input.GetKey(KeyCode.JoystickButton0)) Drive(); 
+        else currentSpeed = 0f;
 
-        else DriveNowhere();
+        if (Input.GetKey(KeyCode.JoystickButton1)) DriveNowhere();
 
         Turning();
         GroundHandler();
@@ -38,11 +39,12 @@ public class BasicKartMove : MonoBehaviour
 
     private void Drive()
     {
-        currentSpeed = forwardAmount *= speed;
+        //currentSpeed = forwardAmount *= speed;
+        currentSpeed = speed;
     }
     void DriveNowhere()
     {
-        currentSpeed = 0f;
+        currentSpeed = -speed;
     }
     //This is for tighter controls, might add it later.
 
