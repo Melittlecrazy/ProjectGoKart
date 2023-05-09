@@ -24,7 +24,7 @@ public class BasicKartMove : MonoBehaviour
         //forwardAmount = Input.GetAxis("Vertical");
         turnAmount = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey(KeyCode.JoystickButton0)) Drive(); 
+        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive(); 
         else currentSpeed = 0f;
 
         if (Input.GetKey(KeyCode.JoystickButton1)) DriveNowhere();
