@@ -27,7 +27,7 @@ public class BasicKartMove : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive(); 
         else currentSpeed = 0f;
 
-        if (Input.GetKey(KeyCode.JoystickButton1)) DriveNowhere();
+        if (Input.GetKey(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.LeftShift)) DriveNowhere();
 
         Turning();
         GroundHandler();
@@ -56,7 +56,9 @@ public class BasicKartMove : MonoBehaviour
     void GroundHandler()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, -transform.up, out hit, 1, ground);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation, 0.01f);
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 0.75f))
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.up * 2, hit.normal) * transform.rotation, 0.75f * Time.deltaTime);
+        }
     }
 }
