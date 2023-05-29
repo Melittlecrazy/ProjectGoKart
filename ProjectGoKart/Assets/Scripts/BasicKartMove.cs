@@ -30,7 +30,7 @@ public class BasicKartMove : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.LeftShift)) DriveNowhere();
 
         Turning();
-        GroundHandler();
+        //GroundHandler();
     }
     private void FixedUpdate()
     {

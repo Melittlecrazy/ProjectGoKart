@@ -236,6 +236,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 1275072889512336695}
+--- !u!1 &5263787461564478364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2743858178282444007}
+  m_Layer: 0
+  m_Name: HoldBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2743858178282444007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263787461564478364}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10470986, y: 0.66, z: -0.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9104266525870264370}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9104266525870264375
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,13 +280,15 @@ GameObject:
   - component: {fileID: 9104266525870264368}
   - component: {fileID: 9104266525870264374}
   - component: {fileID: 9104266525870264333}
+  - component: {fileID: 6156172993278289894}
+  - component: {fileID: 7231240894586154743}
   m_Layer: 3
   m_Name: GoKArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9104266525870264370
 Transform:
   m_ObjectHideFlags: 0
@@ -272,8 +305,9 @@ Transform:
   - {fileID: 8778187846280750420}
   - {fileID: 4376263973505602167}
   - {fileID: 1639147020}
+  - {fileID: 2743858178282444007}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9104266525870264371
 MeshFilter:
@@ -370,6 +404,35 @@ MonoBehaviour:
     m_Bits: 64
   speed: 50
   turnSpeed: 50
+--- !u!114 &6156172993278289894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104266525870264375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9743114f6b73ad645bc74f30437cd884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ball: {fileID: 0}
+  trail: {fileID: 0}
+--- !u!114 &7231240894586154743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104266525870264375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf1c1dfc66ede48b76ec10b903021d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hold: {fileID: 2743858178282444007}
+  pickupRan: 5
+  pickupFor: 5
 --- !u!1 &9104266526567691004
 GameObject:
   m_ObjectHideFlags: 0
