@@ -11,9 +11,9 @@ public class HoldObject : MonoBehaviour
     [SerializeField] private float pickupRan = 5f;
     [SerializeField] private float pickupFor = 5f;
 
-    private void Update()
+    private void OnCollisionEnter(Collision col)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (col.gameObject.tag == "Ball")
         {
             if (holdObj == null)
             { 
