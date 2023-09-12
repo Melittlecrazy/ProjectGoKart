@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 714041984}
   - component: {fileID: 714041983}
   - component: {fileID: 714041982}
+  - component: {fileID: 714041987}
   m_Layer: 0
   m_Name: Ball?
   m_TagString: Ball
@@ -528,7 +529,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714041981}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -542,7 +543,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -634,6 +635,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714041987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714041981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5edf1c1dfc66ede48b76ec10b903021d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grab: {fileID: 1099309782}
+  speed: 1.5
 --- !u!1 &743550689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,6 +5478,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1099309782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263787461564478364, guid: 697f93ccb9d27104eb606a257d9d8dc1, type: 3}
+  m_PrefabInstance: {fileID: 218613240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1107861031
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,11 +6350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588515466423486202, guid: 1b266f4dfc50c8b45afdf0b52d68fce2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000008447955
+      value: 0.0000000084479606
       objectReference: {fileID: 0}
     - target: {fileID: 588515466423486202, guid: 1b266f4dfc50c8b45afdf0b52d68fce2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000016269276
+      value: -0.0000000016269286
       objectReference: {fileID: 0}
     - target: {fileID: 2599570665924769235, guid: 1b266f4dfc50c8b45afdf0b52d68fce2, type: 3}
       propertyPath: m_RootOrder
