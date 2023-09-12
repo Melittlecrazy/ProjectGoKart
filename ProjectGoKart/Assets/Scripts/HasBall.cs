@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HasBall : MonoBehaviour
 {
-    public GameObject Ball;
+    public GameObject ball;
     public GameObject trail;
 
     bool particle = false;
@@ -22,5 +22,6 @@ public class HasBall : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Ball") trail.SetActive(true);
+        
     }
 }

@@ -7,6 +7,8 @@ public class HoldObject : MonoBehaviour
     //[SerializeField] Transform hold;
     private GameObject holdObj;
     private Rigidbody rigidbody;
+    //public ;
+    public GameObject ball;
     public GameObject grab;
     [SerializeField] float speed = 1.5f;
 
@@ -17,27 +19,15 @@ public class HoldObject : MonoBehaviour
     {
         if (col.gameObject.tag == "Ball")
         {
-            transform.position = Vector3.MoveTowards(transform.position, grab.transform.position, speed * Time.deltaTime);
-
-            //if (holdObj == null)
-            //{ 
-            //    RaycastHit hit;
-            //    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRan))
-            //    {
-            //        Pickup(hit.transform.gameObject);
-            //    }
-            
-            //}
-            //else
-            //    {
-            //    Drop();
-            //    }
-            //if (holdObj != null)
-            //{
-            //    MoveObj();
-            //}
-
+            ball.transform.parent = grab.transform;
         }
+
+        if (col.gameObject.tag == "Grabbed") ball.transform.position = Vector3.MoveTowards(transform.position, grab.transform.position, speed * Time.deltaTime);
+    }
+
+    private void Update()
+    {
+        
     }
 
     //void MoveObj()
@@ -69,6 +59,6 @@ public class HoldObject : MonoBehaviour
 
     //        rigidbody.transform.parent = null;
     //        holdObj = null;
-        
+
     //}
 }
