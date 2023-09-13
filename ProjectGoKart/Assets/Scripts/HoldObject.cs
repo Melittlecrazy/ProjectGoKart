@@ -6,7 +6,7 @@ public class HoldObject : MonoBehaviour
 {
     //[SerializeField] Transform hold;
     private GameObject holdObj;
-    private Rigidbody rigidbody;
+    [SerializeField] private Rigidbody rigidbody;
     //public ;
     public GameObject ball;
     public GameObject grab;
@@ -20,9 +20,16 @@ public class HoldObject : MonoBehaviour
         if (col.gameObject.tag == "Ball")
         {
             ball.transform.parent = grab.transform;
+            ball.transform.position = grab.transform.position;
+            rigidbody.constraints = RigidbodyConstraints.FreezePosition;           
         }
 
-        if (col.gameObject.tag == "Grabbed") ball.transform.position = Vector3.MoveTowards(transform.position, grab.transform.position, speed * Time.deltaTime);
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            ball.transform.parent = null;
+            //ball.transform.position = null;
+            rigidbody.constraints = RigidbodyConstraints.None;
+        }
     }
 
     private void Update()

@@ -27,7 +27,7 @@ public class BasicKartMove : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive(); 
         else currentSpeed = 0f;
 
-        if (Input.GetKey(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.LeftShift)) DriveNowhere();
+        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift)) DriveNowhere();
 
         Turning();
         //GroundHandler();
