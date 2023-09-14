@@ -10,6 +10,7 @@ public class BasicKartMove : MonoBehaviour
     private float forwardAmount;
     private float currentSpeed;
     [SerializeField] public float speed;
+    [SerializeField] public float deeps;
     float turnAmount;
     [SerializeField] public float turnSpeed;
 
@@ -47,7 +48,7 @@ public class BasicKartMove : MonoBehaviour
     }
     void DriveNowhere()
     {
-        currentSpeed = -speed * 4;
+        currentSpeed = -speed * deeps;
         
     }
     //This is for tighter controls, might add it later.

@@ -24,13 +24,14 @@ public class HoldObject : MonoBehaviour
             rigidbody.constraints = RigidbodyConstraints.FreezePosition;           
         }
 
-        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Finish"))
+        if (col.gameObject.CompareTag("Enemy"))
         {
             ball.transform.parent = null;
             //ball.transform.position = null;
             rigidbody.constraints = RigidbodyConstraints.None;
         }
     }
+    
 
     private void Update()
     {
