@@ -425,6 +425,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 50
+  deeps: 4
   turnSpeed: 75
 --- !u!114 &6156172993278289894
 MonoBehaviour:
