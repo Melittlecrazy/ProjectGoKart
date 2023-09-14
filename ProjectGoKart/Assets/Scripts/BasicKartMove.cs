@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BasicKartMove : MonoBehaviour
 {
@@ -24,10 +25,11 @@ public class BasicKartMove : MonoBehaviour
         //forwardAmount = Input.GetAxis("Vertical");
         turnAmount = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive(); 
+        //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
+        if (Gamepad.current.buttonSouth.isPressed) Drive();
         else currentSpeed = 0f;
 
-        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift)) DriveNowhere();
+        if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
 
         Turning();
         //GroundHandler();
@@ -41,10 +43,12 @@ public class BasicKartMove : MonoBehaviour
     {
         //currentSpeed = forwardAmount *= speed;
         currentSpeed = speed;
+        
     }
     void DriveNowhere()
     {
-        currentSpeed = -speed;
+        currentSpeed = -speed * 4;
+        
     }
     //This is for tighter controls, might add it later.
 

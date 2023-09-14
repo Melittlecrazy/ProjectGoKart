@@ -24,7 +24,7 @@ public class HoldObject : MonoBehaviour
             rigidbody.constraints = RigidbodyConstraints.FreezePosition;           
         }
 
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Finish"))
         {
             ball.transform.parent = null;
             //ball.transform.position = null;
