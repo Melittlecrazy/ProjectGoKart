@@ -6,7 +6,7 @@ public class EnemyFollow : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject target;
-    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float speed;
 
 
 
@@ -15,5 +15,15 @@ public class EnemyFollow : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         transform.forward = target.transform.position - transform.position;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            speed = 0;
+        }
+        //else speed = 10;
+        if (collision.gameObject.tag != "Player") speed = 10;
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4712741061707351220}
   - component: {fileID: 3178633998482128286}
   - component: {fileID: 3177852147461484767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boop
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2149145989088640031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32334137, y: -0.20949876, z: 0.38455057}
+  m_LocalPosition: {x: 0.32334137, y: -0.20949876, z: 0.273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2149145989088640031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01d15e8e7877634d8ac9be0c756c948, type: 3}
   m_Name: 
@@ -82,9 +82,10 @@ GameObject:
   - component: {fileID: 8968947585910426664}
   - component: {fileID: 8968947585910426665}
   - component: {fileID: 8968947585910426670}
+  - component: {fileID: 1453899443}
   m_Layer: 3
   m_Name: NPCKart
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,7 @@ Transform:
   - {fileID: 8931380447121045836}
   - {fileID: 4712741061707351220}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8968947585910426667
 MeshFilter:
@@ -173,10 +174,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5664604, y: 0.61339617, z: 1.9181837}
-  m_Center: {x: 0.040302753, y: -0.21263206, z: 0.07248837}
+  m_Size: {x: 1.5664604, y: 0.5728112, z: 1.8938673}
+  m_Center: {x: 0.040302753, y: -0.2713748, z: 0.060330153}
 --- !u!54 &8968947585910426670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8968947585910426671}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 100
   m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -204,6 +205,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1453899443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968947585910426671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01d15e8e7877634d8ac9be0c756c948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  target: {fileID: 0}
+  speed: 10
 --- !u!1001 &8968947585691262631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264,42 +280,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: lowpolygokart
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
     - {fileID: 65702495048144492, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6071771980482637458}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
---- !u!1 &8122650528102786038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}
-  m_PrefabInstance: {fileID: 8968947585691262631}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6071771980482637458
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122650528102786038}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.5070517, z: 1.8902496}
-  m_Center: {x: 0, y: 0.24647415, z: 0.069895566}
 --- !u!4 &8931380447121045836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69429342c3a43a04b9479dd95c06a6a6, type: 3}

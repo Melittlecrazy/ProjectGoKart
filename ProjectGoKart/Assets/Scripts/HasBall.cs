@@ -28,14 +28,18 @@ public class HasBall : MonoBehaviour
         quadFour.SetColor("_Color", Color.white);
         
         score.text = "Score: " + point;
+        quadMan.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         score.text = "Score: " + point;
-       if (point == 4) score.text = "WINNER";
-        quadMan.SetActive(false);
+        if (point == 4)
+        {
+            score.text = "WINNER";
+            quadMan.SetActive(false);
+        }
     }
     private void OnCollisionEnter(Collision col)
     {
