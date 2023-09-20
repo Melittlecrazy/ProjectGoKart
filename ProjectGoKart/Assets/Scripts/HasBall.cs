@@ -48,8 +48,13 @@ public class HasBall : MonoBehaviour
             trail.SetActive(true);
             hasBall = true; 
         }
-        
-        
+        if (col.gameObject.tag == "Enemy")
+        {
+            trail.SetActive(false);
+            hasBall = false;
+        }
+
+
         //quadTwo.SetColor()
     }
     private void OnTriggerExit(Collider other)

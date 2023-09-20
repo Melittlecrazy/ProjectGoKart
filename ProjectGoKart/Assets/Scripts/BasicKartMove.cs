@@ -1,22 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem.XInput;
 
 public class BasicKartMove : MonoBehaviour
 {
     [SerializeField] private Rigidbody body;
     [SerializeField] private LayerMask ground;
+
+    PlayerManager playerManager;
+    
     private float forwardAmount;
     private float currentSpeed;
     [SerializeField] public float speed;
     [SerializeField] public float deeps;
     float turnAmount;
     [SerializeField] public float turnSpeed;
+    
+    public bool isPlayer1,isPlayer2;
+
 
     private void Start()
     {
         body.transform.parent = null;
+        
     }
 
     private void Update()
@@ -27,12 +37,27 @@ public class BasicKartMove : MonoBehaviour
         turnAmount = Input.GetAxis("Horizontal");
 
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
-        if (Gamepad.current.buttonSouth.isPressed) Drive();
-        else currentSpeed = 0f;
 
-        if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
+        if (isPlayer1 == true)//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
+        {
+            if (Gamepad.current.buttonSouth.isPressed) Drive();
+            else currentSpeed = 0f;
 
-        Turning();
+            if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
+
+            Turning();
+        }
+
+        if (isPlayer2 == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) Drive();
+            else currentSpeed = 0f;
+
+            if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
+
+            Turning();
+        }
+
         //GroundHandler();
     }
     private void FixedUpdate()
@@ -66,4 +91,6 @@ public class BasicKartMove : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.up * 2, hit.normal) * transform.rotation, 0.75f * Time.deltaTime);
         }
     }
+
+    
 }
