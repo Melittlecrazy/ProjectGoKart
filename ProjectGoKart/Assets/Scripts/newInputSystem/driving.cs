@@ -112,6 +112,120 @@ public partial class @Driving : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Move"",
+            ""id"": ""536ba0db-cc06-4f8b-82e7-371f33357b19"",
+            ""actions"": [
+                {
+                    ""name"": ""drive"",
+                    ""type"": ""Value"",
+                    ""id"": ""bdf7f047-0b70-43a4-8fb6-534f625caa74"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""steering"",
+                    ""type"": ""Value"",
+                    ""id"": ""e408d2cd-fe9e-45ef-90b3-9e874da85621"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e89681f4-e300-40e1-bb1d-7e3e17ffbb99"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""2c38485e-d0b5-4448-b982-df4b485affab"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""drive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""86d7e8c6-4e8f-4fc6-b82e-5cdc718ed0d5"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ab7b2cd5-cf1f-495f-8731-de46de4fc52e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8491cac2-e590-4f66-84ec-8d5aca1bc3ad"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""steering"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""10df0d7a-9b34-4ef1-8ee0-ae524e47586b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""steering"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""638c44d6-9c85-426c-a2af-d77b799eb772"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""steering"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6c0bf992-8da1-4302-b363-45173c0bac3a"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""steering"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -121,6 +235,10 @@ public partial class @Driving : IInputActionCollection2, IDisposable
         m_Drive_Forward = m_Drive.FindAction("Forward", throwIfNotFound: true);
         m_Drive_Backward = m_Drive.FindAction("Backward", throwIfNotFound: true);
         m_Drive_Turning = m_Drive.FindAction("Turning", throwIfNotFound: true);
+        // Move
+        m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
+        m_Move_drive = m_Move.FindAction("drive", throwIfNotFound: true);
+        m_Move_steering = m_Move.FindAction("steering", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,10 +343,56 @@ public partial class @Driving : IInputActionCollection2, IDisposable
         }
     }
     public DriveActions @Drive => new DriveActions(this);
+
+    // Move
+    private readonly InputActionMap m_Move;
+    private IMoveActions m_MoveActionsCallbackInterface;
+    private readonly InputAction m_Move_drive;
+    private readonly InputAction m_Move_steering;
+    public struct MoveActions
+    {
+        private @Driving m_Wrapper;
+        public MoveActions(@Driving wrapper) { m_Wrapper = wrapper; }
+        public InputAction @drive => m_Wrapper.m_Move_drive;
+        public InputAction @steering => m_Wrapper.m_Move_steering;
+        public InputActionMap Get() { return m_Wrapper.m_Move; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MoveActions set) { return set.Get(); }
+        public void SetCallbacks(IMoveActions instance)
+        {
+            if (m_Wrapper.m_MoveActionsCallbackInterface != null)
+            {
+                @drive.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnDrive;
+                @drive.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnDrive;
+                @drive.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnDrive;
+                @steering.started -= m_Wrapper.m_MoveActionsCallbackInterface.OnSteering;
+                @steering.performed -= m_Wrapper.m_MoveActionsCallbackInterface.OnSteering;
+                @steering.canceled -= m_Wrapper.m_MoveActionsCallbackInterface.OnSteering;
+            }
+            m_Wrapper.m_MoveActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @drive.started += instance.OnDrive;
+                @drive.performed += instance.OnDrive;
+                @drive.canceled += instance.OnDrive;
+                @steering.started += instance.OnSteering;
+                @steering.performed += instance.OnSteering;
+                @steering.canceled += instance.OnSteering;
+            }
+        }
+    }
+    public MoveActions @Move => new MoveActions(this);
     public interface IDriveActions
     {
         void OnForward(InputAction.CallbackContext context);
         void OnBackward(InputAction.CallbackContext context);
         void OnTurning(InputAction.CallbackContext context);
+    }
+    public interface IMoveActions
+    {
+        void OnDrive(InputAction.CallbackContext context);
+        void OnSteering(InputAction.CallbackContext context);
     }
 }
