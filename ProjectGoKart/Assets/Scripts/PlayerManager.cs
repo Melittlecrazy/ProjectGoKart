@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     public Image controllerUnpluggedImage;
 
+
+
     void Start()
     {
         

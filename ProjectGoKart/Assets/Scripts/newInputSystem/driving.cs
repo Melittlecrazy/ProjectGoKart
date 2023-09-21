@@ -228,7 +228,19 @@ public partial class @Driving : IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Xbox"",
+            ""bindingGroup"": ""Xbox"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Drive
         m_Drive = asset.FindActionMap("Drive", throwIfNotFound: true);
@@ -384,6 +396,15 @@ public partial class @Driving : IInputActionCollection2, IDisposable
         }
     }
     public MoveActions @Move => new MoveActions(this);
+    private int m_XboxSchemeIndex = -1;
+    public InputControlScheme XboxScheme
+    {
+        get
+        {
+            if (m_XboxSchemeIndex == -1) m_XboxSchemeIndex = asset.FindControlSchemeIndex("Xbox");
+            return asset.controlSchemes[m_XboxSchemeIndex];
+        }
+    }
     public interface IDriveActions
     {
         void OnForward(InputAction.CallbackContext context);

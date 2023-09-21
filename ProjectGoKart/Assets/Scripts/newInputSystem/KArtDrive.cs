@@ -5,105 +5,92 @@ using UnityEngine.ProBuilder.Shapes;
 [RequireComponent(typeof(CharacterController))]
 public class KArtDrive : MonoBehaviour
 {
-    [SerializeField] float maxAngle,maxTorque,brake;
-    [SerializeField] GameObject wheelShape;
+    [SerializeField] private Rigidbody body;
+    [SerializeField] private LayerMask ground;
 
-    [SerializeField] float criticalSpeed;
-    [SerializeField] int stepBellow;
-    [SerializeField] int stepAbove;
+    PlayerManager playerManager;
 
-    WheelCollider[] m_Wheels;
-    float handBrake, torque;
-    public float angle;
+    private float forwardAmount;
+    private float currentSpeed;
+    [SerializeField] public float speed;
+    [SerializeField] public float deeps;
+    float turnAmount;
+    [SerializeField] public float turnSpeed;
 
-    public InputActionAsset inputActions;
-    InputActionMap gameplayActionsMap;
-    InputAction steeringInputAction, accelerationInputAction;
+   // public bool isPlayer1, isPlayer2;
 
+
+    private void Start()
+    {
+        body.transform.parent = null;
+    }
     private void Awake()
     {
-        gameplayActionsMap = inputActions.FindActionMap("Move");
-
-        accelerationInputAction = gameplayActionsMap.FindAction("drive");
-        steeringInputAction = gameplayActionsMap.FindAction("steering");
-
-        steeringInputAction.performed += GetAngleInput;
-        steeringInputAction.canceled += GetAngleInput;
-
-        accelerationInputAction.performed += GetTorque;
-        accelerationInputAction.canceled += GetTorque;
+        playerManager = GetComponent<PlayerManager>();
     }
-    void GetAngleInput(InputAction.CallbackContext cont)
+
+    private void Update()
     {
-        angle = cont.ReadValue<float>() * maxAngle;
+        transform.position = body.transform.position;
+
+        //forwardAmount = Input.GetAxis("Vertical");
+        turnAmount = Input.GetAxis("Horizontal");
+
+        //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
+
+        //if (isPlayer1 == true)//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
+        //{
+        //    if (Gamepad.current.buttonSouth.isPressed) Drive();
+        //    else currentSpeed = 0f;
+
+        //    if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
+
+        //    Turning();
+        //}
+
+        //if (isPlayer2 == true)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space)) Drive();
+        //    else currentSpeed = 0f;
+
+        //    if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
+
+        //    Turning();
+        //}
+
+        //GroundHandler();
     }
-    void GetTorque(InputAction.CallbackContext cont)
+    private void FixedUpdate()
     {
-        torque = cont.ReadValue<float>() * maxTorque; 
+        body.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
+    }
+
+    private void OnDrive(InputAction.CallbackContext cont)
+    {
+        //currentSpeed = forwardAmount *= speed;
+        currentSpeed = speed;
+
+    }
+    void OnReverse(InputAction.CallbackContext cont)
+    {
+        currentSpeed = -speed * deeps;
+
+    }
+    //This is for tighter controls, might add it later.
+
+    void OnTurning(InputAction.CallbackContext cont)
+    {
+        turnAmount = cont.ReadValue<float>();
+        float newRotation = turnAmount * turnSpeed * Time.deltaTime;
+        transform.Rotate(xAngle: 0, yAngle: newRotation, zAngle: 0, relativeTo: Space.World);
     }
 
     private void OnEnable()
     {
-        steeringInputAction.Enable();
-        accelerationInputAction.Enable();
+        
     }
     private void OnDisable()
     {
-        steeringInputAction.Disable();
-        accelerationInputAction.Disable();
-    }
-
-    private void Start()
-    {
-        m_Wheels = GetComponentsInChildren<WheelCollider>();
-
-        for(int i = 0; i < m_Wheels.Length; i++)
-        {
-            var wheel = m_Wheels[i];
-            if(wheelShape != null)
-            {
-                var ws = Instantiate(wheelShape);
-                ws.transform.parent = wheel.transform;
-            }
-        }
-    }
-    private void Update()
-    {
-        m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepBellow, stepAbove);
-        foreach(WheelCollider wheel in m_Wheels)
-        {
-            if(wheel.transform.localPosition.z >0)
-            {
-                wheel.steerAngle = angle;
-            }
-            if(wheel.transform.localPosition.z<0)
-            {
-                wheel.brakeTorque = handBrake;
-            }
-            if (wheel.transform.localPosition.z<0)
-            {
-                wheel.motorTorque = torque;
-            }
-            if (wheelShape)
-            {
-                Quaternion q;
-                Vector3 p;
-                wheel.GetWorldPose(out p, out q);
-
-                Transform shapeTransform = wheel.transform.GetChild(0);
-
-                if (wheel.name == "wheel1" )
-                {
-                    shapeTransform.rotation = q * Quaternion.Euler(0, 180, 0);
-                    shapeTransform.position = p;
-
-                }
-                else
-                {
-                    shapeTransform.position = p;
-                    shapeTransform.rotation = q;
-                }
-            }
-        }
+        
     }
 }
