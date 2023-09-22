@@ -4,7 +4,7 @@ onready var ball = $Ball
 onready var car_mesh = $Kart
 onready var ground_ray = $Kart/RayCast
 
-var sphere_offset = Vector3(0,-1.0,0)
+var sphere_offset = Vector3(0,-0.1,0)
 var acceleration = 50
 var steering = 21.0
 var turn_speed = 5
