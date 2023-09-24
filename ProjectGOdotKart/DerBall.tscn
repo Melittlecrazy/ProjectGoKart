@@ -1,26 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Drive.gd" type="Script" id=1]
+[ext_resource path="res://Prefabs/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="PhysicsMaterial" id=5]
-bounce = 0.1
-
-[sub_resource type="SphereShape" id=6]
-
-[sub_resource type="CubeMesh" id=2]
-size = Vector3( 1, 0.5, 2 )
-
-[sub_resource type="SpatialMaterial" id=9]
-albedo_color = Color( 1, 0, 0, 1 )
-
-[sub_resource type="CylinderMesh" id=3]
-top_radius = 0.5
-bottom_radius = 0.5
-height = 0.2
-
-[sub_resource type="SpatialMaterial" id=10]
-albedo_color = Color( 0.215686, 0.0509804, 0.0509804, 1 )
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_world_triplanar = true
@@ -35,56 +16,36 @@ size = Vector3( 500, 0.5, 500 )
 data = PoolVector3Array( -250, 0.25, 250, 250, 0.25, 250, -250, -0.25, 250, 250, 0.25, 250, 250, -0.25, 250, -250, -0.25, 250, 250, 0.25, -250, -250, 0.25, -250, 250, -0.25, -250, -250, 0.25, -250, -250, -0.25, -250, 250, -0.25, -250, 250, 0.25, 250, 250, 0.25, -250, 250, -0.25, 250, 250, 0.25, -250, 250, -0.25, -250, 250, -0.25, 250, -250, 0.25, -250, -250, 0.25, 250, -250, -0.25, -250, -250, 0.25, 250, -250, -0.25, 250, -250, -0.25, -250, 250, 0.25, 250, -250, 0.25, 250, 250, 0.25, -250, -250, 0.25, 250, -250, 0.25, -250, 250, 0.25, -250, -250, -0.25, 250, 250, -0.25, 250, -250, -0.25, -250, 250, -0.25, 250, 250, -0.25, -250, -250, -0.25, -250 )
 
 [sub_resource type="PhysicsMaterial" id=12]
-bounce = 2.0
+bounce = 5.0
 
 [sub_resource type="SphereMesh" id=11]
 
 [sub_resource type="SphereShape" id=13]
 
+[sub_resource type="SphereShape" id=15]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 0.5, 2 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.0392157, 0, 1, 1 )
+
+[sub_resource type="CylinderMesh" id=3]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 0.2
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.215686, 0.0509804, 0.0509804, 1 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 1, 0.415238, 1 )
+
+[sub_resource type="CylinderShape" id=17]
+height = 1.866
+radius = 0.564985
+
 [node name="DerBall" type="Spatial"]
-script = ExtResource( 1 )
-
-[node name="Ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29, 0 )
-physics_material_override = SubResource( 5 )
-gravity_scale = 10.0
-angular_damp = 5.0
-
-[node name="CollisionShape" type="CollisionShape" parent="Ball"]
-shape = SubResource( 6 )
-
-[node name="Kart" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.821722, 0 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 9 )
-
-[node name="F_LWheel" type="MeshInstance" parent="Kart"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.7, 0, 0.9 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 10 )
-
-[node name="F_R_Wheel" type="MeshInstance" parent="Kart"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.7, 0, 0.9 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 10 )
-
-[node name="B_LWheel" type="MeshInstance" parent="Kart"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.7, 0, -0.9 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 10 )
-
-[node name="B_RWheel" type="MeshInstance" parent="Kart"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.7, 0, -0.9 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 10 )
-
-[node name="RayCast" type="RayCast" parent="Kart"]
-enabled = true
-
-[node name="Camera_pivot" type="Spatial" parent="Kart"]
-
-[node name="Camera" type="Camera" parent="Kart/Camera_pivot"]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 5 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 mesh = SubResource( 4 )
@@ -94,14 +55,64 @@ mesh = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
 shape = SubResource( 8 )
 
-[node name="RigidBody" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+[node name="Player" parent="." groups=["players"] instance=ExtResource( 1 )]
+
+[node name="Scoreball" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30806, 3.49651, 0 )
 physics_material_override = SubResource( 12 )
 gravity_scale = 10.0
 
-[node name="Sphear" type="MeshInstance" parent="RigidBody"]
+[node name="Sphear" type="MeshInstance" parent="Scoreball"]
 mesh = SubResource( 11 )
 skeleton = NodePath("../..")
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Scoreball"]
 shape = SubResource( 13 )
+
+[node name="Scoreballcol" type="Area" parent="Scoreball"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Scoreball/Scoreballcol"]
+shape = SubResource( 15 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48382, 1, 0 )
+
+[node name="Kart2" type="MeshInstance" parent="KinematicBody"]
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 14 )
+
+[node name="F_LWheel" type="MeshInstance" parent="KinematicBody/Kart2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.7, 0, 0.9 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 10 )
+
+[node name="F_R_Wheel" type="MeshInstance" parent="KinematicBody/Kart2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.7, 0, 0.9 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 10 )
+
+[node name="B_LWheel" type="MeshInstance" parent="KinematicBody/Kart2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.7, 0, -0.9 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 10 )
+
+[node name="B_RWheel" type="MeshInstance" parent="KinematicBody/Kart2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.7, 0, -0.9 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 10 )
+
+[node name="RayCast" type="RayCast" parent="KinematicBody/Kart2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+shape = SubResource( 16 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.153, 0.938 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.153, -0.991935 )
+shape = SubResource( 17 )
+
+[connection signal="body_entered" from="Scoreball/Scoreballcol" to="Player" method="_on_Scoreballcol_body_entered"]

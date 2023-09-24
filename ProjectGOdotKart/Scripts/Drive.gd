@@ -21,6 +21,7 @@ func _physics_process(_delta):
 	car_mesh.transform.origin = ball.transform.origin + sphere_offset
 	# Accelerate based on car's forward direction
 	ball.add_central_force(-car_mesh.global_transform.basis.z * speed_input)
+	
 
 func _process(delta):
 	# Can't steer/accelerate when in the air
@@ -53,10 +54,9 @@ func align_with_y(xform, new_y):
 	xform.basis = xform.basis.orthonormalized()
 	return xform
 
+#to rotate the wheels
 onready var F_RWheel = $Kart/F_R_Wheel
 onready var F_LWheel = $Kart/F_LWheel
-
-
 #F_RWheel.rotation.y = rotate_input
 #F_LWheel.rotation.y = rotate_input
 
@@ -64,3 +64,13 @@ onready var F_LWheel = $Kart/F_LWheel
 #	# tilt body for effect
 #var t = -rotate_input * ball.linear_velocity.length() / body_tilt
 #body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
+
+func _on_Scoreballcol_body_entered(body):
+#	for index in get_slide_count():
+#		var collision = get_slide_collison(index)
+#	if collision.collider is RigidBody:
+		print("Boo.")
+		
+#func _on_body_enter(body):
+#    if body.get_name() == "Player":
+#        set_input_process(true)
