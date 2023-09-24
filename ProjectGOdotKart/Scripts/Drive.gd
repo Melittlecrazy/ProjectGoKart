@@ -13,6 +13,9 @@ var turn_stop_limit = 0.75
 var speed_input = 0
 var rotate_input = 0
 
+var touche : Array
+var closest_touche
+
 func _ready():
 	ground_ray.add_exception(ball)
 	
@@ -65,11 +68,33 @@ onready var F_LWheel = $Kart/F_LWheel
 #var t = -rotate_input * ball.linear_velocity.length() / body_tilt
 #body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 
+func find_closest_touche():
+	if touche.size() <1:
+		return null
+	elif touche.size() >1:
+		var distance = INF
+		var closest = touche[0]
+		for n in touche:
+			var new_distance = n.global_translation.distance_to(global_translation)
+			if new_distance < distance:
+				distance = new_distance
+				closest = n
+			return closest
+	else:
+		return touche[0]
+
+
 func _on_Scoreballcol_body_entered(body):
 #	for index in get_slide_count():
 #		var collision = get_slide_collison(index)
-#	if collision.collider is RigidBody:
+	if body is RigidBody:
+#		var location = child.rect_global_position
+#		old_parent_node.remove_child(child) new_parent_node.add_child(child)
+#		child.rect_global_position = location
+		
 		print("Boo.")
+	if body.is_in_group("players"):
+		print("body")
 		
 #func _on_body_enter(body):
 #    if body.get_name() == "Player":
