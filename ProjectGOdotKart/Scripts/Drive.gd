@@ -4,6 +4,8 @@ onready var ball = $Ball
 onready var car_mesh = $Kart
 onready var ground_ray = $Kart/RayCast
 
+export var player_ip = 1
+
 var sphere_offset = Vector3(0,-0.1,0)
 var acceleration = 50
 var steering = 21.0
@@ -32,13 +34,13 @@ func _process(delta):
 		return
 	# Get accelerate/brake input
 	speed_input = 0
-	speed_input += Input.get_action_strength("accelerate")
-	speed_input -= Input.get_action_strength("brake")
+	speed_input += Input.get_action_strength("accelerate_%s" % [player_ip])
+	speed_input -= Input.get_action_strength("brake_%s" % [player_ip])
 	speed_input *= acceleration
 	# Get steering input
 	rotate_input = 0
-	rotate_input += Input.get_action_strength("steer_left")
-	rotate_input -= Input.get_action_strength("steer_right")
+	rotate_input += Input.get_action_strength("steer_left_%s" % [player_ip])
+	rotate_input -= Input.get_action_strength("steer_right_%s" % [player_ip])
 	rotate_input *= deg2rad(steering)
 
 # rotate car mesh
@@ -99,3 +101,4 @@ func _on_Scoreballcol_body_entered(body):
 #func _on_body_enter(body):
 #    if body.get_name() == "Player":
 #        set_input_process(true)
+
