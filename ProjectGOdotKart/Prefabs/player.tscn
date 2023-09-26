@@ -27,11 +27,12 @@ albedo_color = Color( 0.215686, 0.0509804, 0.0509804, 1 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26256, 0 )
 shape = SubResource( 11 )
 disabled = true
 
 [node name="Ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52259, 0 )
 physics_material_override = SubResource( 5 )
 gravity_scale = 10.0
 angular_damp = 5.0

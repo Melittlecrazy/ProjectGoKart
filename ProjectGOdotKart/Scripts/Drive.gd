@@ -18,6 +18,11 @@ var rotate_input = 0
 var touche : Array
 var closest_touche
 
+export var sped = 100
+var player_position
+var target
+onready var player = get_parent().get_parent().get_parent().get_node("ViewportContainer/Viewport/Player")
+
 func _ready():
 	ground_ray.add_exception(ball)
 	
@@ -26,6 +31,9 @@ func _physics_process(_delta):
 	car_mesh.transform.origin = ball.transform.origin + sphere_offset
 	# Accelerate based on car's forward direction
 	ball.add_central_force(-car_mesh.global_transform.basis.z * speed_input)
+	
+	player_position = player.player_position
+	target = (player_position - Position3D)
 	
 
 func _process(delta):
@@ -70,6 +78,16 @@ onready var F_LWheel = $Kart/F_LWheel
 #var t = -rotate_input * ball.linear_velocity.length() / body_tilt
 #body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 
+
+#func _integrate_forces(state):
+#    if updatingposition:
+#        if assignedasocket:
+#            followtarget = player.orbtargets[orbindex]
+#            var direction = (followtarget.global_position - global_position).normalized()
+#            var distance_to_player = global_position.distance_to(followtarget.global_position)
+#            if distance_to_player > 10 :
+#                apply_central_impulse(direction * 700)   
+
 func find_closest_touche():
 	if touche.size() <1:
 		return null
@@ -86,6 +104,7 @@ func find_closest_touche():
 		return touche[0]
 
 
+
 func _on_Scoreballcol_body_entered(body):
 #	for index in get_slide_count():
 #		var collision = get_slide_collison(index)
@@ -93,6 +112,17 @@ func _on_Scoreballcol_body_entered(body):
 #		var location = child.rect_global_position
 #		old_parent_node.remove_child(child) new_parent_node.add_child(child)
 #		child.rect_global_position = location
+		
+		#might not work but maybe. goal is to get position of specific object then apply that to the ball
+#		var target = $Kart/Camera_pivot
+		
+#		var target_position = target.get_global_transform().origin
+#    look_follow(state, get_global_transform(), target_position)
+#    add_central_force(Vector3(0,0,5))
+
+	
+		_physics_process(target * sped)
+		look_at(player_position, Vector3.FORWARD)
 		
 		print("Boo.")
 	if body.is_in_group("players"):
