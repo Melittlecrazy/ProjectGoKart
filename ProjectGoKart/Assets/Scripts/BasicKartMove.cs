@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -22,6 +23,10 @@ public class BasicKartMove : MonoBehaviour
     
     public bool isPlayer1,isPlayer2;
 
+    public enum ControllerTypeConnected { Xbox, Playstation, Other }
+    [HideInInspector]
+    public ControllerTypeConnected controllerTypeConnected;
+
 
     private void Start()
     {
@@ -35,10 +40,10 @@ public class BasicKartMove : MonoBehaviour
 
         //forwardAmount = Input.GetAxis("Vertical");
         turnAmount = Input.GetAxis("Horizontal");
-
+        string joystickName = Input.GetJoystickNames().First();
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
 
-        if (isPlayer1 == true)//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
+        if (isPlayer1 == true && joystickName.ToLower().Contains("xbox"))//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
         {
             if (Gamepad.current.buttonSouth.isPressed) Drive();
             else currentSpeed = 0f;
@@ -48,15 +53,15 @@ public class BasicKartMove : MonoBehaviour
             Turning();
         }
 
-        if (isPlayer2 == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Space)) Drive();
-            else currentSpeed = 0f;
+        //if (isPlayer2 == true && joystickName.ToLower().Contains("xbox"))
+        //{
+        //    if (GamepadButton.South) Drive();
+        //    else currentSpeed = 0f;
 
-            if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
+        //    if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
 
-            Turning();
-        }
+        //    Turning();
+        //}
 
         //GroundHandler();
     }

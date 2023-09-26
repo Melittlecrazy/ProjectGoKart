@@ -75,6 +75,10 @@ steer_right_2={
  ]
 }
 
+[mono]
+
+project/assembly_name="ProjectGodotKart"
+
 [physics]
 
 common/enable_pause_aware_picking=true
