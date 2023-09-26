@@ -20,8 +20,9 @@ var closest_touche
 
 export var sped = 100
 var player_position
-var target
+onready var target = get_parent().get_parent().get_parent().get_parent().get_parent().get_node("Scoreball")
 onready var player = get_parent().get_parent().get_parent().get_node("ViewportContainer/Viewport/Player")
+#onready var player2 = get_parent().get_parent().get_parent().get_node("ViewportContainer/Viewport/Player2")
 
 func _ready():
 	ground_ray.add_exception(ball)
@@ -32,8 +33,8 @@ func _physics_process(_delta):
 	# Accelerate based on car's forward direction
 	ball.add_central_force(-car_mesh.global_transform.basis.z * speed_input)
 	
-	player_position = player.player_position
-	target = (player_position - Position3D)
+	#player_position = player.player_position
+	#target = (player_position - Position3D)
 	
 
 func _process(delta):
@@ -68,8 +69,8 @@ func align_with_y(xform, new_y):
 	return xform
 
 #to rotate the wheels
-onready var F_RWheel = $Kart/F_R_Wheel
-onready var F_LWheel = $Kart/F_LWheel
+#onready var F_RWheel = get_parent().get_node("Player/Kart/F_R_Wheel")
+#onready var F_LWheel = get_parent().get_node("Player/Kart/F_LWheel")
 #F_RWheel.rotation.y = rotate_input
 #F_LWheel.rotation.y = rotate_input
 
@@ -87,6 +88,22 @@ onready var F_LWheel = $Kart/F_LWheel
 #            var distance_to_player = global_position.distance_to(followtarget.global_position)
 #            if distance_to_player > 10 :
 #                apply_central_impulse(direction * 700)   
+
+func safe_look_at(spatial: Spatial, target: Vector3) -> void:
+	var origin : Vector3 = spatial.global_transform.origin
+	var v_z :=(origin - target).normalized()
+	
+	if origin == target:
+		return
+	
+	var up := Vector3.ZERO
+	for entry in [Vector3.RIGHT, Vector3.UP, Vector3.BACK]:
+		var v_x : Vector3 = entry.cross(v_z).normalized()
+		if v_x.length() != 0:
+			up = entry
+			
+		if up != Vector3.ZERO:
+			spatial.look_at(target,up)
 
 func find_closest_touche():
 	if touche.size() <1:
@@ -120,15 +137,17 @@ func _on_Scoreballcol_body_entered(body):
 #    look_follow(state, get_global_transform(), target_position)
 #    add_central_force(Vector3(0,0,5))
 
-	
-		_physics_process(target * sped)
-		look_at(player_position, Vector3.FORWARD)
-		
+#		target.linear_velocity = (player - global_transform.origin) * sped
+#		_physics_process(target * sped)
+#		safe_look_at(player_position, Vector3.FORWARD)
+#		safe_look_at(player, target.global_transform.origin)
 		print("Boo.")
-	if body.is_in_group("players"):
-		print("body")
+		#apply_centeral_impulse(Vector3(100,0,0)* _delta)
+#	if body.is_in_group("players"):
+#		print("body")
 		
 #func _on_body_enter(body):
 #    if body.get_name() == "Player":
 #        set_input_process(true)
+
 
