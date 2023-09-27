@@ -47,7 +47,7 @@ public class BasicKartMove : MonoBehaviour
             else currentSpeed = 0f;
 
             if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
-
+            //if (Gamepad.current.leftStick.left.)
             Turning();
         }
 
