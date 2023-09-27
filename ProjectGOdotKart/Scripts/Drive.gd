@@ -4,6 +4,7 @@ onready var ball = $Ball
 onready var car_mesh = $Kart
 onready var ground_ray = $Kart/RayCast
 
+
 export var player_ip = 1
 
 var sphere_offset = Vector3(0,-0.1,0)
@@ -30,8 +31,10 @@ func _ready():
 func _physics_process(_delta):
 	# Keep the car mesh aligned with the sphere
 	car_mesh.transform.origin = ball.transform.origin + sphere_offset
+
 	# Accelerate based on car's forward direction
 	ball.add_central_force(-car_mesh.global_transform.basis.z * speed_input)
+
 	
 	#player_position = player.player_position
 	#target = (player_position - Position3D)

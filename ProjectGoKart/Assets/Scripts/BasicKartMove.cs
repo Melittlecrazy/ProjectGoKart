@@ -23,9 +23,6 @@ public class BasicKartMove : MonoBehaviour
     
     public bool isPlayer1,isPlayer2;
 
-    public enum ControllerTypeConnected { Xbox, Playstation, Other }
-    [HideInInspector]
-    public ControllerTypeConnected controllerTypeConnected;
 
 
     private void Start()
@@ -40,10 +37,11 @@ public class BasicKartMove : MonoBehaviour
 
         //forwardAmount = Input.GetAxis("Vertical");
         turnAmount = Input.GetAxis("Horizontal");
-        string joystickName = Input.GetJoystickNames().First();
+
+        //string joystickName = Input.GetJoystickNames().First();
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
 
-        if (isPlayer1 == true && joystickName.ToLower().Contains("xbox"))//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
+        if (isPlayer1 == true )//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
         {
             if (Gamepad.current.buttonSouth.isPressed) Drive();
             else currentSpeed = 0f;
