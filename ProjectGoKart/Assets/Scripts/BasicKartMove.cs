@@ -28,7 +28,6 @@ public class BasicKartMove : MonoBehaviour
     private void Start()
     {
         body.transform.parent = null;
-        
     }
 
     private void Update()
@@ -36,30 +35,34 @@ public class BasicKartMove : MonoBehaviour
         transform.position = body.transform.position;
 
         //forwardAmount = Input.GetAxis("Vertical");
-        turnAmount = Input.GetAxis("Horizontal");
+        
 
         //string joystickName = Input.GetJoystickNames().First();
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
 
         if (isPlayer1 == true )//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
         {
+            turnAmount = Input.GetAxis("Horizontal");
             if (Gamepad.current.buttonSouth.isPressed) Drive();
             else currentSpeed = 0f;
+            
 
             if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
             //if (Gamepad.current.leftStick.left.)
             Turning();
         }
 
-        //if (isPlayer2 == true && joystickName.ToLower().Contains("xbox"))
-        //{
-        //    if (GamepadButton.South) Drive();
-        //    else currentSpeed = 0f;
+        if (isPlayer2 == true)// && joystickName.ToLower().Contains("xbox"))
+        {
+            turnAmount = Input.GetAxis("Horizontal2");
+            if (Input.GetAxis("Jump") > 0) Drive();
+            else currentSpeed = 0f;
 
-        //    if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
+            if (Input.GetAxis("Jump2") > 0) DriveNowhere();
 
-        //    Turning();
-        //}
+            //Input.GetKeyDown(KeyCode.LeftShift) 
+            Turning();
+        }
 
         //GroundHandler();
     }

@@ -1,96 +1,97 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.ProBuilder.Shapes;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 [RequireComponent(typeof(CharacterController))]
 public class KArtDrive : MonoBehaviour
 {
-    [SerializeField] private Rigidbody body;
-    [SerializeField] private LayerMask ground;
+    Driving driving;
+    Vector2 move;
+    
+    private int playerID;
 
-    PlayerManager playerManager;
-
-    private float forwardAmount;
-    private float currentSpeed;
-    [SerializeField] public float speed;
-    [SerializeField] public float deeps;
-    float turnAmount;
-    [SerializeField] public float turnSpeed;
-
-   // public bool isPlayer1, isPlayer2;
+    //[Header("Sub Behaviours")]
+    //public PlayerMovementBehaviour playerMovementBehaviour;
+    //public PlayerAnimationBehaviour playerAnimationBehaviour;
+    //public PlayerVisualsBehaviour playerVisualsBehaviour;
 
 
-    private void Start()
+    //[Header("Input Settings")]
+    //public PlayerInput playerInput;
+    //public float movementSmoothingSpeed = 1f;
+    //private Vector3 rawInputMovement;
+    //private Vector3 smoothInputMovement;
+
+    // public bool isPlayer1, isPlayer2;
+
+    public void SetupPlayer(int newPlayerID)
     {
-        body.transform.parent = null;
+        playerID = newPlayerID;
+
+        //currentControlScheme = playerInput.currentControlScheme;
+
+        //playerMovementBehaviour.SetupBehaviour();
+        //playerAnimationBehaviour.SetupBehaviour();
+        //playerVisualsBehaviour.SetupBehaviour(playerID, playerInput);
     }
+
+ 
     private void Awake()
     {
-        playerManager = GetComponent<PlayerManager>();
+        //playerManager = GetComponent<PlayerManager>();
+        driving = new Driving();
+
+        driving.Drive.Forward.performed += cntxt => move = cntxt.ReadValue<Vector2>();
+        driving.Drive.Forward.canceled += cntxt => move = Vector2.zero;
+
+        driving.Drive.Backward.performed += cntxt => move = cntxt.ReadValue<Vector2>();
+        driving.Drive.Backward.canceled += cntxt => move = Vector2.zero;
+
+        driving.Drive.Turning.performed += cntxt => move = cntxt.ReadValue<Vector2>();
+        driving.Drive.Turning.canceled += cntxt => move = Vector2.zero;
     }
 
     private void Update()
     {
-        transform.position = body.transform.position;
+        Vector3 m =  new Vector3(move.x * 5, 0, move.y * 5);
+        //Vector3 r = new Vector3(0,move.y * 5, 0);
 
-        //forwardAmount = Input.GetAxis("Vertical");
-        turnAmount = Input.GetAxis("Horizontal");
+       //GetComponent<Rigidbody>().velocity = m;
 
-        //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
-
-        //if (isPlayer1 == true)//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
-        //{
-        //    if (Gamepad.current.buttonSouth.isPressed) Drive();
-        //    else currentSpeed = 0f;
-
-        //    if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
-
-        //    Turning();
-        //}
-
-        //if (isPlayer2 == true)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Space)) Drive();
-        //    else currentSpeed = 0f;
-
-        //    if (Input.GetKeyDown(KeyCode.LeftShift)) DriveNowhere();
-
-        //    Turning();
-        //}
-
-        //GroundHandler();
+        GetComponent<Transform>().Rotate(Vector3.up* move.x * .2f);
     }
     private void FixedUpdate()
     {
-        body.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
+        //body.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
     }
 
-    private void OnDrive(InputAction.CallbackContext cont)
+    public void OnDrive(InputAction.CallbackContext cont)
     {
         //currentSpeed = forwardAmount *= speed;
-        currentSpeed = speed;
+        //currentSpeed = speed;
 
     }
-    void OnReverse(InputAction.CallbackContext cont)
+    public void OnReverse(InputAction.CallbackContext cont)
     {
-        currentSpeed = -speed * deeps;
+        //currentSpeed = -speed * deeps;
 
     }
     //This is for tighter controls, might add it later.
 
-    void OnTurning(InputAction.CallbackContext cont)
+    public void OnTurning(InputAction.CallbackContext cont)
     {
-        turnAmount = cont.ReadValue<float>();
-        float newRotation = turnAmount * turnSpeed * Time.deltaTime;
-        transform.Rotate(xAngle: 0, yAngle: newRotation, zAngle: 0, relativeTo: Space.World);
+        //turnAmount = cont.ReadValue<float>();
+        //float newRotation = turnAmount * turnSpeed * Time.deltaTime;
+        //transform.Rotate(xAngle: 0, yAngle: newRotation, zAngle: 0, relativeTo: Space.World);
     }
 
     private void OnEnable()
     {
-        
+        driving.Drive.Enable();
     }
     private void OnDisable()
     {
-        
+        driving.Drive.Disable();
     }
 }
