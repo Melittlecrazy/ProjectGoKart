@@ -33,7 +33,7 @@ public partial class @Driving : IInputActionCollection2, IDisposable
                     ""id"": ""7e1f315d-99fd-4615-8130-4275eb10cb32"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": true
                 },
                 {
@@ -42,8 +42,8 @@ public partial class @Driving : IInputActionCollection2, IDisposable
                     ""id"": ""48ccca87-db6c-4eab-8e33-be81270794c4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Turning"",
