@@ -9,10 +9,10 @@ InputManager:
     m_Name: Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 2 button 1
+    positiveButton: joystick 1 button 0
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -194,15 +194,15 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Go1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 4
+    positiveButton: joystick 1 button 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -212,7 +212,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Fire3
     descriptiveName: 

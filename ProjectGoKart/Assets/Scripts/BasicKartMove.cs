@@ -9,13 +9,13 @@ using UnityEngine.InputSystem.XInput;
 
 public class BasicKartMove : MonoBehaviour
 {
-    [SerializeField] private Rigidbody body;
+    [SerializeField] private Rigidbody body,body2;
     [SerializeField] private LayerMask ground;
 
     PlayerManager playerManager;
     
     private float forwardAmount;
-    private float currentSpeed;
+    private float currentSpeed1, currentSpeed2;
     [SerializeField] public float speed;
     [SerializeField] public float deeps;
     float turnAmount;
@@ -28,37 +28,43 @@ public class BasicKartMove : MonoBehaviour
     private void Start()
     {
         body.transform.parent = null;
+        body2.transform.parent = null;
     }
 
     private void Update()
     {
-        transform.position = body.transform.position;
+        
+        
 
         //forwardAmount = Input.GetAxis("Vertical");
-        
+
 
         //string joystickName = Input.GetJoystickNames().First();
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
 
         if (isPlayer1 == true )//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
         {
+            transform.position = body.transform.position;
             turnAmount = Input.GetAxis("Horizontal");
-            if (Gamepad.current.buttonSouth.isPressed) Drive();
-            else currentSpeed = 0f;
+            if (Input.GetAxis("Go") > 0) Drive();
+            else currentSpeed1 = 0f;
             
 
-            if (Gamepad.current.buttonEast.isPressed) DriveNowhere();
-            //if (Gamepad.current.leftStick.left.)
+            if (Input.GetAxis("Go1") > 0) DriveNowhere();
+            //if (Gamepad.current.leftStick.left.) //Gamepad.current.buttonSouth.isPressed //Gamepad.current.buttonEast.isPressed
             Turning();
         }
 
         if (isPlayer2 == true)// && joystickName.ToLower().Contains("xbox"))
         {
+            transform.position = body2.transform.position;
             turnAmount = Input.GetAxis("Horizontal2");
-            if (Input.GetAxis("Jump") > 0) Drive();
-            else currentSpeed = 0f;
+            if (Input.GetAxis("Jump") > 0) { currentSpeed2 = speed; }
+                //Drive();
+            else currentSpeed2 = 0f;
 
-            if (Input.GetAxis("Jump2") > 0) DriveNowhere();
+            if (Input.GetAxis("Jump2") > 0) { currentSpeed2 = -speed * deeps; }
+                //DriveNowhere();
 
             //Input.GetKeyDown(KeyCode.LeftShift) 
             Turning();
@@ -68,18 +74,19 @@ public class BasicKartMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        body.AddForce(transform.forward * currentSpeed, ForceMode.Acceleration);
+        body.AddForce(transform.forward * currentSpeed1, ForceMode.Acceleration);
+        body2.AddForce(transform.forward * currentSpeed2, ForceMode.Acceleration);
     }
 
     private void Drive()
     {
         //currentSpeed = forwardAmount *= speed;
-        currentSpeed = speed;
+        currentSpeed1 = speed;
         
     }
     void DriveNowhere()
     {
-        currentSpeed = -speed * deeps;
+        currentSpeed1 = -speed * deeps;
         
     }
     //This is for tighter controls, might add it later.

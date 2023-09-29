@@ -10,5 +10,5 @@ public class CollisionDetect : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         impactSpeed = col.relativeVelocity.magnitude;
-    }
+    } //is for knockback
 }

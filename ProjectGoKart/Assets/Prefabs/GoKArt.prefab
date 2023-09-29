@@ -329,7 +329,7 @@ Transform:
   - {fileID: 1639147020}
   - {fileID: 2743858178282444007}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9104266525870264371
 MeshFilter:
@@ -421,15 +421,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 9104266526567691007}
+  body2: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 64
   speed: 50
   deeps: 4
-  turnSpeed: 75
+  turnSpeed: 100
   isPlayer1: 1
   isPlayer2: 0
-  controllerTypeConnected: 0
 --- !u!114 &6156172993278289894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,8 +453,12 @@ MonoBehaviour:
   quadTwo: {fileID: 2100000, guid: 803d2ad508bd5cb4caace68d12ecb2a8, type: 2}
   quadThree: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
   quadFour: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
-  point: 0
-  score: {fileID: 0}
+  point1: 0
+  point2: 0
+  score1: {fileID: 0}
+  score2: {fileID: 0}
+  isPlayer1: 0
+  isPlayer2: 0
 --- !u!114 &7231240894586154743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +475,9 @@ MonoBehaviour:
   ball: {fileID: 0}
   grab: {fileID: 5263787461564478364}
   speed: 5
+  daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+  isPlayer1: 0
+  isPlayer2: 0
 --- !u!1 &9104266526567691004
 GameObject:
   m_ObjectHideFlags: 0

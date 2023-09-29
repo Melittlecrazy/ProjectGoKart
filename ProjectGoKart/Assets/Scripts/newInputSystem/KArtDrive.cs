@@ -81,7 +81,7 @@ public class KArtDrive : MonoBehaviour
 
         driving.Drive.Forward.canceled += cont =>
         {
-            currentSpeed = speed *0;
+            currentSpeed = speed * 0;
         };
 
         //press.action.performed += cntxt => move = cntxt.ReadValue<Vector2>();
