@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Dropball : MonoBehaviour
 {
-    HasBall hasBall;
+    public Material daball;
+    public Rigidbody rb;
+
+    HasBall hasball;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Respawn")
+        {
+            this.transform.parent = null;
+            daball.SetColor("_Color", Color.grey);
+            rb.constraints = RigidbodyConstraints.None;
+            //hasball.Reset();
+        }
     }
 }

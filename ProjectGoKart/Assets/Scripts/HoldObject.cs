@@ -33,11 +33,9 @@ public class HoldObject : MonoBehaviour
 
         if (col.gameObject.CompareTag("Enemy")  || col.gameObject.CompareTag("Player"))
         {
-            ball.transform.parent = null;
-            daball.SetColor("_Color", Color.grey);
-            rigidbody.constraints = RigidbodyConstraints.None;
+            Drop();
         }
-        if (col.gameObject.CompareTag("Respawn")) print("BAH");
+        if (col.gameObject.CompareTag("Respawn")) print("If you're reading this... why?");
     }
     
 
@@ -46,5 +44,10 @@ public class HoldObject : MonoBehaviour
         daball.SetColor("_Color", Color.grey);
     }
 
-    
+    public void Drop()
+    {
+        ball.transform.parent = null;
+        daball.SetColor("_Color", Color.grey);
+        rigidbody.constraints = RigidbodyConstraints.None;
+    }
 }
