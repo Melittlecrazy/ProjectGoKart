@@ -445,6 +445,7 @@ MonoBehaviour:
   ball: {fileID: 0}
   trail: {fileID: 0}
   quadMan: {fileID: 0}
+  grab: {fileID: 0}
   quad1: {fileID: 0}
   quad2: {fileID: 0}
   quad3: {fileID: 0}
@@ -453,6 +454,8 @@ MonoBehaviour:
   quadTwo: {fileID: 2100000, guid: 803d2ad508bd5cb4caace68d12ecb2a8, type: 2}
   quadThree: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
   quadFour: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
+  daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+  rigidbody: {fileID: 0}
   point1: 0
   point2: 0
   score1: {fileID: 0}

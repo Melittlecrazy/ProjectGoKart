@@ -22,12 +22,14 @@ public class Dropball : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
+
+
         if (col.gameObject.tag == "Respawn")
         {
             this.transform.parent = null;
             daball.SetColor("_Color", Color.grey);
             rb.constraints = RigidbodyConstraints.None;
-            //hasball.Reset();
+            //hasball.hasBall = false;
         }
     }
 }

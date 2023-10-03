@@ -8,15 +8,16 @@ using UnityEngine.SocialPlatforms.Impl;
 public class HasBall : MonoBehaviour
 {
     public GameObject ball;
-    public GameObject trail, quadMan;
+    public GameObject trail, quadMan, grab;
     public MeshRenderer quad1,quad2,quad3,quad4;
-    public Material quadOne,quadTwo,quadThree,quadFour;
+    public Material quadOne,quadTwo,quadThree,quadFour,daball;
+    public Rigidbody rigidbody;
 
     public int point1,point2;
     public TextMeshProUGUI score1, score2;
 
     bool particle = false;
-    bool hasBall = false;
+    public bool hasBall = false,resetted = false;
     public bool isPlayer1, isPlayer2;
 
 
@@ -43,12 +44,14 @@ public class HasBall : MonoBehaviour
             if (point1 == 4)
             {
                 score1.text = "Score: 1";
-                //    score1.text = "WIN";
-                //    quadMan.SetActive(false);
-                //    score2.text = "LOSE";
-            }
-            if (point1 == 8) { score1.text = "Score: 2"; }
-            if (point1 == 12) { score1.text = "Winner"; score2.text = "Lose"; }
+                Reset(); point2 = point2 + 1;
+            
+            //    score1.text = "WIN";
+            //    quadMan.SetActive(false);
+            //    score2.text = "LOSE";
+        }
+            if (point1 == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
+            if (point1 == 13) { score1.text = "Winner"; score2.text = "Lose"; }
         }
         if (isPlayer2 == true)
         {
@@ -60,9 +63,10 @@ public class HasBall : MonoBehaviour
                 //    quadMan.SetActive(false);
                 //    score1.text = "LOSE";
                 Reset();
+                point2 = point2 + 1;
             }
-            if (point2 == 8) { score1.text = "Score: 2"; Reset(); }
-            if (point2 == 12) { score2.text = "Winner"; score1.text = "Lose"; }
+            if (point2 == 9) { score2.text = "Score: 2";  Reset(); point2 = point2 + 1; }
+            if (point2 == 13) { score2.text = "Winner"; score1.text = "Lose"; }
         }
     }
     private void OnCollisionEnter(Collision col)
@@ -131,9 +135,18 @@ public class HasBall : MonoBehaviour
     public void Reset()
     {
         hasBall = false;
+        resetted = false;
         quadOne.SetColor("_Color", Color.white);
         quadTwo.SetColor("_Color", Color.white);
         quadThree.SetColor("_Color", Color.white);
         quadFour.SetColor("_Color", Color.white);
+
+        ball.transform.parent = null;
+        daball.SetColor("_Color", Color.grey);
+        rigidbody.constraints = RigidbodyConstraints.None;
+        ball.transform.position = grab.transform.position;
+
+
     }
+
 }

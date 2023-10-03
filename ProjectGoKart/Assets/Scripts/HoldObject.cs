@@ -35,7 +35,7 @@ public class HoldObject : MonoBehaviour
         {
             Drop();
         }
-        if (col.gameObject.CompareTag("Respawn")) print("If you're reading this... why?");
+        if (col.gameObject.CompareTag("Respawn")) ; //print("If you're reading this... why?");
     }
     
 
