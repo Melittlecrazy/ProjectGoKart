@@ -28,15 +28,16 @@ public class HoldObject : MonoBehaviour
             
             if (isPlayer1 == true) daball.SetColor("_Color", Color.red);
             if (isPlayer2 == true) daball.SetColor("_Color", Color.blue);
-            else daball.SetColor("_Color", Color.grey);
+            
         }
 
-        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Respawn") || col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Enemy")  || col.gameObject.CompareTag("Player"))
         {
             ball.transform.parent = null;
-            //ball.transform.position = null;
+            daball.SetColor("_Color", Color.grey);
             rigidbody.constraints = RigidbodyConstraints.None;
         }
+        if (col.gameObject.CompareTag("Respawn")) print("BAH");
     }
     
 

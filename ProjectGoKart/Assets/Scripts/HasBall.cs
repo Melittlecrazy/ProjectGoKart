@@ -13,7 +13,7 @@ public class HasBall : MonoBehaviour
     public Material quadOne,quadTwo,quadThree,quadFour;
 
     public int point1,point2;
-    public TextMeshProUGUI score1,score2;
+    public TextMeshProUGUI score1, score2;
 
     bool particle = false;
     bool hasBall = false;
@@ -22,16 +22,15 @@ public class HasBall : MonoBehaviour
 
     void Start()
     {
-        score1 = FindObjectOfType<TextMeshProUGUI>();
-        score2 = FindObjectOfType<TextMeshProUGUI>();
+        
 
         quadOne.SetColor("_Color", Color.white);
         quadTwo.SetColor("_Color", Color.white);
         quadThree.SetColor("_Color", Color.white);
         quadFour.SetColor("_Color", Color.white);
         
-        score1.text = "Score: " + point1;
-        score2.text = "Score: " + point2;
+        //score1.text = "Score: " + point1;
+        //score2.text = "Score: " + point2;
         quadMan.SetActive(true);
     }
 
@@ -39,41 +38,49 @@ public class HasBall : MonoBehaviour
     void Update()
     {
         if (isPlayer1 == true)
-        { 
-            score1.text = "Score: " + point1;
+        {
+            //score1.text = "Score: " + point1;
             if (point1 == 4)
             {
-                score1.text = "WIN";
-                quadMan.SetActive(false);
-                score2.text = "LOSE";
+                score1.text = "Score: 1";
+                //    score1.text = "WIN";
+                //    quadMan.SetActive(false);
+                //    score2.text = "LOSE";
             }
+            if (point1 == 8) { score1.text = "Score: 2"; }
+            if (point1 == 12) { score1.text = "Winner"; score2.text = "Lose"; }
         }
         if (isPlayer2 == true)
         {
-            score2.text = "Score: " + point2;
+            //score2.text = "Score: " + point2;
             if (point2 == 4)
             {
-                score2.text = "WIN";
-                quadMan.SetActive(false);
-                score1.text = "LOSE";
+                score2.text = "Score: 1";
+                //    score2.text = "WIN";
+                //    quadMan.SetActive(false);
+                //    score1.text = "LOSE";
+                Reset();
             }
+            if (point2 == 8) { score1.text = "Score: 2"; Reset(); }
+            if (point2 == 12) { score2.text = "Winner"; score1.text = "Lose"; }
         }
     }
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Ball")
         {
-            trail.SetActive(true);
-            hasBall = true; 
+            //trail.SetActive(true);
+            hasBall = true;
+            quad1.enabled = true;
+            quad2.enabled = true;
+            quad3.enabled = true;
+            quad4.enabled = true;
         }
-        if (col.gameObject.tag == "Enemy" && isPlayer2 == true || col.gameObject.tag == "Player" && isPlayer1 == true || col.gameObject.tag == "Respawn")
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player") 
         {
-            trail.SetActive(false);
-            hasBall = false;
-
+            //trail.SetActive(false);
             Reset();
         }
-
 
         //quadTwo.SetColor()
     }
@@ -121,8 +128,12 @@ public class HasBall : MonoBehaviour
         //quad4.enabled = true;
     }
 
-    private void Reset()
+    public void Reset()
     {
-        
+        hasBall = false;
+        quadOne.SetColor("_Color", Color.white);
+        quadTwo.SetColor("_Color", Color.white);
+        quadThree.SetColor("_Color", Color.white);
+        quadFour.SetColor("_Color", Color.white);
     }
 }
