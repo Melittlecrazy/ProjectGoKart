@@ -1310,7 +1310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &743550690
 Transform:
   m_ObjectHideFlags: 0
@@ -8521,6 +8521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b1d7cb93a44241a60aa0cc62eb6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  singleplayer: 0
+  multiplayer: 0
   controllerTypeConnected: 0
   controllerUnpluggedImage: {fileID: 0}
 --- !u!4 &1729716291

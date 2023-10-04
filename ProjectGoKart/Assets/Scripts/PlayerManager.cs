@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
 {
     BasicKartMove basicKartMove;
 
+    public bool singleplayer,multiplayer;
+
     public enum ControllerTypeConnected { Xbox, Playstation, Other }
     [HideInInspector]
     public ControllerTypeConnected controllerTypeConnected;
@@ -25,7 +27,9 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (new )
+        if (singleplayer == true) ;
+
+        if (multiplayer == true) ;
     }
 
     private string getControllerType()

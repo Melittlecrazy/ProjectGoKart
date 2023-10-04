@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements;
 
 public class HasBall : MonoBehaviour
 {
@@ -149,7 +150,13 @@ public class HasBall : MonoBehaviour
         rigidbody.constraints = RigidbodyConstraints.None;
         ball.transform.position = grab.transform.position;
 
+        if (point1 < 4) point1 = 0;
+        if (point1 > 4 && point1 < 8) point1 = 5;
+        if (point1 > 9 && point1 < 12) point1 = 9;
 
+        if (point2 < 4) point2 = 0;
+        if (point2 > 4 && point2 < 8) point2 = 5;
+        if (point2 > 9 && point2 < 12) point2 = 9;
     }
 
 }
