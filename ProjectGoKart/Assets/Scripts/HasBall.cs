@@ -44,14 +44,15 @@ public class HasBall : MonoBehaviour
             if (point1 == 4)
             {
                 score1.text = "Score: 1";
-                Reset(); point2 = point2 + 1;
+                Reset(); point1 = point1 + 1;
+
             
             //    score1.text = "WIN";
             //    quadMan.SetActive(false);
             //    score2.text = "LOSE";
         }
             if (point1 == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
-            if (point1 == 13) { score1.text = "Winner"; score2.text = "Lose"; }
+            if (point1 == 13) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
         }
         if (isPlayer2 == true)
         {
@@ -59,14 +60,15 @@ public class HasBall : MonoBehaviour
             if (point2 == 4)
             {
                 score2.text = "Score: 1";
+
                 //    score2.text = "WIN";
                 //    quadMan.SetActive(false);
                 //    score1.text = "LOSE";
                 Reset();
                 point2 = point2 + 1;
             }
-            if (point2 == 9) { score2.text = "Score: 2";  Reset(); point2 = point2 + 1; }
-            if (point2 == 13) { score2.text = "Winner"; score1.text = "Lose"; }
+            if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
+            if (point2 == 13) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
     }
     private void OnCollisionEnter(Collision col)
@@ -136,6 +138,7 @@ public class HasBall : MonoBehaviour
     {
         hasBall = false;
         resetted = false;
+        trail.SetActive(false);
         quadOne.SetColor("_Color", Color.white);
         quadTwo.SetColor("_Color", Color.white);
         quadThree.SetColor("_Color", Color.white);
