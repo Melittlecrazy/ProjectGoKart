@@ -19,11 +19,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
-        {
-            speed = 0;
-        }
-        //else speed = 10;
-        if (collision.gameObject.tag != "Ball") { speed = 10;}
+        //if (collision.gameObject.tag == "Ball")
+        //{
+        //    speed = 0;
+        //}
+        ////else speed = 10;
+        //if (collision.gameObject.tag != "Ball") { speed = 10;}
     }
 }
