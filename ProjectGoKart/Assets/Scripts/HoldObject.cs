@@ -13,7 +13,7 @@ public class HoldObject : MonoBehaviour
     [SerializeField] float speed = 1.5f;
     public Material daball;
 
-    public bool isPlayer1, isPlayer2;
+    public bool isPlayer1, isPlayer2, hasBall = false;
 
     //[SerializeField] private float pickupRan = 5f;
     //[SerializeField] private float pickupFor = 5f;
@@ -26,12 +26,12 @@ public class HoldObject : MonoBehaviour
             ball.transform.position = grab.transform.position;
             rigidbody.constraints = RigidbodyConstraints.FreezePosition;
             
-            if (isPlayer1 == true) daball.SetColor("_Color", Color.red);
-            if (isPlayer2 == true) daball.SetColor("_Color", Color.blue);
+            if (isPlayer1 == true) daball.SetColor("_Color", Color.red); hasBall = true;
+            if (isPlayer2 == true) daball.SetColor("_Color", Color.blue);hasBall = true;
             
         }
 
-        if (col.gameObject.CompareTag("Enemy")  || col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Enemy") && hasBall == true && isPlayer2 ==true  || col.gameObject.CompareTag("Player") && hasBall == true && isPlayer1 == true)
         {
             Drop();
         }
@@ -49,5 +49,6 @@ public class HoldObject : MonoBehaviour
         ball.transform.parent = null;
         daball.SetColor("_Color", Color.grey);
         rigidbody.constraints = RigidbodyConstraints.None;
+        hasBall = false;
     }
 }

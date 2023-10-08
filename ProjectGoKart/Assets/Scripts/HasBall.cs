@@ -53,7 +53,7 @@ public class HasBall : MonoBehaviour
             //    score2.text = "LOSE";
         }
             if (point1 == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
-            if (point1 == 13) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
+            if (point1 == 14) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
         }
         if (isPlayer2 == true)
         {
@@ -69,7 +69,7 @@ public class HasBall : MonoBehaviour
                 point2 = point2 + 1;
             }
             if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
-            if (point2 == 13) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
+            if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
     }
     private void OnCollisionEnter(Collision col)
@@ -86,7 +86,7 @@ public class HasBall : MonoBehaviour
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player") 
         {
             //trail.SetActive(false);
-            Reset();
+            Drop();
         }
 
         //quadTwo.SetColor()
@@ -158,5 +158,11 @@ public class HasBall : MonoBehaviour
         if (point2 > 4 && point2 < 8) point2 = 5;
         if (point2 > 9 && point2 < 12) point2 = 9;
     }
-
+    public void Drop()
+    {
+        ball.transform.parent = null;
+        daball.SetColor("_Color", Color.grey);
+        rigidbody.constraints = RigidbodyConstraints.None;
+        hasBall = false;
+    }
 }

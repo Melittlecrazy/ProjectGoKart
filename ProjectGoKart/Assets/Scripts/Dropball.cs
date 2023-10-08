@@ -6,12 +6,12 @@ public class Dropball : MonoBehaviour
 {
     public Material daball;
     public Rigidbody rb;
-
+    [SerializeField] GameObject bob;
     HasBall hasball;
 
     void Start()
     {
-        
+        hasball = GetComponent<HasBall>();
     }
 
     void Update()
