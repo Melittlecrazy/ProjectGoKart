@@ -848,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1636396771550394887, guid: 697f93ccb9d27104eb606a257d9d8dc1, type: 3}
+      propertyPath: m_TagString
+      value: Bonk
+      objectReference: {fileID: 0}
     - target: {fileID: 2030465323587573722, guid: 697f93ccb9d27104eb606a257d9d8dc1, type: 3}
       propertyPath: m_Mesh
       value: 

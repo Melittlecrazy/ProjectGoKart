@@ -9,6 +9,7 @@ TagManager:
   - Kart
   - Grabbed
   - Enemy
+  - Bonk
   layers:
   - Default
   - TransparentFX
