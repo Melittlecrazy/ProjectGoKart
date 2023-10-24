@@ -6,6 +6,7 @@ using UnityEngine.ProBuilder.Shapes;
 public class Spawner : MonoBehaviour
 {
     public GameObject powerUp;
+    public int timer;
     public bool spawn;
 
     private void OnTriggerEnter(Collider other)
@@ -20,9 +21,11 @@ public class Spawner : MonoBehaviour
     IEnumerator Spawn()
     {
         powerUp.SetActive(false);
+        GetComponent<BoxCollider>().enabled = false;
         print("george");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timer);
         //Instantiate(powerUp, this.transform.position, this.transform.rotation);
         powerUp.SetActive(true);
+        GetComponent<BoxCollider>().enabled = true;
     }
 }
