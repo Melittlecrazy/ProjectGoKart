@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float time = .5f, zoom;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player") StartCoroutine(Vroom(other));
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Vroom(Collider player)
     {
-        
+        BasicKartMove vroom = player.GetComponent<BasicKartMove>();
+        vroom.speed *= zoom;
+
+        yield return new WaitForSeconds(time);
+        vroom.speed /= zoom;
     }
 }

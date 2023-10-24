@@ -18,7 +18,7 @@ public class HasBall : MonoBehaviour
     public TextMeshProUGUI score1, score2;
 
     bool particle = false;
-    public bool hasBall = false,resetted = false;
+    public bool hasBall = false,resetted = false, stayed=false;
     public bool isPlayer1, isPlayer2;
 
 
@@ -71,6 +71,8 @@ public class HasBall : MonoBehaviour
             if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
             if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
+
+        //timer
     }
     private void OnCollisionEnter(Collision col)
     {
@@ -91,8 +93,11 @@ public class HasBall : MonoBehaviour
 
         //quadTwo.SetColor()
     }
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
+
+        //if (stayed == false)
+        //{
         //Red team
         if (other.gameObject.name == "quad1" && hasBall == true && isPlayer1 == true) { QuadA(); quadOne.SetColor("_Color", Color.red); point1 = point1 + 1; quad1.enabled = true; }
         if (other.gameObject.name == "quad2" && hasBall == true && isPlayer1 == true) { QuadB(); quadTwo.SetColor("_Color", Color.red); point1 = point1 + 1; quad2.enabled = true; }
@@ -104,7 +109,12 @@ public class HasBall : MonoBehaviour
         if (other.gameObject.name == "quad2" && hasBall == true && isPlayer2 == true) { QuadB(); quadTwo.SetColor("_Color", Color.blue); point2 = point2 + 1; quad2.enabled = true; }
         if (other.gameObject.name == "quad3" && hasBall == true && isPlayer2 == true) { QuadC(); quadThree.SetColor("_Color", Color.blue); point2 = point2 + 1; quad3.enabled = true; }
         if (other.gameObject.name == "quad4" && hasBall == true && isPlayer2 == true) { QuadD(); quadFour.SetColor("_Color", Color.blue); point2 = point2 + 1; quad4.enabled = true; }
+        //}
+    }
 
+    private void OnCollisionStay(Collision col)
+    {
+        stayed = true;
     }
     void QuadA()
     {
