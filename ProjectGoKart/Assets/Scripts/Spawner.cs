@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.tag == "Enemy")
         {
            
             StartCoroutine(Spawn());

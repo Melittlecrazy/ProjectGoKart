@@ -80,6 +80,7 @@ public class HasBall : MonoBehaviour
         {
             //trail.SetActive(true);
             hasBall = true;
+            
             quad1.enabled = true;
             quad2.enabled = true;
             quad3.enabled = true;
@@ -96,8 +97,7 @@ public class HasBall : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
 
-        //if (stayed == false)
-        //{
+        
         //Red team
         if (other.gameObject.name == "quad1" && hasBall == true && isPlayer1 == true) { QuadA(); quadOne.SetColor("_Color", Color.red); point1 = point1 + 1; quad1.enabled = true; }
         if (other.gameObject.name == "quad2" && hasBall == true && isPlayer1 == true) { QuadB(); quadTwo.SetColor("_Color", Color.red); point1 = point1 + 1; quad2.enabled = true; }
@@ -109,13 +109,9 @@ public class HasBall : MonoBehaviour
         if (other.gameObject.name == "quad2" && hasBall == true && isPlayer2 == true) { QuadB(); quadTwo.SetColor("_Color", Color.blue); point2 = point2 + 1; quad2.enabled = true; }
         if (other.gameObject.name == "quad3" && hasBall == true && isPlayer2 == true) { QuadC(); quadThree.SetColor("_Color", Color.blue); point2 = point2 + 1; quad3.enabled = true; }
         if (other.gameObject.name == "quad4" && hasBall == true && isPlayer2 == true) { QuadD(); quadFour.SetColor("_Color", Color.blue); point2 = point2 + 1; quad4.enabled = true; }
-        //}
-    }
-
-    private void OnCollisionStay(Collision col)
-    {
-        stayed = true;
-    }
+    
+        
+}
     void QuadA()
     {
         //quad1.enabled = true;
