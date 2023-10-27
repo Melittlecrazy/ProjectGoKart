@@ -8206,6 +8206,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1729716291}
     m_Modifications:
+    - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.105215
+      objectReference: {fileID: 0}
     - target: {fileID: 1589577565617442882, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: target
       value: 
@@ -8214,6 +8222,10 @@ PrefabInstance:
       propertyPath: body2
       value: 
       objectReference: {fileID: 866664166}
+    - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3178045034627474142, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_Name
       value: GoKArt
@@ -8275,8 +8287,16 @@ PrefabInstance:
       value: 2.09518
       objectReference: {fileID: 0}
     - target: {fileID: 7169496475044734563, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_Size.z
+      value: 4.7305393
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169496475044734563, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_Center.x
-      value: -0.0058167577
+      value: -0.005816698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169496475044734563, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_Center.z
+      value: 0.020508766
       objectReference: {fileID: 0}
     - target: {fileID: 7169496475044734563, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_ProvidesContacts
@@ -8364,7 +8384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b916dfd23f9ddf40859fbeadf142c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrength: 5
+  knockbackStrength: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
