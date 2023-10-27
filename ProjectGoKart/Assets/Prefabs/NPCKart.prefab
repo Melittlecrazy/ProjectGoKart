@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4712741061707351220}
   - component: {fileID: 3178633998482128286}
   - component: {fileID: 3177852147461484767}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Boop
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2149145989088640031}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.32334137, y: -0.20949876, z: 0.273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8968947585910426666}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3178633998482128286
 BoxCollider:
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 8968947585910426665}
   - component: {fileID: 8968947585910426670}
   - component: {fileID: 1453899443}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: NPCKart
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,6 +97,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8968947585910426671}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.4, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -105,7 +106,6 @@ Transform:
   - {fileID: 8931380447121045836}
   - {fileID: 4712741061707351220}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8968947585910426667
 MeshFilter:
