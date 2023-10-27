@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class KnockbackOnCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float knockbackStrength;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            Vector3 direction = collision.transform.position - transform.position;
+            direction.y = 0f;
+
+            rb.AddForce(direction.normalized * knockbackStrength, ForceMode.Impulse);
+        }
     }
 }
