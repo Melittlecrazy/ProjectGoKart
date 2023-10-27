@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639147020}
   - component: {fileID: 1639147019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639147018}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10521498, y: -0, z: -0, w: 0.9944495}
-  m_LocalPosition: {x: 0, y: 1.6999999, z: -5}
+  m_LocalRotation: {x: 0.105215, y: -0, z: -0, w: 0.9944495}
+  m_LocalPosition: {x: 0, y: 1.7, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4376263973505602167}
   - component: {fileID: 1275072889512336695}
   - component: {fileID: 7287381157530430297}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Bonk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 1041834934491181917}
   - component: {fileID: 313049533736654738}
   - component: {fileID: 5409617687743248900}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 6156172993278289894}
   - component: {fileID: 7231240894586154743}
   - component: {fileID: 7749474382462335356}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: GoKArt
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 9104266526567691001}
   - component: {fileID: 9104266526567691006}
   - component: {fileID: 9104266526567691007}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
