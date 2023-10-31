@@ -6002,6 +6002,10 @@ PrefabInstance:
       propertyPath: isPlayer2
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9104266525870264333, guid: 697f93ccb9d27104eb606a257d9d8dc1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9104266525870264370, guid: 697f93ccb9d27104eb606a257d9d8dc1, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6894,6 +6898,7 @@ MonoBehaviour:
   charaPref:
   - {fileID: 658982040}
   - {fileID: 4624727686860431804}
+  player2: []
 --- !u!1 &1193642341
 GameObject:
   m_ObjectHideFlags: 0

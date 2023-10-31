@@ -1244,7 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4280410712272786861}
   - component: {fileID: 6944049971619907282}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

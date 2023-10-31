@@ -24,7 +24,7 @@ public class titleScreenstuff : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(p1);
         p1.SetActive(true);
         p2.SetActive(true);
-        if (sin == true) SceneManager.LoadScene(single);
+        if (sin == true) 
         if (mul == true) SceneManager.LoadScene(multi);
 
     }
