@@ -764,17 +764,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 658982041}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 384392171}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: trail
       value: 
       objectReference: {fileID: 1017133246}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: score1
+      value: 
+      objectReference: {fileID: 318907245}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: score2
+      value: 
+      objectReference: {fileID: 978511276}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: quadMan
       value: 
       objectReference: {fileID: 1298227378}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: rigidball
+      value: 
+      objectReference: {fileID: 714041982}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: rigidbody
       value: 
       objectReference: {fileID: 714041982}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 1828591024}
     - target: {fileID: 7879841235319601981, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7760,6 +7780,11 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &1828591024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8912502584842132852, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+  m_PrefabInstance: {fileID: 2329861373507216965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859536525
 GameObject:
   m_ObjectHideFlags: 0
