@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 7213389733181347878}
   - component: {fileID: 3334413670778681110}
   - component: {fileID: 3653139061040694950}
+  - component: {fileID: 251367276880538272}
   - component: {fileID: 4801359175307325608}
   m_Layer: 3
   m_Name: TinkTom p2
@@ -784,9 +785,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  rigidball: {fileID: 0}
   trail: {fileID: 0}
   quadMan: {fileID: 0}
-  grab: {fileID: 0}
+  spawn: {fileID: 0}
   quad1: {fileID: 0}
   quad2: {fileID: 0}
   quad3: {fileID: 0}
@@ -796,7 +798,7 @@ MonoBehaviour:
   quadThree: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
   quadFour: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
   daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
-  rigidbody: {fileID: 0}
+  checkpoints: {fileID: 0}
   point1: 0
   point2: 0
   score1: {fileID: 0}
@@ -826,6 +828,19 @@ MonoBehaviour:
   isPlayer1: 1
   isPlayer2: 0
   hasBall: 0
+--- !u!114 &251367276880538272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699620231343780141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b916dfd23f9ddf40859fbeadf142c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackStrength: 20
 --- !u!65 &4801359175307325608
 BoxCollider:
   m_ObjectHideFlags: 0
