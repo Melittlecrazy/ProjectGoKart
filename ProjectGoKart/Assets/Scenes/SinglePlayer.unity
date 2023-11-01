@@ -723,6 +723,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1158665626}
     m_Modifications:
+    - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.105215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589577565617442882, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 714041981}
     - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: body2
       value: 
@@ -733,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3178045034627474142, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5356371975380871648, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: ball
@@ -6891,7 +6903,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158665625}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab999d73e6d5384b98a1938678e59dc, type: 3}
   m_Name: 
