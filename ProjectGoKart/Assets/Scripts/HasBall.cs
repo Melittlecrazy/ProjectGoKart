@@ -8,11 +8,13 @@ using UnityEngine.UIElements;
 
 public class HasBall : MonoBehaviour
 {
-    public GameObject ball;
-    public GameObject trail, quadMan, grab;
+    public GameObject ball; 
+    public Rigidbody rigidball;
+
+    public GameObject trail, quadMan, spawn;
     public MeshRenderer quad1,quad2,quad3,quad4;
     public Material quadOne,quadTwo,quadThree,quadFour,daball;
-    public Rigidbody rigidball;
+   
 
     public GameObject checkpoints;
 
@@ -157,7 +159,7 @@ public class HasBall : MonoBehaviour
         ball.transform.parent = null;
         daball.SetColor("_Color", Color.grey);
         rigidball.constraints = RigidbodyConstraints.None;
-        ball.transform.position = grab.transform.position;
+        ball.transform.position = spawn.transform.position;
 
         if (point1 < 4) point1 = 0;
         if (point1 > 4 && point1 < 8) point1 = 5;
