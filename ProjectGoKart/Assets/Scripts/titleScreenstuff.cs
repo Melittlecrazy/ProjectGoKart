@@ -11,7 +11,7 @@ public class titleScreenstuff : MonoBehaviour
     public string single,multi;
     public GameObject button, p1,p2,play,play2;
 
-    public GameObject title,singleP,multiP;
+    public GameObject title,singleP,multiP, multiCam;
     public bool sin,mul;
 
     void Start()
@@ -43,6 +43,7 @@ public class titleScreenstuff : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(play2);
         title.SetActive(false);
         multiP.SetActive(true);
+        multiCam.SetActive(true);
 
         mul = true;
     }

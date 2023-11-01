@@ -12,7 +12,9 @@ public class HasBall : MonoBehaviour
     public GameObject trail, quadMan, grab;
     public MeshRenderer quad1,quad2,quad3,quad4;
     public Material quadOne,quadTwo,quadThree,quadFour,daball;
-    public Rigidbody rigidbody;
+    public Rigidbody rigidball;
+
+    public GameObject checkpoints;
 
     public int point1,point2;
     public TextMeshProUGUI score1, score2;
@@ -24,7 +26,7 @@ public class HasBall : MonoBehaviour
 
     void Start()
     {
-        
+        checkpoints.GetComponent<Scoring>();
 
         quadOne.SetColor("_Color", Color.white);
         quadTwo.SetColor("_Color", Color.white);
@@ -42,23 +44,24 @@ public class HasBall : MonoBehaviour
         if (isPlayer1 == true)
         {
             //score1.text = "Score: " + point1;
-            if (point1 == 4)
+            if (checkpoints.GetComponent<Scoring>().player1score == 16)
             {
                 score1.text = "Score: 1";
-                Reset(); point1 = point1 + 1;
+                Reset(); 
+                point1 = point1 + 1;
 
             
             //    score1.text = "WIN";
             //    quadMan.SetActive(false);
             //    score2.text = "LOSE";
-        }
-            if (point1 == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
-            if (point1 == 14) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
+            }
+            //if (checkpoints.GetComponent<Scoring>().player1score == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
+            //if (checkpoints.GetComponent<Scoring>().player1score == 14) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
         }
         if (isPlayer2 == true)
         {
             //score2.text = "Score: " + point2;
-            if (point2 == 4)
+            if (checkpoints.GetComponent<Scoring>().player2score == 16)
             {
                 score2.text = "Score: 1";
 
@@ -68,13 +71,13 @@ public class HasBall : MonoBehaviour
                 Reset();
                 point2 = point2 + 1;
             }
-            if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
-            if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
+            //if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
+            //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
 
         //timer
     }
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Ball")
         {
@@ -94,7 +97,7 @@ public class HasBall : MonoBehaviour
 
         //quadTwo.SetColor()
     }
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
 
         
@@ -153,7 +156,7 @@ public class HasBall : MonoBehaviour
 
         ball.transform.parent = null;
         daball.SetColor("_Color", Color.grey);
-        rigidbody.constraints = RigidbodyConstraints.None;
+        rigidball.constraints = RigidbodyConstraints.None;
         ball.transform.position = grab.transform.position;
 
         if (point1 < 4) point1 = 0;
@@ -168,7 +171,7 @@ public class HasBall : MonoBehaviour
     {
         ball.transform.parent = null;
         daball.SetColor("_Color", Color.grey);
-        rigidbody.constraints = RigidbodyConstraints.None;
+        rigidball.constraints = RigidbodyConstraints.None;
         hasBall = false;
     }
 }
