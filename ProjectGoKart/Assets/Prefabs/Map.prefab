@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: a432c0938dc9ec94fa2e1891d84dec18, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &183325505061044148
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 16149239818f4b54bbc1cc8b6d53edff, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &1441906866844771002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 803d2ad508bd5cb4caace68d12ecb2a8, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &2036349332894574472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 5eae8e9e100035c4ba17ad4c5639412a, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &2207237648400351598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,6 +2106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 4c1bdd9f049a2a947a66ca53c5502d99, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &2351188339527156008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &3192501571705418075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,6 +3273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 8cbd66c670fd45c4db8e905548e9161f, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &4052790180834249085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &4343763375860396466
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,6 +3651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 39d08b2729f7e4748b9accfbdb8717be, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &5449486697032299601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,6 +3883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: c387caee24be1454bb59995464d6f027, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &5687919790754415564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,6 +4549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: bef7a3ce5d66e41498c63a2fe5f901ad, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &6569445300784588144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,6 +4782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 76df796f109103749a7e68173ab19d3f, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &6583219014010875921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,6 +4909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: 2c010b44bef04a44f8a410aa1bc6cc8f, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &6776525258866362287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5023,6 +5036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: ee70f92cbe071eb4e92311d885892347, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &7052503245372823099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,6 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: ab97e93d0e3a9524f80b4e8551cb45cc, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &7466031319435399864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,6 +6382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {fileID: 2100000, guid: c58693ef12b680a4ba147f7ab39bee0e, type: 2}
+  checkpoints: {fileID: 8912502584842132852}
 --- !u!1 &9115050155554381210
 GameObject:
   m_ObjectHideFlags: 0

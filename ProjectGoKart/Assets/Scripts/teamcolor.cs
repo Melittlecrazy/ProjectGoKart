@@ -7,16 +7,18 @@ public class teamcolor : MonoBehaviour
     [SerializeField]public Material color;
 
     private HasBall HasBall;
+    public GameObject checkpoints;
 
 
     private void Start()
     {
+        checkpoints.GetComponent<Scoring>();
         Gray();
     }
 
     private void Update()
     {
-        //if (GameObject.Find("Player").GetComponent<HasBall>().hasBall == false) Gray();
+        if (checkpoints.GetComponent<Scoring>().player1score == 0) Gray();
     }
 
     private void OnTriggerEnter(Collider other)
