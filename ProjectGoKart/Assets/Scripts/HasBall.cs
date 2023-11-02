@@ -18,7 +18,7 @@ public class HasBall : MonoBehaviour
 
     public GameObject checkpoints;
 
-    public int point1,point2;
+    public int point1=1,point2=1;
     public TextMeshProUGUI score1, score2;
 
     bool particle = false;
@@ -48,7 +48,7 @@ public class HasBall : MonoBehaviour
             //score1.text = "Score: " + point1;
             if (checkpoints.GetComponent<Scoring>().player1score == 16)
             {
-                score1.text = "Score: 1";
+                score1.text = "Score: " + point1;
                 Reset(); 
                 point1 = point1 + 1;
 
@@ -65,7 +65,7 @@ public class HasBall : MonoBehaviour
             //score2.text = "Score: " + point2;
             if (checkpoints.GetComponent<Scoring>().player2score == 16)
             {
-                score2.text = "Score: 1";
+                score2.text = "Score: " + point2;
 
                 //    score2.text = "WIN";
                 //    quadMan.SetActive(false);
@@ -79,7 +79,7 @@ public class HasBall : MonoBehaviour
 
         //timer
     }
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Ball")
         {
@@ -161,13 +161,8 @@ public class HasBall : MonoBehaviour
         rigidball.constraints = RigidbodyConstraints.None;
         ball.transform.position = spawn.transform.position;
 
-        if (point1 < 4) point1 = 0;
-        if (point1 > 4 && point1 < 8) point1 = 5;
-        if (point1 > 9 && point1 < 12) point1 = 9;
-
-        if (point2 < 4) point2 = 0;
-        if (point2 > 4 && point2 < 8) point2 = 5;
-        if (point2 > 9 && point2 < 12) point2 = 9;
+        checkpoints.GetComponent<Scoring>().player1score = 0;
+        checkpoints.GetComponent<Scoring>().player2score = 0;
     }
     public void Drop()
     {
