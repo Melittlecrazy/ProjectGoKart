@@ -12,9 +12,10 @@ public class HasBall : MonoBehaviour
     public Rigidbody rigidball;
 
     public GameObject trail, quadMan, spawn;
-    public MeshRenderer quad1,quad2,quad3,quad4;
-    public Material quadOne,quadTwo,quadThree,quadFour,daball;
-   
+    //public MeshRenderer quad1,quad2,quad3,quad4;
+    public Material daball;
+
+    private teamcolor color;
 
     public GameObject checkpoints;
 
@@ -30,10 +31,9 @@ public class HasBall : MonoBehaviour
     {
         checkpoints.GetComponent<Scoring>();
 
-        quadOne.SetColor("_Color", Color.white);
-        quadTwo.SetColor("_Color", Color.white);
-        quadThree.SetColor("_Color", Color.white);
-        quadFour.SetColor("_Color", Color.white);
+        //teamcolor color = gameObject.GetComponent<teamcolor>();
+        
+        //color.Gray();
         
         //score1.text = "Score: " + point1;
         //score2.text = "Score: " + point2;
@@ -86,10 +86,7 @@ public class HasBall : MonoBehaviour
             //trail.SetActive(true);
             hasBall = true;
             
-            quad1.enabled = true;
-            quad2.enabled = true;
-            quad3.enabled = true;
-            quad4.enabled = true;
+            quadMan.SetActive(true);
         }
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player") 
         {
@@ -99,62 +96,63 @@ public class HasBall : MonoBehaviour
 
         //quadTwo.SetColor()
     }
-    private void OnTriggerExit(Collider other)
-    {
+//    private void OnTriggerExit(Collider other)
+//    {
 
         
-        //Red team
-        if (other.gameObject.name == "quad1" && hasBall == true && isPlayer1 == true) { QuadA(); quadOne.SetColor("_Color", Color.red); point1 = point1 + 1; quad1.enabled = true; }
-        if (other.gameObject.name == "quad2" && hasBall == true && isPlayer1 == true) { QuadB(); quadTwo.SetColor("_Color", Color.red); point1 = point1 + 1; quad2.enabled = true; }
-        if (other.gameObject.name == "quad3" && hasBall == true && isPlayer1 == true) { QuadC(); quadThree.SetColor("_Color", Color.red); point1 = point1 + 1; quad3.enabled = true; }
-        if (other.gameObject.name == "quad4" && hasBall == true && isPlayer1 == true) { QuadD(); quadFour.SetColor("_Color", Color.red); point1 = point1 + 1; quad4.enabled = true; }
+//        ////Red team
+//        //if (other.gameObject.name == "quad1" && hasBall == true && isPlayer1 == true) { QuadA(); quadOne.SetColor("_Color", Color.red); point1 = point1 + 1; quad1.enabled = true; }
+//        //if (other.gameObject.name == "quad2" && hasBall == true && isPlayer1 == true) { QuadB(); quadTwo.SetColor("_Color", Color.red); point1 = point1 + 1; quad2.enabled = true; }
+//        //if (other.gameObject.name == "quad3" && hasBall == true && isPlayer1 == true) { QuadC(); quadThree.SetColor("_Color", Color.red); point1 = point1 + 1; quad3.enabled = true; }
+//        //if (other.gameObject.name == "quad4" && hasBall == true && isPlayer1 == true) { QuadD(); quadFour.SetColor("_Color", Color.red); point1 = point1 + 1; quad4.enabled = true; }
 
-        //Blue team
-        if (other.gameObject.name == "quad1" && hasBall == true && isPlayer2 == true) { QuadA(); quadOne.SetColor("_Color", Color.blue); point2 = point2 + 1; quad1.enabled = true; }
-        if (other.gameObject.name == "quad2" && hasBall == true && isPlayer2 == true) { QuadB(); quadTwo.SetColor("_Color", Color.blue); point2 = point2 + 1; quad2.enabled = true; }
-        if (other.gameObject.name == "quad3" && hasBall == true && isPlayer2 == true) { QuadC(); quadThree.SetColor("_Color", Color.blue); point2 = point2 + 1; quad3.enabled = true; }
-        if (other.gameObject.name == "quad4" && hasBall == true && isPlayer2 == true) { QuadD(); quadFour.SetColor("_Color", Color.blue); point2 = point2 + 1; quad4.enabled = true; }
+//        ////Blue team
+//        //if (other.gameObject.name == "quad1" && hasBall == true && isPlayer2 == true) { QuadA(); quadOne.SetColor("_Color", Color.blue); point2 = point2 + 1; quad1.enabled = true; }
+//        //if (other.gameObject.name == "quad2" && hasBall == true && isPlayer2 == true) { QuadB(); quadTwo.SetColor("_Color", Color.blue); point2 = point2 + 1; quad2.enabled = true; }
+//        //if (other.gameObject.name == "quad3" && hasBall == true && isPlayer2 == true) { QuadC(); quadThree.SetColor("_Color", Color.blue); point2 = point2 + 1; quad3.enabled = true; }
+//        //if (other.gameObject.name == "quad4" && hasBall == true && isPlayer2 == true) { QuadD(); quadFour.SetColor("_Color", Color.blue); point2 = point2 + 1; quad4.enabled = true; }
     
         
-}
-    void QuadA()
-    {
-        //quad1.enabled = true;
-        quad2.enabled = true;
-        quad3.enabled = true;
-        quad4.enabled = true;
-    }
-    void QuadB()
-    {
-        quad1.enabled = true;
-        //quad2.enabled = true;
-        quad3.enabled = true;
-        quad4.enabled = true;
-    }
-    void QuadC()
-    {
-        quad1.enabled = true;
-        quad2.enabled = true;
-        //quad3.enabled = true;
-        quad4.enabled = true;
-    }
-    void QuadD()
-    {
-        quad1.enabled = true;
-        quad2.enabled = true;
-        quad3.enabled = true;
-        //quad4.enabled = true;
-    }
+//}
+//    void QuadA()
+//    {
+//        //quad1.enabled = true;
+//        quad2.enabled = true;
+//        quad3.enabled = true;
+//        quad4.enabled = true;
+//    }
+//    void QuadB()
+//    {
+//        quad1.enabled = true;
+//        //quad2.enabled = true;
+//        quad3.enabled = true;
+//        quad4.enabled = true;
+//    }
+//    void QuadC()
+//    {
+//        quad1.enabled = true;
+//        quad2.enabled = true;
+//        //quad3.enabled = true;
+//        quad4.enabled = true;
+//    }
+//    void QuadD()
+//    {
+//        quad1.enabled = true;
+//        quad2.enabled = true;
+//        quad3.enabled = true;
+//        //quad4.enabled = true;
+//    }
 
     public void Reset()
     {
         hasBall = false;
         resetted = false;
         trail.SetActive(false);
-        quadOne.SetColor("_Color", Color.white);
-        quadTwo.SetColor("_Color", Color.white);
-        quadThree.SetColor("_Color", Color.white);
-        quadFour.SetColor("_Color", Color.white);
+
+        //teamcolor color = gameObject.GetComponent<teamcolor>();
+        
+        //color.Gray();
+
 
         ball.transform.parent = null;
         daball.SetColor("_Color", Color.grey);
