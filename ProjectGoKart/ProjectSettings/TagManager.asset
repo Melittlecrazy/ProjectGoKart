@@ -12,6 +12,7 @@ TagManager:
   - Bonk
   - PowerUp
   - Vroom
+  - color
   layers:
   - Default
   - TransparentFX
