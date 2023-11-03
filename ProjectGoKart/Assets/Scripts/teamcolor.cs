@@ -19,6 +19,7 @@ public class teamcolor : MonoBehaviour
     private void Update()
     {
         if (checkpoints.GetComponent<Scoring>().player1score == 0) Gray();
+        //if (checkpoints.GetComponent<Scoring>().player2score == 0) Gray();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +30,6 @@ public class teamcolor : MonoBehaviour
 
     public void Gray()
     {
-        color.SetColor("_Color", Color.gray);
+        color.SetColor("_Color", Color.white);
     }
 }

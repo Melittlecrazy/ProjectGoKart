@@ -41,13 +41,13 @@ public class HoldObject : MonoBehaviour
 
     private void Start()
     {
-        daball.SetColor("_Color", Color.grey);
+        daball.SetColor("_Color", Color.white);
     }
 
     public void Drop()
     {
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.grey);
+        daball.SetColor("_Color", Color.white);
         rigidbody.constraints = RigidbodyConstraints.None;
         hasBall = false;
     }

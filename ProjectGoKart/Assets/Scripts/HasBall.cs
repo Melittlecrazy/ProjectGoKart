@@ -24,7 +24,7 @@ public class HasBall : MonoBehaviour
 
     bool particle = false;
     public bool hasBall = false,resetted = false, stayed=false;
-    public bool isPlayer1, isPlayer2;
+    public bool isPlayer1, isPlayer2,endlessMode=true;
 
 
     void Start()
@@ -52,11 +52,21 @@ public class HasBall : MonoBehaviour
                 Reset(); 
                 point1 = point1 + 1;
 
-            
-            //    score1.text = "WIN";
-            //    quadMan.SetActive(false);
-            //    score2.text = "LOSE";
             }
+
+            if (endlessMode == false)
+            {
+                if (point1 == 5)
+                {
+                    score1.text = "WIN";
+
+                    score2.text = "LOSE";
+                }
+            }
+            //    
+            //    quadMan.SetActive(false);
+            //    
+            
             //if (checkpoints.GetComponent<Scoring>().player1score == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
             //if (checkpoints.GetComponent<Scoring>().player1score == 14) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
         }
@@ -155,7 +165,7 @@ public class HasBall : MonoBehaviour
 
 
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.grey);
+        daball.SetColor("_Color", Color.white);
         rigidball.constraints = RigidbodyConstraints.None;
         ball.transform.position = spawn.transform.position;
 
@@ -165,8 +175,17 @@ public class HasBall : MonoBehaviour
     public void Drop()
     {
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.grey);
+        daball.SetColor("_Color", Color.white);
         rigidball.constraints = RigidbodyConstraints.None;
         hasBall = false;
+    }
+
+    public void EndlessOn()
+    {
+        endlessMode = true;
+    }
+    public void EndlessOff()
+    {
+        endlessMode = false;
     }
 }
