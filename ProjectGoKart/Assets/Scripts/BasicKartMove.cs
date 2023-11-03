@@ -15,7 +15,7 @@ public class BasicKartMove : MonoBehaviour
     PlayerManager playerManager;
     
     private float forwardAmount;
-    private float currentSpeed1, currentSpeed2;
+    public float currentSpeed1, currentSpeed2;
     [SerializeField] public float speed;
     [SerializeField] public float deeps;
     float turnAmount;
