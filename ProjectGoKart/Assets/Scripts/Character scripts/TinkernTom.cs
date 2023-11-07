@@ -11,6 +11,7 @@ public class TinkernTom : MonoBehaviour
     public GameObject icon1, icon2,icon3;
     bool enoughSlices = true;
 
+    public bool isPlayer1,isPlayer2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,11 +25,11 @@ public class TinkernTom : MonoBehaviour
         if (powerUp >= 4) 
         { 
             icon2.SetActive(true);
-            if (Input.GetAxis("Tier1") == 1)
+            if (Input.GetAxis("Tier1") == 1 && isPlayer1 == true)
             {
                 StartCoroutine(Spew()); 
             }
-            if (Input.GetAxis("p2Tier1") == 1)
+            if (Input.GetAxis("p2Tier1") == 1 && isPlayer2 == true)
             {
                 StopCoroutine(Spew());
             }
@@ -39,16 +40,16 @@ public class TinkernTom : MonoBehaviour
             enoughSlices = false;
 
 
-            if (Input.GetAxis("Tier2") == 1)
+            if (Input.GetAxis("Tier2") == 1 && isPlayer1 == true)
             {
-
+                StartCoroutine(Tier2());
             }
 
 
-            if (Input.GetAxis("p2Tier2") == 1)
+            if (Input.GetAxis("p2Tier2") == 1 && isPlayer2 == true)
             {
 
-
+                StartCoroutine(Spew());
             }
         }
         
@@ -73,14 +74,15 @@ public class TinkernTom : MonoBehaviour
 
     }
 
-    //IEnumerator Tier2()
-    //{ this is tier 2 thing
-    //    //on
-    //    tathrow.SetActive(true);
-    //    yield return new WaitForSeconds(datime);
-    //    //off
-    //    icon3.SetActive(false);
-    //    tathrow.SetActive(false);
+    IEnumerator Tier2()
+    {
+        //this is tier 2 thing
+        //on
+        tathrow.SetActive(true);
+        yield return new WaitForSeconds(datime);
+        //off
+        icon3.SetActive(false);
+        tathrow.SetActive(false);
 
-    //}
+    }
 }
