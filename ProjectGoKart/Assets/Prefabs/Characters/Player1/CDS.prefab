@@ -76,6 +76,7 @@ Transform:
   - {fileID: 5500409236654936802}
   - {fileID: 7767814683040462896}
   - {fileID: 7301482298046440467}
+  - {fileID: 1799677900994563248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7630176061893988959
@@ -140,6 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c283021c8ff3a34cafff81a1edf2509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUp: 0
+  datime: 0
+  box: {fileID: 6264753481340493097}
+  icon1: {fileID: 0}
+  icon2: {fileID: 0}
+  icon3: {fileID: 0}
+  clowns: []
 --- !u!54 &7801924435853183611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -903,6 +911,37 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!1 &6264753481340493097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799677900994563248}
+  m_Layer: 0
+  m_Name: Clown spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1799677900994563248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264753481340493097}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.61, y: 0.244, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5138428674530630885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6441421959627337801
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6970112778713173354}
   - component: {fileID: 169197383324190784}
   - component: {fileID: 3928054394887837633}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Tools
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b1a1c3dd547db594e85a419656db37f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de56abf5ac24b064a8624dcbcbaa6384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StunTimer: 2
+  StunTimer: 5
