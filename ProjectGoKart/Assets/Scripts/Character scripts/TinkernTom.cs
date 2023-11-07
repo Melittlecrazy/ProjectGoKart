@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class TinkernTom : MonoBehaviour
 {
     public float powerUp = 0;
+    public int datime;
+    public GameObject tathrow;
     public GameObject icon1, icon2,icon3;
     bool enoughSlices = true;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,7 +21,20 @@ public class TinkernTom : MonoBehaviour
     void Update()
     {
         if (powerUp >= 2) { icon1.SetActive(true); }
-        if (powerUp >= 4) { icon2.SetActive(true); }
+        if (powerUp >= 4) { icon2.SetActive(true); StartCoroutine(Spew()); }
         if (powerUp >= 6) { icon3.SetActive(true); enoughSlices = false; }
+    }
+
+
+
+
+    IEnumerator Spew()
+    {
+        //on
+        tathrow.SetActive(true);
+        yield return new WaitForSeconds(datime);
+        //off
+        tathrow.SetActive(false);
+
     }
 }
