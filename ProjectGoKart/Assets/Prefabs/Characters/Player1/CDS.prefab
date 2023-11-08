@@ -147,6 +147,8 @@ MonoBehaviour:
   icon1: {fileID: 0}
   icon2: {fileID: 0}
   icon3: {fileID: 0}
+  isPlayer1: 0
+  isPlayer2: 0
   clowns: []
 --- !u!54 &7801924435853183611
 Rigidbody:
@@ -199,6 +201,7 @@ MonoBehaviour:
   turnSpeed: 100
   isPlayer1: 1
   isPlayer2: 0
+  stun: 0
 --- !u!114 &3333607763499774729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,11 +1829,11 @@ PrefabInstance:
     - target: {fileID: -3706253152079739263, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 09d826f4f184bcf49bf5eeefa2ada151, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a6a64b1a53df72408ba4e3a88330a0d, type: 2}
     - target: {fileID: -107955116091867106, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ae87a7110e53c494ea9b52ec7c36b599, type: 2}
+      objectReference: {fileID: 2100000, guid: 3464b2e1a8f8a834698d3426c4d8e488, type: 2}
     - target: {fileID: 919132149155446097, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Name
       value: CDS_concept
@@ -1838,15 +1841,15 @@ PrefabInstance:
     - target: {fileID: 3144505901893146929, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 09d826f4f184bcf49bf5eeefa2ada151, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a6a64b1a53df72408ba4e3a88330a0d, type: 2}
     - target: {fileID: 5264327059534382646, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 09d826f4f184bcf49bf5eeefa2ada151, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a6a64b1a53df72408ba4e3a88330a0d, type: 2}
     - target: {fileID: 7471057351165352345, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 09d826f4f184bcf49bf5eeefa2ada151, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a6a64b1a53df72408ba4e3a88330a0d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 3f25ae14f3fda7149a9649cf1d1a59df, type: 3}
