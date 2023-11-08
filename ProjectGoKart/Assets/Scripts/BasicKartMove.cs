@@ -23,7 +23,7 @@ public class BasicKartMove : MonoBehaviour
     
     public bool isPlayer1,isPlayer2;
 
-
+    public int stun;
 
     private void Start()
     {
@@ -105,5 +105,17 @@ public class BasicKartMove : MonoBehaviour
         }
     }
 
-    
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Tool") StartCoroutine(Stun());
+    }
+
+    IEnumerator Stun()
+    {
+        if (isPlayer1 == true) speed = 0;
+        if (isPlayer2 == true) speed = 0;
+        yield return new WaitForSeconds(stun);
+        if (isPlayer1 == true) speed = 50;
+        if (isPlayer2 == true) speed= 50;
+    }
 }

@@ -21,7 +21,8 @@ public class Spewingtools : MonoBehaviour
         {
             Instantiate(Tool,fireplace.position, fireplace.rotation);
             Rigidbody rb = Tool.GetComponent<Rigidbody>();
-            rb.AddForce(fireplace.forward * daforce, ForceMode.Acceleration);
+            //rb.AddForce(fireplace.forward * daforce, ForceMode.Acceleration);
+            rb.velocity = (Vector3.forward * daforce);
         }
     }
 }

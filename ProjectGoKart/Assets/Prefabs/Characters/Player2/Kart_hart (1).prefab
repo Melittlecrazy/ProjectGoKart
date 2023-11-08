@@ -90,8 +90,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2354036367473757780}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10521498, y: -0, z: -0, w: 0.9944495}
-  m_LocalPosition: {x: 0, y: 1.6999999, z: -5}
+  m_LocalRotation: {x: 0.105215, y: -0, z: -0, w: 0.9944495}
+  m_LocalPosition: {x: 0, y: 1.7, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,11 +476,14 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  currentSpeed1: 0
+  currentSpeed2: 0
   speed: 50
   deeps: 1
   turnSpeed: 100
   isPlayer1: 1
   isPlayer2: 0
+  stun: 0
 --- !u!114 &8740673784255836793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,19 +497,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  rigidball: {fileID: 0}
   trail: {fileID: 0}
   quadMan: {fileID: 0}
-  grab: {fileID: 0}
-  quad1: {fileID: 0}
-  quad2: {fileID: 0}
-  quad3: {fileID: 0}
-  quad4: {fileID: 0}
-  quadOne: {fileID: 2100000, guid: 2c010b44bef04a44f8a410aa1bc6cc8f, type: 2}
-  quadTwo: {fileID: 2100000, guid: 803d2ad508bd5cb4caace68d12ecb2a8, type: 2}
-  quadThree: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
-  quadFour: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
+  spawn: {fileID: 0}
   daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
-  rigidbody: {fileID: 0}
+  checkpoints: {fileID: 0}
   point1: 0
   point2: 0
   score1: {fileID: 0}
@@ -516,6 +512,7 @@ MonoBehaviour:
   stayed: 0
   isPlayer1: 1
   isPlayer2: 0
+  endlessMode: 1
 --- !u!114 &4424192271981156781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +546,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackStrength: 20
+  isBumpedP1: 0
+  isBumpedP2: 0
+  stunTimer: 0
 --- !u!65 &4731693586012366064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1506,7 +1506,7 @@ PrefabInstance:
     - target: {fileID: 4828799087902952727, guid: 769c0b8fb3102b4448dd5a66a61dc6d8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e351090b575f2d749adb0d9d52d68a92, type: 2}
+      objectReference: {fileID: 2100000, guid: f126fee83f506134683a29a674b55b5e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

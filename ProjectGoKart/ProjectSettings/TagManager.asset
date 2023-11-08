@@ -13,6 +13,7 @@ TagManager:
   - PowerUp
   - Vroom
   - color
+  - Tool
   layers:
   - Default
   - TransparentFX
