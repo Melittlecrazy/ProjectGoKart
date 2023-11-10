@@ -31,14 +31,14 @@ public class CDS : MonoBehaviour
             {
                 if (Input.GetAxis("Tier1") == 1)
                 {
-                    StartCoroutine(Spew());
+                    StartCoroutine(Delivery());
                 }
             }
             if (isPlayer2 == true)
             {
                 if (Input.GetAxis("p2Tier1") == 1)
                 {
-                    StartCoroutine(Spew());
+                    StartCoroutine(Delivery());
                 }
             }
         }
@@ -73,15 +73,27 @@ public class CDS : MonoBehaviour
     {
         foreach (GameObject clown in clowns)
         {
-            if (col.gameObject.tag == "Enemy")
-            Instantiate(clown, box.transform.position, box.transform.rotation);
+            if(isPlayer1 == true)
+            {
+                if (col.gameObject.tag == "Enemy")
+                Instantiate(clown, box.transform.position, box.transform.rotation);
+            }
+            if (isPlayer2 == true)
+            {
+                if (col.gameObject.tag == "Player")
+                Instantiate(clown, box.transform.position, box.transform.rotation);
+            }
         }
     }
 
-    IEnumerator Spew()
+    IEnumerator Delivery()
     {
         //on
         //tathrow.SetActive(true);
+        foreach (GameObject clown in clowns)
+        {
+            Instantiate(clown, box.transform.position, box.transform.rotation);
+        }
         yield return new WaitForSeconds(datime);
         //off
         //tathrow.SetActive(false);
