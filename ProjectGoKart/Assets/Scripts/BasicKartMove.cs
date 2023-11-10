@@ -20,6 +20,11 @@ public class BasicKartMove : MonoBehaviour
     [SerializeField] public float deeps;
     float turnAmount;
     [SerializeField] public float turnSpeed;
+
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private bool isDashing;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
     
     public bool isPlayer1,isPlayer2;
 
@@ -52,7 +57,15 @@ public class BasicKartMove : MonoBehaviour
 
             if (Input.GetAxis("Go1") > 0) DriveNowhere();
             //if (Gamepad.current.leftStick.left.) //Gamepad.current.buttonSouth.isPressed //Gamepad.current.buttonEast.isPressed
-            Turning();
+
+            if (Input.GetAxis("Dash") > 0)
+            {
+                StartCoroutine(Dash());
+            }
+
+
+            Turning(); 
+            
         }
 
         if (isPlayer2 == true)// && joystickName.ToLower().Contains("xbox"))
@@ -76,6 +89,9 @@ public class BasicKartMove : MonoBehaviour
     {
         body.AddForce(transform.forward * currentSpeed1, ForceMode.Acceleration);
         body2.AddForce(transform.forward * currentSpeed2, ForceMode.Acceleration);
+        
+
+
     }
 
     private void Drive()
@@ -117,5 +133,20 @@ public class BasicKartMove : MonoBehaviour
         yield return new WaitForSeconds(stun);
         if (isPlayer1 == true) speed = 50;
         if (isPlayer2 == true) speed= 50;
+    }
+
+    private IEnumerator Dash()
+    {
+        float startTime = Time.time;
+
+
+        while(Time.time < startTime + dashTime)
+        {
+            currentSpeed1 = speed * dashSpeed;
+
+            yield return null;
+        } 
+        
+    
     }
 }
