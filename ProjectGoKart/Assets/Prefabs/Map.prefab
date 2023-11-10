@@ -5831,7 +5831,7 @@ GameObject:
   - component: {fileID: 1537449925659158643}
   m_Layer: 4
   m_Name: respawnball
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7827,7 +7827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1b56d468c01fd541b736ae5eefb0221, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1b56d468c01fd541b736ae5eefb0221, type: 3}
       propertyPath: m_TagString

@@ -21,7 +21,8 @@ public class TinkernTom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUp >= 2) { icon1.SetActive(true); }
+        if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
+        if (powerUp >= 2) { icon1.SetActive(true);}
         if (powerUp >= 4) 
         { 
             icon2.SetActive(true);
@@ -78,7 +79,8 @@ public class TinkernTom : MonoBehaviour
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
-        icon2.SetActive(false);
+        icon2.SetActive(false); 
+        icon3.SetActive(false);
         tathrow.SetActive(false);
 
     }
@@ -92,7 +94,7 @@ public class TinkernTom : MonoBehaviour
         yield return new WaitForSeconds(datime);
         //off
         print("boop");
-        //icon3.SetActive(false);
+        icon3.SetActive(false);
         //tathrow.SetActive(false);
 
     }

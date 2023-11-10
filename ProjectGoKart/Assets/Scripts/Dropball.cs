@@ -24,7 +24,7 @@ public class Dropball : MonoBehaviour
     {
 
 
-        if (col.gameObject.tag == "Respawn" || col.gameObject.tag == "Water")
+        if (col.gameObject.tag == "Respawn")
         {
             this.transform.parent = null;
             daball.SetColor("_Color", Color.grey);
@@ -32,4 +32,5 @@ public class Dropball : MonoBehaviour
             //hasball.hasBall = false;
         }
     }
+
 }
