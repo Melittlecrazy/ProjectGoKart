@@ -75,7 +75,7 @@ public class TinkernTom : MonoBehaviour
     {
         //on
         tathrow.SetActive(true);
-        powerUp = powerUp - 2;
+        powerUp = 2;
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
@@ -90,6 +90,7 @@ public class TinkernTom : MonoBehaviour
         //this is tier 2 thing
         //on
         //tathrow.SetActive(true);
+        powerUp = 4;
         print("beep");
         yield return new WaitForSeconds(datime);
         //off

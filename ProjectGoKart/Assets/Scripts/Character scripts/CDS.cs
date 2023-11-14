@@ -90,11 +90,16 @@ public class CDS : MonoBehaviour
     {
         //on
         //tathrow.SetActive(true);
+        powerUp = 2;
         foreach (GameObject clown in clowns)
         {
             Instantiate(clown, box.transform.position, box.transform.rotation);
         }
+        enoughSlices = true;
         yield return new WaitForSeconds(datime);
+        //off
+        icon2.SetActive(false);
+        icon3.SetActive(false);
         //off
         //tathrow.SetActive(false);
 
@@ -104,9 +109,12 @@ public class CDS : MonoBehaviour
     {
         //on
         //tathrow.SetActive(true);
+        powerUp = 4;
+        enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
-        //tathrow.SetActive(false);
+        icon2.SetActive(false);
+        icon3.SetActive(false);
 
     }
 }
