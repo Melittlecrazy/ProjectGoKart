@@ -6,7 +6,7 @@ public class CDS : MonoBehaviour
 {
     public float powerUp = 0;
     public int datime;
-    public GameObject box;
+    public GameObject box,mimes;
     public GameObject icon1, icon2, icon3;
     bool enoughSlices = true;
     public bool isPlayer1, isPlayer2;
@@ -88,6 +88,20 @@ public class CDS : MonoBehaviour
 
     IEnumerator Delivery()
     {
+        
+        //on
+        mimes.SetActive(true);
+        powerUp = 2;
+        enoughSlices = true;
+        yield return new WaitForSeconds(datime);
+        //off
+        icon2.SetActive(false);
+        icon3.SetActive(false);
+        mimes.SetActive(false);
+    }
+
+    IEnumerator Tier2()
+    {
         //on
         //tathrow.SetActive(true);
         powerUp = 2;
@@ -102,19 +116,6 @@ public class CDS : MonoBehaviour
         icon3.SetActive(false);
         //off
         //tathrow.SetActive(false);
-
-    }
-
-    IEnumerator Tier2()
-    {
-        //on
-        //tathrow.SetActive(true);
-        powerUp = 4;
-        enoughSlices = true;
-        yield return new WaitForSeconds(datime);
-        //off
-        icon2.SetActive(false);
-        icon3.SetActive(false);
 
     }
 }

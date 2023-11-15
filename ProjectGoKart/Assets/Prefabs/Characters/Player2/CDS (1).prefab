@@ -700,14 +700,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp: 0
-  datime: 0
+  datime: 2
   box: {fileID: 0}
   icon1: {fileID: 0}
   icon2: {fileID: 0}
   icon3: {fileID: 0}
   isPlayer1: 0
-  isPlayer2: 0
-  clowns: []
+  isPlayer2: 1
+  clowns:
+  - {fileID: 3725954985733101136, guid: a212e5a7c9a57a846b07627cdef643bf, type: 3}
 --- !u!54 &2283403640602959407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -757,6 +758,10 @@ MonoBehaviour:
   speed: 50
   deeps: 1
   turnSpeed: 100
+  canDash: 1
+  isDashing: 0
+  dashSpeed: 0
+  dashTime: 0
   isPlayer1: 0
   isPlayer2: 1
   stun: 0
