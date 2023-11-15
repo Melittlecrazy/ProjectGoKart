@@ -94,15 +94,13 @@ public class TinkernTom : MonoBehaviour
 
         //on
         boom.SetActive(true);
-        powerUp = 0;
+        powerUp = powerUp - 2;
         this.GetComponent<BasicKartMove>().speed = 100;
         enoughSlices = true;
         yield return new WaitForSeconds(explosion);
         //off
         this.GetComponent<BasicKartMove>().speed = 50;
         icon1.SetActive(false);
-        icon2.SetActive(false);
-        icon3.SetActive(false);
         boom.SetActive(false);
     }
     IEnumerator Spew()//button x
@@ -110,7 +108,7 @@ public class TinkernTom : MonoBehaviour
         //this is tier 2 thing
         //on
         //tathrow.SetActive(true);
-        powerUp = 2;
+        powerUp = powerUp - 4;
         print("beep");
         yield return new WaitForSeconds(datime);
         //off
@@ -125,7 +123,7 @@ public class TinkernTom : MonoBehaviour
 
         //on
         tathrow.SetActive(true);
-        powerUp = 2;
+        powerUp = 0;
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
