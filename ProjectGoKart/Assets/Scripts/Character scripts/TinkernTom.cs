@@ -109,9 +109,12 @@ public class TinkernTom : MonoBehaviour
         //on
         //tathrow.SetActive(true);
         powerUp = powerUp - 4;
+        enoughSlices = true;
+
         print("beep");
         yield return new WaitForSeconds(datime);
         //off
+
         print("boop");
         icon3.SetActive(false);
         //tathrow.SetActive(false);
