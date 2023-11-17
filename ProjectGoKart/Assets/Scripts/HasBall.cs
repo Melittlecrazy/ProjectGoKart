@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class HasBall : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class HasBall : MonoBehaviour
     public bool hasBall = false,resetted = false, stayed=false;
     public bool isPlayer1, isPlayer2,endlessMode=true;
 
+    string credits = "Credits";
 
     void Start()
     {
@@ -61,6 +63,7 @@ public class HasBall : MonoBehaviour
                     score1.text = "WIN";
 
                     score2.text = "LOSE";
+                    StartCoroutine(Credits());
                 }
             }
             //    
@@ -82,6 +85,16 @@ public class HasBall : MonoBehaviour
                 //    score1.text = "LOSE";
                 Reset();
                 point2 = point2 + 1;
+            }
+            if (endlessMode == false)
+            {
+                if (point2 == 5)
+                {
+                    score2.text = "WIN";
+
+                    score1.text = "LOSE";
+                    StartCoroutine(Credits());
+                }
             }
             //if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
             //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
@@ -109,49 +122,6 @@ public class HasBall : MonoBehaviour
 //    private void OnTriggerExit(Collider other)
 //    {
 
-        
-//        ////Red team
-//        //if (other.gameObject.name == "quad1" && hasBall == true && isPlayer1 == true) { QuadA(); quadOne.SetColor("_Color", Color.red); point1 = point1 + 1; quad1.enabled = true; }
-//        //if (other.gameObject.name == "quad2" && hasBall == true && isPlayer1 == true) { QuadB(); quadTwo.SetColor("_Color", Color.red); point1 = point1 + 1; quad2.enabled = true; }
-//        //if (other.gameObject.name == "quad3" && hasBall == true && isPlayer1 == true) { QuadC(); quadThree.SetColor("_Color", Color.red); point1 = point1 + 1; quad3.enabled = true; }
-//        //if (other.gameObject.name == "quad4" && hasBall == true && isPlayer1 == true) { QuadD(); quadFour.SetColor("_Color", Color.red); point1 = point1 + 1; quad4.enabled = true; }
-
-//        ////Blue team
-//        //if (other.gameObject.name == "quad1" && hasBall == true && isPlayer2 == true) { QuadA(); quadOne.SetColor("_Color", Color.blue); point2 = point2 + 1; quad1.enabled = true; }
-//        //if (other.gameObject.name == "quad2" && hasBall == true && isPlayer2 == true) { QuadB(); quadTwo.SetColor("_Color", Color.blue); point2 = point2 + 1; quad2.enabled = true; }
-//        //if (other.gameObject.name == "quad3" && hasBall == true && isPlayer2 == true) { QuadC(); quadThree.SetColor("_Color", Color.blue); point2 = point2 + 1; quad3.enabled = true; }
-//        //if (other.gameObject.name == "quad4" && hasBall == true && isPlayer2 == true) { QuadD(); quadFour.SetColor("_Color", Color.blue); point2 = point2 + 1; quad4.enabled = true; }
-    
-        
-//}
-//    void QuadA()
-//    {
-//        //quad1.enabled = true;
-//        quad2.enabled = true;
-//        quad3.enabled = true;
-//        quad4.enabled = true;
-//    }
-//    void QuadB()
-//    {
-//        quad1.enabled = true;
-//        //quad2.enabled = true;
-//        quad3.enabled = true;
-//        quad4.enabled = true;
-//    }
-//    void QuadC()
-//    {
-//        quad1.enabled = true;
-//        quad2.enabled = true;
-//        //quad3.enabled = true;
-//        quad4.enabled = true;
-//    }
-//    void QuadD()
-//    {
-//        quad1.enabled = true;
-//        quad2.enabled = true;
-//        quad3.enabled = true;
-//        //quad4.enabled = true;
-//    }
 
     public void Reset()
     {
@@ -187,5 +157,12 @@ public class HasBall : MonoBehaviour
     public void EndlessOff()
     {
         endlessMode = false;
+    }
+
+    IEnumerator Credits()
+    {
+
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(credits);
     }
 }

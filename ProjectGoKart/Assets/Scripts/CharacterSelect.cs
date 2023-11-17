@@ -22,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
         characters1[selectedCharacter1].SetActive(false) ;
         selectedCharacter1--;
         if (selectedCharacter1 < 0)
-        { selectedCharacter1 = (selectedCharacter1 - 1) % characters1.Length; }
+        { selectedCharacter1 = characters1.Length; }
         characters1[selectedCharacter1].SetActive(true);
     }
 
