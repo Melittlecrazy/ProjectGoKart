@@ -7,14 +7,17 @@ public class KnockbackOnCollision : MonoBehaviour
     [SerializeField] private float knockbackStrength;
     [SerializeField] private bool isBumpedP1, isBumpedP2;
     [SerializeField] private float stunTimer;
-
+    [SerializeField] private float knockbackTimer;
+    
+    
     private void OnCollisionEnter(Collision collision)
     {
+        knockbackTimer = 0.5f;
         BasicKartMove moveScript = GetComponent<BasicKartMove>();
         Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
         stunTimer -= Time.deltaTime;
 
-        if (rb != null)
+        if (rb != null && gameObject.tag == "Player" | gameObject.tag == "Enemy")
         {
             Vector3 direction = collision.transform.position - transform.position;
             direction.y = 0f;
@@ -22,7 +25,7 @@ public class KnockbackOnCollision : MonoBehaviour
 
             rb.AddForce(direction.normalized * knockbackStrength, ForceMode.VelocityChange);
 
-            if(collision.gameObject.tag == "Player")
+            /*if(collision.gameObject.tag == "Player")
             {
                 isBumpedP1 = true;
                 
@@ -52,7 +55,7 @@ public class KnockbackOnCollision : MonoBehaviour
                 {
                     moveScript.currentSpeed2 = moveScript.speed;
                 }
-            }
+            }*/
         }
 
     }
