@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class teamcolor : MonoBehaviour
 {
-    [SerializeField]public Material color;
+    public Renderer kart;
 
     private HasBall HasBall;
     public GameObject checkpoints;
@@ -24,12 +24,12 @@ public class teamcolor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.GetComponent<HasBall>().hasBall == true) color.SetColor("_Color", Color.red);
-        if (other.CompareTag("Enemy") && other.GetComponent<HasBall>().hasBall == true) color.SetColor("_Color", Color.blue);
+        if (other.CompareTag("Player") && other.GetComponent<HasBall>().hasBall == true) { kart.material.color = Color.red; }
+        if (other.CompareTag("Enemy") && other.GetComponent<HasBall>().hasBall == true) { kart.material.color = Color.blue; }
     }
 
     public void Gray()
     {
-        color.SetColor("_Color", Color.white);
+        kart.material.color = Color.white;
     }
 }

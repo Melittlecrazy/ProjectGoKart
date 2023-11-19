@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 487f0320d4074b049821b8c8cfe74d70
+guid: ce88564eb1d4ac04990ce148f04af2b9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,88 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bumpers
-    second: {fileID: 2100000, guid: fb398f416db82384c9c05872f5ec9670, type: 2}
+      name: 1.png
+    second: {fileID: 2100000, guid: 2c010b44bef04a44f8a410aa1bc6cc8f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Clownbod.png
-    second: {fileID: 2100000, guid: 3464b2e1a8f8a834698d3426c4d8e488, type: 2}
+      name: 10.png
+    second: {fileID: 2100000, guid: a432c0938dc9ec94fa2e1891d84dec18, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: wheel.png
-    second: {fileID: 2100000, guid: 8a6a64b1a53df72408ba4e3a88330a0d, type: 2}
+      name: 11.png
+    second: {fileID: 2100000, guid: c58693ef12b680a4ba147f7ab39bee0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 12.png
+    second: {fileID: 2100000, guid: 8cbd66c670fd45c4db8e905548e9161f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13.png
+    second: {fileID: 2100000, guid: 4c1bdd9f049a2a947a66ca53c5502d99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14.png
+    second: {fileID: 2100000, guid: 76df796f109103749a7e68173ab19d3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 15.png
+    second: {fileID: 2100000, guid: bef7a3ce5d66e41498c63a2fe5f901ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 16.png
+    second: {fileID: 2100000, guid: 39d08b2729f7e4748b9accfbdb8717be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2.png
+    second: {fileID: 2100000, guid: 803d2ad508bd5cb4caace68d12ecb2a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3.png
+    second: {fileID: 2100000, guid: 08525d76478a9d44eb654aa5399bbb98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 4.png
+    second: {fileID: 2100000, guid: 133a506f11bf1e3468a1292a2543a53c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5.png
+    second: {fileID: 2100000, guid: 16149239818f4b54bbc1cc8b6d53edff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 6.png
+    second: {fileID: 2100000, guid: 5eae8e9e100035c4ba17ad4c5639412a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 7.png
+    second: {fileID: 2100000, guid: ee70f92cbe071eb4e92311d885892347, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 8.png
+    second: {fileID: 2100000, guid: c387caee24be1454bb59995464d6f027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 9.png
+    second: {fileID: 2100000, guid: ab97e93d0e3a9524f80b4e8551cb45cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottom.png
+    second: {fileID: 2100000, guid: b38cdcd84dc9ef94fb6350c0fc979854, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
