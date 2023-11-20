@@ -22,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
         characters1[selectedCharacter1].SetActive(false) ;
         selectedCharacter1--;
         if (selectedCharacter1 < 0)
-        { selectedCharacter1 = characters1.Length; }
+        { selectedCharacter1 = 0; }
         characters1[selectedCharacter1].SetActive(true);
     }
 
@@ -38,7 +38,7 @@ public class CharacterSelect : MonoBehaviour
         characters2[selectedCharacter2].SetActive(false);
         selectedCharacter2--;
         if (selectedCharacter2 < 0)
-        { selectedCharacter2 = (selectedCharacter2 - 1) % characters2.Length; }
+        { selectedCharacter2 = 0; }
         characters2[selectedCharacter2].SetActive(true);
     }
     public void OnStart()

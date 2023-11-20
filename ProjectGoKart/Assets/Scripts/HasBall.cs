@@ -48,7 +48,7 @@ public class HasBall : MonoBehaviour
         if (isPlayer1 == true)
         {
             //score1.text = "Score: " + point1;
-            if (checkpoints.GetComponent<Scoring>().player1score == 16)
+            if (checkpoints.GetComponent<Scoring>().player1score == 17)
             {
                 score1.text = "Score: " + point1;
                 Reset(); 
@@ -76,7 +76,7 @@ public class HasBall : MonoBehaviour
         if (isPlayer2 == true)
         {
             //score2.text = "Score: " + point2;
-            if (checkpoints.GetComponent<Scoring>().player2score == 16)
+            if (checkpoints.GetComponent<Scoring>().player2score == 17)
             {
                 score2.text = "Score: " + point2;
 
