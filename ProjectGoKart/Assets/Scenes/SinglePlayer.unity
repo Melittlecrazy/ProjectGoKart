@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72504847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10521504, y: -0, z: -0, w: 0.9944495}
-  m_LocalPosition: {x: 7.9141345, y: 1.6997278, z: -52.436165}
+  m_LocalRotation: {x: 0.22662748, y: -0, z: -0, w: 0.9739815}
+  m_LocalPosition: {x: 7.9141345, y: 3.0897279, z: -52.436165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1370,19 +1370,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7
+      value: 3.0900002
       objectReference: {fileID: 0}
     - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.999998
       objectReference: {fileID: 0}
     - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9739815
+      objectReference: {fileID: 0}
+    - target: {fileID: 981767850030602379, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.10521504
+      value: 0.22662748
       objectReference: {fileID: 0}
     - target: {fileID: 1418113602094641071, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: knockbackStrength
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528665352942870993, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 1589577565617442882, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: target
@@ -1426,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3178045034627474142, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3892607725006123014, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_Mesh
@@ -8940,7 +8948,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729716289}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab999d73e6d5384b98a1938678e59dc, type: 3}
   m_Name: 
