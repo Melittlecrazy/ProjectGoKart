@@ -23,7 +23,7 @@ public class TinkernTom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
+        if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); StartCoroutine(Always()); }
         if (powerUp >= 2) 
         { 
             icon1.SetActive(true);
@@ -88,7 +88,13 @@ public class TinkernTom : MonoBehaviour
 
     }
 
-
+    IEnumerator Always()
+    {
+        yield return new WaitForSeconds(3);
+        powerUp = 1;
+        yield return new WaitForSeconds(3);
+        powerUp = 2;
+    }
     IEnumerator Passive()//Button RB
     {
 

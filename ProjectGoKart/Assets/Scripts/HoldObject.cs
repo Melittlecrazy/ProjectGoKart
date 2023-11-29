@@ -11,7 +11,7 @@ public class HoldObject : MonoBehaviour
     public GameObject ball;
     public GameObject grab;
     [SerializeField] float speed = 1.5f;
-    public Material daball;
+    public Renderer daball;
 
     public bool isPlayer1, isPlayer2, hasBall = false;
 
@@ -26,8 +26,8 @@ public class HoldObject : MonoBehaviour
             ball.transform.position = grab.transform.position;
             rigidbody.constraints = RigidbodyConstraints.FreezePosition;
             
-            if (isPlayer1 == true) daball.SetColor("_Color", Color.red); hasBall = true;
-            if (isPlayer2 == true) daball.SetColor("_Color", Color.blue);hasBall = true;
+            if (isPlayer1 == true) daball.material.color = Color.red; hasBall = true;
+            if (isPlayer2 == true) daball.material.color = Color.blue; hasBall = true;
             
         }
 
@@ -41,13 +41,13 @@ public class HoldObject : MonoBehaviour
 
     private void Start()
     {
-        daball.SetColor("_Color", Color.white);
+        daball.material.color = Color.white;
     }
 
     public void Drop()
     {
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.white);
+        daball.material.color = Color.white;
         rigidbody.constraints = RigidbodyConstraints.None;
         hasBall = false;
     }
