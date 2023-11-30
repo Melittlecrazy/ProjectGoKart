@@ -50,14 +50,14 @@ public class TinkernTom : MonoBehaviour
             {
                 if (Input.GetAxis("Tier1") == 1)
                 {
-                    StartCoroutine(Spew());
+                    StartCoroutine(Lasso());
                 }
             }
             if (isPlayer2 == true)
             {
                 if (Input.GetAxis("p2Tier1") == 1)
                 {
-                    StartCoroutine(Spew());
+                    StartCoroutine(Lasso());
                 }
             }
         }
@@ -70,14 +70,14 @@ public class TinkernTom : MonoBehaviour
             {
                 if (Input.GetAxis("Tier2") == 1)
                 {
-                    StartCoroutine(Tier2());
+                    StartCoroutine(Spew());
                 }
             }
             if (isPlayer2 == true)
             {
                 if (Input.GetAxis("p2Tier2") == 1 )
                 {
-                    StartCoroutine(Tier2());
+                    StartCoroutine(Spew());
                 }
             }
         }
@@ -109,7 +109,7 @@ public class TinkernTom : MonoBehaviour
         icon1.SetActive(false);
         boom.SetActive(false);
     }
-    IEnumerator Spew()//button x
+    IEnumerator Lasso()//button x
     {
         //this is tier 2 thing
         //on
@@ -127,7 +127,7 @@ public class TinkernTom : MonoBehaviour
 
     }
 
-    IEnumerator Tier2()//Button y
+    IEnumerator Spew()//Button y
     {
 
         //on

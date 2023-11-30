@@ -15,9 +15,11 @@ public class Lasso : MonoBehaviour
     Vector3 destanation;
     float timer;
 
+    Transform origin;
 
     void Start()
     {
+        origin = GetComponentInChildren<Transform>();
         camTrans = Camera.main.transform;
         lineRend = GetComponent<LineRenderer>();
     }
@@ -25,7 +27,7 @@ public class Lasso : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.GetAxis("Tier1") == 1)
         {
             AssignLasso();
         }
@@ -37,24 +39,26 @@ public class Lasso : MonoBehaviour
                 timer -= Time.deltaTime;
             }
             else FinishLasso();
-        }
-        float distance = Vector3.Distance(target.position, transform.position);
-        if (distance > stopDistance)
-        {
-            destanation = transform.position + ((target.position - transform.position).normalized * stopDistance);
-            if (keepY)
+
+            float distance = Vector3.Distance(target.position, transform.position);
+            if (distance > stopDistance)
             {
-                destanation.y = target.position.y;
+                destanation = transform.position + ((target.position - transform.position).normalized * stopDistance);
+                if (keepY)
+                {
+                    destanation.y = target.position.y;
+                }
             }
-        }
-        else
-        {
-            destanation = transform.position;
-        }
+            else
+            {
+                destanation = transform.position;
+            }
 
-        target.position = Vector3.Lerp(target.position,destanation,speed * Time.deltaTime);
+            target.position = Vector3.Lerp(target.position,destanation,speed * Time.deltaTime);
 
-        lineRend.SetPosition(1, target.position);
+            lineRend.SetPosition(0, transform.position);
+            lineRend.SetPosition(1, target.position);
+        }
     }
 
 
@@ -62,8 +66,9 @@ public class Lasso : MonoBehaviour
     {
         if (target)
             return;
+        Debug.DrawRay(origin.position, origin.forward * castRange, Color.red,4);
         RaycastHit hit;
-        if (Physics.Raycast(camTrans.position,camTrans.forward, out hit, castRange,layerMask))
+        if (Physics.Raycast(origin.position, origin.forward, out hit, castRange,layerMask))
         {
             if (enemies.Contains(hit.transform.tag))
             {
@@ -78,7 +83,7 @@ public class Lasso : MonoBehaviour
 
     void FinishLasso()
     {
-        target.GetComponent<BasicKartMove>().speed = 50;
+        //target.GetComponent<BasicKartMove>().speed = 50;
 
         lineRend.enabled = false;
         target = null;

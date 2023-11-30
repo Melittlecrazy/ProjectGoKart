@@ -22,6 +22,7 @@ public class CDS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); StartCoroutine(Always()); }
         if (powerUp >= 2) { icon1.SetActive(true); }
         if (powerUp >= 4)
         {
@@ -85,7 +86,13 @@ public class CDS : MonoBehaviour
             }
         }
     }
-
+    IEnumerator Always()
+    {
+        yield return new WaitForSeconds(3);
+        powerUp = 1;
+        yield return new WaitForSeconds(3);
+        powerUp = 2;
+    }
     IEnumerator Delivery()
     {
         
