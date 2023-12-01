@@ -38,7 +38,11 @@ public class Lasso : MonoBehaviour
             {
                 timer -= Time.deltaTime;
             }
-            else FinishLasso();
+            else
+            {
+                FinishLasso();
+                return;
+            }
 
             float distance = Vector3.Distance(target.position, transform.position);
             if (distance > stopDistance)
@@ -83,7 +87,7 @@ public class Lasso : MonoBehaviour
 
     void FinishLasso()
     {
-        //target.GetComponent<BasicKartMove>().speed = 50;
+        target.GetComponent<BasicKartMove>().speed = 50;
 
         lineRend.enabled = false;
         target = null;

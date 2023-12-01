@@ -1417,6 +1417,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: stun
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: body2
       value: 
       objectReference: {fileID: 153333924734956659}
@@ -1448,6 +1452,10 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 714041981}
+    - target: {fileID: 5356371975380871648, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: daball
+      value: 
+      objectReference: {fileID: 714041984}
     - target: {fileID: 5356371975380871648, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: rigidbody
       value: 
@@ -1547,6 +1555,10 @@ PrefabInstance:
     - target: {fileID: 7324857341631966696, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: explosion
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324857341631966696, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7879841235319601981, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7423,6 +7435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1092995020}
   - component: {fileID: 1092995019}
+  - component: {fileID: 1092995021}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -7507,6 +7520,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1092995021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092995018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1108783002
 GameObject:
   m_ObjectHideFlags: 0
@@ -7791,7 +7827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1121530263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9693,7 +9729,7 @@ PrefabInstance:
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: daball
       value: 
-      objectReference: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+      objectReference: {fileID: 714041984}
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: rigidbody
       value: 
