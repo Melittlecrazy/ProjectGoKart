@@ -14,7 +14,7 @@ public class EnemyFollow : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        transform.forward = target.transform.position - transform.position;
+        transform.forward = player.transform.position - transform.position;
     }
 
     private void OnCollisionStay(Collision collision)

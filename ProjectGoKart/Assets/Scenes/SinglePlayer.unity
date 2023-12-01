@@ -4646,14 +4646,14 @@ PrefabInstance:
     - target: {fileID: 1453899443, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 658982040}
     - target: {fileID: 1453899443, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223840}
     - target: {fileID: 1453899443, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 863135406856807637, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: m_Materials.Array.data[0]
