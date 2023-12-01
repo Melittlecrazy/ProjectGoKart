@@ -4678,7 +4678,7 @@ PrefabInstance:
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223840}
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: spawn
       value: 
@@ -4686,11 +4686,11 @@ PrefabInstance:
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: trail
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223839}
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: daball
       value: 
-      objectReference: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+      objectReference: {fileID: 89223837}
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: score1
       value: 
@@ -4708,9 +4708,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: rigidball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223838}
     - target: {fileID: 5088456514826667856, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: checkpoints
       value: 
@@ -4738,7 +4742,7 @@ PrefabInstance:
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223840}
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: grab
       value: 
@@ -4746,11 +4750,15 @@ PrefabInstance:
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: daball
       value: 
+      objectReference: {fileID: 89223837}
+    - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8881961516528757320, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: rigidbody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 89223838}
     - target: {fileID: 8968947585910426666, guid: 355ea53fcba22ac418b28a4803a69aca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.6
