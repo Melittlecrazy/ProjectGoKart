@@ -14,7 +14,7 @@ public class HasBall : MonoBehaviour
 
     public GameObject trail, quadMan, spawn;
     //public MeshRenderer quad1,quad2,quad3,quad4;
-    public Material daball;
+    public Renderer daball;
 
     private teamcolor color;
 
@@ -135,7 +135,7 @@ public class HasBall : MonoBehaviour
 
 
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.white);
+        daball.material.color = Color.white;
         rigidball.constraints = RigidbodyConstraints.None;
         ball.transform.position = spawn.transform.position;
 
@@ -145,7 +145,7 @@ public class HasBall : MonoBehaviour
     public void Drop()
     {
         ball.transform.parent = null;
-        daball.SetColor("_Color", Color.white);
+        daball.material.color = Color.white;
         rigidball.constraints = RigidbodyConstraints.None;
         hasBall = false;
     }

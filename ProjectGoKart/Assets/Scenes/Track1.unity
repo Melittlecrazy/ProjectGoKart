@@ -3079,7 +3079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &863741205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12455,6 +12455,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6359151422774601390, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6380717360489275819, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -12915,7 +12919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1852312128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14042,6 +14046,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3150282404486255616, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150282404486255616, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: clowns.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14831,6 +14839,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5580413697940565476, guid: 70adea216753c8549885d5a36347e4e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6039926283109904341, guid: 70adea216753c8549885d5a36347e4e5, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -15170,6 +15182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5475094008224338804}
     m_Modifications:
+    - target: {fileID: 38928417401736764, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 42888636575549963, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16033,6 +16049,10 @@ PrefabInstance:
       propertyPath: isPlayer2
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5801760621831209857, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5828030859069695579, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -16550,6 +16570,10 @@ PrefabInstance:
       propertyPath: isPlayer1
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7324857341631966696, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7542965050638405095, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0
@@ -16669,8 +16693,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 384392171}
     - target: {fileID: 2843209287227273798, guid: 42c612832770f9c488bcfea74d019d50, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843209287227273798, guid: 42c612832770f9c488bcfea74d019d50, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843209287227273798, guid: 42c612832770f9c488bcfea74d019d50, type: 3}
+      propertyPath: m_ImplicitCom
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4848316593176758541, guid: 42c612832770f9c488bcfea74d019d50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17239,6 +17271,10 @@ PrefabInstance:
     - target: {fileID: 7625591148717342719, guid: 0fa173521369ea046ac7c56aaa626e99, type: 3}
       propertyPath: isPlayer2
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625591148717342719, guid: 0fa173521369ea046ac7c56aaa626e99, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7625591148717342719, guid: 0fa173521369ea046ac7c56aaa626e99, type: 3}
       propertyPath: clowns.Array.size

@@ -7,7 +7,7 @@ public class Dropball : MonoBehaviour
     public Material daball;
     public Rigidbody rb;
     [SerializeField] GameObject bob;
-    HasBall hasball;
+    public HasBall hasball;
 
     void Start()
     {
