@@ -16363,6 +16363,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6649388855169737977}
     - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: dashTime
       value: 0
       objectReference: {fileID: 0}
