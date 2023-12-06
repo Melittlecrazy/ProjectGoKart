@@ -6,20 +6,25 @@ using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+//using System;
+using UnityEngine.TextCore.Text;
 
 public class HasBall : MonoBehaviour
 {
     public GameObject ball; 
     public Rigidbody rigidball;
 
-    public GameObject trail, quadMan, spawn;
+    public GameObject trail, quadMan;
     //public MeshRenderer quad1,quad2,quad3,quad4;
     public Renderer daball;
 
     private teamcolor color;
 
     public GameObject checkpoints;
+    public GameObject[] spawns;
+    public GameObject ring1, ring2, ring3;
 
+    int selectedCharacter;
     public int point1=1,point2=1;
     public TextMeshProUGUI score1, score2;
 
@@ -29,10 +34,12 @@ public class HasBall : MonoBehaviour
 
     string credits = "Credits";
 
+    Vector3 scaleChange;
+
     void Start()
     {
         checkpoints.GetComponent<Scoring>();
-
+        Respawn();
         //teamcolor color = gameObject.GetComponent<teamcolor>();
         
         //color.Gray();
@@ -58,18 +65,17 @@ public class HasBall : MonoBehaviour
 
             if (endlessMode == false)
             {
-                if (point1 == 5)
+                if (point1 == 4)
                 {
                     score1.text = "WIN";
-
+                    ring3.GetComponent<Renderer>().material.color = Color.red;
                     score2.text = "LOSE";
+
                     StartCoroutine(Credits());
                 }
             }
-            //    
-            //    quadMan.SetActive(false);
-            //    
-            
+
+
             //if (checkpoints.GetComponent<Scoring>().player1score == 9) { score1.text = "Score: 2"; Reset(); point1 = point1 + 1; }
             //if (checkpoints.GetComponent<Scoring>().player1score == 14) { score1.text = "Winner"; score2.text = "Lose"; trail.SetActive(true); }
         }
@@ -88,7 +94,7 @@ public class HasBall : MonoBehaviour
             }
             if (endlessMode == false)
             {
-                if (point2 == 5)
+                if (point2 == 4)
                 {
                     score2.text = "WIN";
 
@@ -100,9 +106,22 @@ public class HasBall : MonoBehaviour
             //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
 
-        //timer
+        if (point1 == 2)
+        { //FFF308 original yellow of rings
+            scaleChange = new Vector3(1.4f, 1, 1.4f);
+            checkpoints.transform.localScale = scaleChange;
+            ring1.GetComponent<Renderer>().material.color = Color.red;
+            ring2.SetActive(true);
+        }
+        if (point1 == 3)
+        {
+            scaleChange = new Vector3(2f, 1, 2f);
+            checkpoints.transform.localScale = scaleChange;
+            ring2.GetComponent<Renderer>().material.color = Color.red;
+            ring3.SetActive(true);
+        }
     }
-    private void OnCollisionEnter(Collision col)
+        private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Ball")
         {
@@ -137,8 +156,8 @@ public class HasBall : MonoBehaviour
         ball.transform.parent = null;
         daball.material.color = Color.white;
         rigidball.constraints = RigidbodyConstraints.None;
-        ball.transform.position = spawn.transform.position;
-
+        //ball.transform.position = spawn.transform.position;
+        Respawn();
         checkpoints.GetComponent<Scoring>().player1score = 0;
         checkpoints.GetComponent<Scoring>().player2score = 0;
     }
@@ -164,5 +183,10 @@ public class HasBall : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(credits);
+    }
+    public void Respawn()
+    {
+            selectedCharacter = Random.Range(0, spawns.Length);
+            ball.transform.position = spawns[selectedCharacter].transform.position;
     }
 }
