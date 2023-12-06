@@ -97,7 +97,7 @@ public class HasBall : MonoBehaviour
                 if (point2 == 4)
                 {
                     score2.text = "WIN";
-
+                    ring3.GetComponent<Renderer>().material.color = Color.blue;
                     score1.text = "LOSE";
                     StartCoroutine(Credits());
                 }
@@ -118,6 +118,20 @@ public class HasBall : MonoBehaviour
             scaleChange = new Vector3(2f, 1, 2f);
             checkpoints.transform.localScale = scaleChange;
             ring2.GetComponent<Renderer>().material.color = Color.red;
+            ring3.SetActive(true);
+        }
+        if (point2 == 2)
+        { //FFF308 original yellow of rings
+            scaleChange = new Vector3(1.4f, 1, 1.4f);
+            checkpoints.transform.localScale = scaleChange;
+            ring1.GetComponent<Renderer>().material.color = Color.blue;
+            ring2.SetActive(true);
+        }
+        if (point2 == 3)
+        {
+            scaleChange = new Vector3(2f, 1, 2f);
+            checkpoints.transform.localScale = scaleChange;
+            ring2.GetComponent<Renderer>().material.color = Color.blue;
             ring3.SetActive(true);
         }
     }

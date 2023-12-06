@@ -54,7 +54,10 @@ public class titleScreenstuff : MonoBehaviour
         SceneManager.LoadScene(credits);
     }
 
-
+    public void Tutorial()
+    {
+        SceneManager.LoadScene(4);
+    }
     public void QuitGame()
     {
         Application.Quit(); 
