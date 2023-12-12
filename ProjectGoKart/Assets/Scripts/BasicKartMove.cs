@@ -58,10 +58,10 @@ public class BasicKartMove : MonoBehaviour
             if (Input.GetAxis("Go1") > 0) DriveNowhere();
             //if (Gamepad.current.leftStick.left.) //Gamepad.current.buttonSouth.isPressed //Gamepad.current.buttonEast.isPressed
 
-            if (Input.GetAxis("Dash") > 0)
-            {
-                StartCoroutine(Dash());
-            }
+            //if (Input.GetAxis("Dash") > 0)
+            //{
+            //    StartCoroutine(Dash());
+            //}
 
 
             Turning(); 
@@ -135,14 +135,17 @@ public class BasicKartMove : MonoBehaviour
         if (isPlayer2 == true) speed= 50;
     }
 
-    private IEnumerator Dash()
+    public IEnumerator Dash()
     {
         float startTime = Time.time;
 
 
         while(Time.time < startTime + dashTime)
         {
+            if (isPlayer1)
             currentSpeed1 = speed * dashSpeed;
+            if(isPlayer2)
+            currentSpeed2 = speed * dashSpeed;
 
             yield return null;
         } 

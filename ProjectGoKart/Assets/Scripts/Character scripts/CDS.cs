@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CDS : MonoBehaviour
 {
@@ -23,27 +24,31 @@ public class CDS : MonoBehaviour
     void Update()
     {
         if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); StartCoroutine(Always()); }
-        if (powerUp >= 2) { icon1.SetActive(true); }
-        if (powerUp >= 4)
+        if (powerUp >= 2) 
         {
-            icon2.SetActive(true);
-
+            icon1.SetActive(true);
             if (isPlayer1 == true)
             {
-                if (Input.GetAxis("Tier1") == 1)
+                if (Input.GetAxis("Dash") == 1)
                 {
-                    StartCoroutine(Delivery());
+                    StartCoroutine(Passive());
                 }
             }
             if (isPlayer2 == true)
             {
-                if (Input.GetAxis("p2Tier1") == 1)
+                if (Input.GetAxis("Passive2") == 1)
                 {
-                    StartCoroutine(Delivery());
+                    StartCoroutine(Passive());
                 }
             }
+             
         }
-        if (powerUp == 6)
+        //if (powerUp >= 4)
+        //{
+        //    icon2.SetActive(true);
+
+        //}
+        if (powerUp == 4)
         {
             icon3.SetActive(true);
             enoughSlices = false;
@@ -66,26 +71,26 @@ public class CDS : MonoBehaviour
 
 
         //if (powerUp == 0) { icon1.SetActive(false);  }
-        if (powerUp > 6) { powerUp = 6; }
+        if (powerUp > 4) { powerUp = 4; }
     }
 
 
-    private void OnCollisionEnter(Collision col)
-    {
-        foreach (GameObject clown in clowns)
-        {
-            if(isPlayer1 == true)
-            {
-                if (col.gameObject.tag == "Enemy")
-                Instantiate(clown, box.transform.position, box.transform.rotation);
-            }
-            if (isPlayer2 == true)
-            {
-                if (col.gameObject.tag == "Player")
-                Instantiate(clown, box.transform.position, box.transform.rotation);
-            }
-        }
-    }
+    //private void OnCollisionEnter(Collision col)
+    //{
+    //    foreach (GameObject clown in clowns)
+    //    {
+    //        if(isPlayer1 == true)
+    //        {
+    //            if (col.gameObject.tag == "Enemy")
+    //            Instantiate(clown, box.transform.position, box.transform.rotation);
+    //        }
+    //        if (isPlayer2 == true)
+    //        {
+    //            if (col.gameObject.tag == "Player")
+    //            Instantiate(clown, box.transform.position, box.transform.rotation);
+    //        }
+    //    }
+    //}
     IEnumerator Always()
     {
         yield return new WaitForSeconds(3);
@@ -106,7 +111,20 @@ public class CDS : MonoBehaviour
         icon3.SetActive(false);
         mimes.SetActive(false);
     }
+    IEnumerator Passive()//Button LB
+    {
 
+        //on
+       //box.SetActive(true);
+        powerUp = powerUp - 2;
+        StartCoroutine(this.GetComponent<BasicKartMove>().Dash());
+        enoughSlices = true;
+        yield return new WaitForSeconds(2);
+        //off
+        //this.GetComponent<BasicKartMove>().speed = 50;
+        icon1.SetActive(false);
+       // box.SetActive(false);
+    }
     IEnumerator Tier2()
     {
         //on

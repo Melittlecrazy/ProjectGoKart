@@ -29,7 +29,7 @@ public class TinkernTom : MonoBehaviour
             icon1.SetActive(true);
             if (isPlayer1 == true)
             {
-                if (Input.GetAxis("Passive1") == 1)
+                if (Input.GetAxis("Dash") > 0)
                 {
                     StartCoroutine(Passive());
                 }
@@ -42,26 +42,26 @@ public class TinkernTom : MonoBehaviour
                 }
             }
         }
-        if (powerUp >= 4) 
-        { 
-            icon2.SetActive(true);
+        //if (powerUp >= 4) 
+        //{ 
+        //    icon2.SetActive(true);
 
-            if (isPlayer1 == true)
-            {
-                if (Input.GetAxis("Tier1") == 1)
-                {
-                    StartCoroutine(Lasso());
-                }
-            }
-            if (isPlayer2 == true)
-            {
-                if (Input.GetAxis("p2Tier1") == 1)
-                {
-                    StartCoroutine(Lasso());
-                }
-            }
-        }
-        if (powerUp == 6)
+        //    if (isPlayer1 == true)
+        //    {
+        //        if (Input.GetAxis("Tier1") == 1)
+        //        {
+        //            StartCoroutine(Lasso());
+        //        }
+        //    }
+        //    if (isPlayer2 == true)
+        //    {
+        //        if (Input.GetAxis("p2Tier1") == 1)
+        //        {
+        //            StartCoroutine(Lasso());
+        //        }
+        //    }
+        //}
+        if (powerUp == 4)
         {
             icon3.SetActive(true);
             enoughSlices = false;
@@ -84,7 +84,7 @@ public class TinkernTom : MonoBehaviour
         
         
         //if (powerUp == 0) { icon1.SetActive(false);  }
-        if (powerUp > 6) { powerUp = 6; }
+        if (powerUp > 4) { powerUp = 4; }
 
     }
 
@@ -101,11 +101,11 @@ public class TinkernTom : MonoBehaviour
         //on
         boom.SetActive(true);
         powerUp = powerUp - 2;
-        this.GetComponent<BasicKartMove>().speed = 100;
+        StartCoroutine(this.GetComponent<BasicKartMove>().Dash());
         enoughSlices = true;
         yield return new WaitForSeconds(explosion);
         //off
-        this.GetComponent<BasicKartMove>().speed = 50;
+        //this.GetComponent<BasicKartMove>().speed = 50;
         icon1.SetActive(false);
         boom.SetActive(false);
     }

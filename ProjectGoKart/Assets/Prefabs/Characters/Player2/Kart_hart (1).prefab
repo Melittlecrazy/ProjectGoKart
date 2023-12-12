@@ -471,9 +471,12 @@ MonoBehaviour:
   rigidball: {fileID: 0}
   trail: {fileID: 0}
   quadMan: {fileID: 0}
-  spawn: {fileID: 0}
   daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
   checkpoints: {fileID: 0}
+  spawns: []
+  ring1: {fileID: 0}
+  ring2: {fileID: 0}
+  ring3: {fileID: 0}
   point1: 0
   point2: 0
   score1: {fileID: 0}
@@ -815,7 +818,7 @@ PrefabInstance:
     - target: {fileID: 1473982094830363054, guid: 4883335f2c7d83c44b5152fe6ee6a1d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ada5619075b17e429c7a2ccc5e0c00b, type: 2}
+      objectReference: {fileID: 2100000, guid: e351090b575f2d749adb0d9d52d68a92, type: 2}
     - target: {fileID: 1827395451513575085, guid: 4883335f2c7d83c44b5152fe6ee6a1d6, type: 3}
       propertyPath: m_Name
       value: NavArrow (1)
@@ -823,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 6124545165056443055, guid: 4883335f2c7d83c44b5152fe6ee6a1d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ada5619075b17e429c7a2ccc5e0c00b, type: 2}
+      objectReference: {fileID: 2100000, guid: e351090b575f2d749adb0d9d52d68a92, type: 2}
     - target: {fileID: 6986244619718530927, guid: 4883335f2c7d83c44b5152fe6ee6a1d6, type: 3}
       propertyPath: m_LocalScale.x
       value: 5

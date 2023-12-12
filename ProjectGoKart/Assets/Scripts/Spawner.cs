@@ -11,9 +11,8 @@ public class Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && other.tag == "Enemy")
+        if (other.tag == "Player" || other.tag == "Enemy")
         {
-           
             StartCoroutine(Spawn());
         }
     }
@@ -21,11 +20,11 @@ public class Spawner : MonoBehaviour
     IEnumerator Spawn()
     {
         powerUp.SetActive(false);
-        GetComponent<BoxCollider>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = false;
         print("george");
         yield return new WaitForSeconds(timer);
         //Instantiate(powerUp, this.transform.position, this.transform.rotation);
         powerUp.SetActive(true);
-        GetComponent<BoxCollider>().enabled = true;
+        this.GetComponent<BoxCollider>().enabled = true;
     }
 }

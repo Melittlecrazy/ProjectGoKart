@@ -9,6 +9,8 @@ public class teamcolor : MonoBehaviour
     private HasBall HasBall;
     public GameObject checkpoints;
 
+    public bool p1activated, p2activated;
+
 
     private void Start()
     {
@@ -24,13 +26,22 @@ public class teamcolor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-         if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true) 
-        { 
-            kart.material.color = Color.red; 
+        if (!p1activated)
+        {
+            if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true)
+            {
+                kart.material.color = Color.red;
+                p1activated = true;
+            }
         }
-        if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<HasBall>().hasBall == true) 
-        { 
-            kart.material.color = Color.blue; 
+
+        if (!p2activated)
+        {
+            if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<HasBall>().hasBall == true)
+            {
+                kart.material.color = Color.blue;
+                p2activated = true;
+            }
         }
     }
     public IEnumerator Gray()
@@ -40,5 +51,7 @@ public class teamcolor : MonoBehaviour
         yield return new WaitForSeconds(1);
         checkpoints.GetComponent<Scoring>().player1score = 1;
         checkpoints.GetComponent<Scoring>().player2score = 1;
+        p1activated = false;
+        p2activated = false;
     }
 }
