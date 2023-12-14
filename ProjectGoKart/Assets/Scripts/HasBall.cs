@@ -20,7 +20,7 @@ public class HasBall : MonoBehaviour
 
     private teamcolor color;
 
-    public GameObject checkpoints;
+    public GameObject points,checkpoints,checkpoints2,checkpoints3;
     public GameObject[] spawns;
     public GameObject ring1, ring2, ring3;
 
@@ -30,7 +30,7 @@ public class HasBall : MonoBehaviour
 
     bool particle = false;
     public bool hasBall = false,resetted = false, stayed=false;
-    public bool isPlayer1, isPlayer2,endlessMode=true;
+    public bool isPlayer1, isPlayer2,endlessMode=true, first;
 
     string credits = "Credits";
 
@@ -38,7 +38,7 @@ public class HasBall : MonoBehaviour
 
     void Start()
     {
-        checkpoints.GetComponent<Scoring>();
+        points.GetComponent<Scoring>();
         Respawn();
         //teamcolor color = gameObject.GetComponent<teamcolor>();
         
@@ -55,11 +55,11 @@ public class HasBall : MonoBehaviour
         if (isPlayer1 == true)
         {
             //score1.text = "Score: " + point1;
-            if (checkpoints.GetComponent<Scoring>().player1score == 17)
+            if (points.GetComponent<Scoring>().player1score == 17)
             {
                 score1.text = "Score: " + point1;
-                Reset(); 
                 point1 = point1 + 1;
+                Reset(); 
 
             }
 
@@ -82,15 +82,15 @@ public class HasBall : MonoBehaviour
         if (isPlayer2 == true)
         {
             //score2.text = "Score: " + point2;
-            if (checkpoints.GetComponent<Scoring>().player2score == 17)
+            if (points.GetComponent<Scoring>().player2score == 17)
             {
                 score2.text = "Score: " + point2;
 
                 //    score2.text = "WIN";
                 //    quadMan.SetActive(false);
                 //    score1.text = "LOSE";
-                Reset();
                 point2 = point2 + 1;
+                Reset();
             }
             if (endlessMode == false)
             {
@@ -106,33 +106,78 @@ public class HasBall : MonoBehaviour
             //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
 
-        if (point1 == 2)
-        { //FFF308 original yellow of rings
-            scaleChange = new Vector3(1.4f, 1, 1.4f);
-            checkpoints.transform.localScale = scaleChange;
-            ring1.GetComponent<Renderer>().material.color = Color.red;
-            ring2.SetActive(true);
-        }
-        if (point1 == 3)
+        if (isPlayer1 = true && points.GetComponent<Scoring>().player1score == 17)
         {
-            scaleChange = new Vector3(2f, 1, 2f);
-            checkpoints.transform.localScale = scaleChange;
-            ring2.GetComponent<Renderer>().material.color = Color.red;
-            ring3.SetActive(true);
+            checkpoints2.SetActive(true);
+            first = false;
         }
-        if (point2 == 2)
-        { //FFF308 original yellow of rings
-            scaleChange = new Vector3(1.4f, 1, 1.4f);
-            checkpoints.transform.localScale = scaleChange;
-            ring1.GetComponent<Renderer>().material.color = Color.blue;
-            ring2.SetActive(true);
-        }
-        if (point2 == 3)
+        if (isPlayer2 = true && points.GetComponent<Scoring>().player2score == 17)
         {
-            scaleChange = new Vector3(2f, 1, 2f);
-            checkpoints.transform.localScale = scaleChange;
-            ring2.GetComponent<Renderer>().material.color = Color.blue;
-            ring3.SetActive(true);
+            checkpoints2.SetActive(true);
+            first = true;
+        }
+
+        if (!first)
+        {
+            if (point1 == 2)
+            { //FFF308 original yellow of rings
+                scaleChange = new Vector3(1.4f, 1, 1.4f);
+                checkpoints.transform.localScale = scaleChange;
+                ring1.GetComponent<Renderer>().material.color = Color.red;
+                ring2.SetActive(true);
+            }
+            if (point1 == 3)
+            {
+                scaleChange = new Vector3(2f, 1, 2f);
+                checkpoints.transform.localScale = scaleChange;
+                ring2.GetComponent<Renderer>().material.color = Color.red;
+                ring3.SetActive(true);
+            }
+            if (point2 == 2)
+            { //FFF308 original yellow of rings
+                scaleChange = new Vector3(1.4f, 1, 1.4f);
+                checkpoints2.transform.localScale = scaleChange;
+                ring1.GetComponent<Renderer>().material.color = Color.blue;
+                ring2.SetActive(true);
+            }
+            if (point2 == 3)
+            {
+                scaleChange = new Vector3(2f, 1, 2f);
+                checkpoints2.transform.localScale = scaleChange;
+                ring2.GetComponent<Renderer>().material.color = Color.blue;
+                ring3.SetActive(true);
+            }
+        }
+        if (first)
+        {
+            if (point1 == 2)
+            { //FFF308 original yellow of rings
+                scaleChange = new Vector3(1.4f, 1, 1.4f);
+                checkpoints2.transform.localScale = scaleChange;
+                ring1.GetComponent<Renderer>().material.color = Color.red;
+                ring2.SetActive(true);
+            }
+            if (point1 == 3)
+            {
+                scaleChange = new Vector3(2f, 1, 2f);
+                checkpoints2.transform.localScale = scaleChange;
+                ring2.GetComponent<Renderer>().material.color = Color.red;
+                ring3.SetActive(true);
+            }
+            if (point2 == 2)
+            { //FFF308 original yellow of rings
+                scaleChange = new Vector3(1.4f, 1, 1.4f);
+                checkpoints.transform.localScale = scaleChange;
+                ring1.GetComponent<Renderer>().material.color = Color.blue;
+                ring2.SetActive(true);
+            }
+            if (point2 == 3)
+            {
+                scaleChange = new Vector3(2f, 1, 2f);
+                checkpoints.transform.localScale = scaleChange;
+                ring2.GetComponent<Renderer>().material.color = Color.blue;
+                ring3.SetActive(true);
+            }
         }
     }
         private void OnCollisionEnter(Collision col)
@@ -141,7 +186,7 @@ public class HasBall : MonoBehaviour
         {
             //trail.SetActive(true);
             hasBall = true;
-            
+            points.SetActive(true);
             quadMan.SetActive(true);
         }
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player") 
@@ -172,8 +217,8 @@ public class HasBall : MonoBehaviour
         rigidball.constraints = RigidbodyConstraints.None;
         //ball.transform.position = spawn.transform.position;
         Respawn();
-        checkpoints.GetComponent<Scoring>().player1score = 0;
-        checkpoints.GetComponent<Scoring>().player2score = 0;
+        points.GetComponent<Scoring>().player1score = 0;
+        points.GetComponent<Scoring>().player2score = 0;
     }
     public void Drop()
     {

@@ -64,8 +64,8 @@ public class BasicKartMove : MonoBehaviour
             //}
 
 
-            Turning(); 
-            
+            Turning();
+
         }
 
         if (isPlayer2 == true)// && joystickName.ToLower().Contains("xbox"))
