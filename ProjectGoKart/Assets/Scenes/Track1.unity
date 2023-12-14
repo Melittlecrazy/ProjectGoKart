@@ -12861,6 +12861,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 616376632}
   m_SourcePrefab: {fileID: 100100000, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+--- !u!1 &1704658430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4311585506224353895, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+  m_PrefabInstance: {fileID: 1704658429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &1710546903
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -14369,6 +14374,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1660818756}
     - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
+    - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: spawns.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -15351,6 +15360,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1660818756}
     - target: {fileID: 8740673784255836793, guid: 70adea216753c8549885d5a36347e4e5, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
+    - target: {fileID: 8740673784255836793, guid: 70adea216753c8549885d5a36347e4e5, type: 3}
       propertyPath: spawns.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -15725,6 +15738,10 @@ PrefabInstance:
       propertyPath: checkpoints2
       value: 
       objectReference: {fileID: 1660818756}
+    - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
     - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: spawns.Array.size
       value: 4
@@ -16208,6 +16225,10 @@ PrefabInstance:
       propertyPath: checkpoints2
       value: 
       objectReference: {fileID: 1660818756}
+    - target: {fileID: 3334413670778681110, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
     - target: {fileID: 3334413670778681110, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
       propertyPath: spawns.Array.size
       value: 4
@@ -16921,6 +16942,10 @@ PrefabInstance:
       propertyPath: checkpoints2
       value: 
       objectReference: {fileID: 1660818756}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: spawns.Array.size
       value: 4
@@ -17681,6 +17706,10 @@ PrefabInstance:
       propertyPath: checkpoints2
       value: 
       objectReference: {fileID: 1660818756}
+    - target: {fileID: 5486244597565432013, guid: 0fa173521369ea046ac7c56aaa626e99, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1704658430}
     - target: {fileID: 5486244597565432013, guid: 0fa173521369ea046ac7c56aaa626e99, type: 3}
       propertyPath: spawns.Array.size
       value: 4

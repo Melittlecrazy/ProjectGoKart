@@ -30,7 +30,7 @@ public class HasBall : MonoBehaviour
 
     bool particle = false;
     public bool hasBall = false,resetted = false, stayed=false;
-    public bool isPlayer1, isPlayer2,endlessMode=true, first;
+    public bool isPlayer1, isPlayer2,endlessMode=true, first,bob;
 
     string credits = "Credits";
 
@@ -106,77 +106,96 @@ public class HasBall : MonoBehaviour
             //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
         }
 
-        if (isPlayer1 = true && points.GetComponent<Scoring>().player1score == 17)
+        if (isPlayer1 = true && points.GetComponent<Scoring>().player1score == 17  && bob == false)
         {
             checkpoints2.SetActive(true);
             first = false;
+            bob = true;
         }
-        if (isPlayer2 = true && points.GetComponent<Scoring>().player2score == 17)
+        if (isPlayer2 = true && points.GetComponent<Scoring>().player2score == 17 && bob == false)
         {
-            checkpoints2.SetActive(true);
+            checkpoints3.SetActive(true);
             first = true;
+            bob = true;
         }
 
-        if (!first)
+        if (!first) // for if player 1 is winning
         {
             if (point1 == 2)
             { //FFF308 original yellow of rings
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints2.transform.localScale = scaleChange;
                 ring1.GetComponent<Renderer>().material.color = Color.red;
                 ring2.SetActive(true);
             }
             if (point1 == 3)
             {
                 scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints2.transform.localScale = scaleChange;
                 ring2.GetComponent<Renderer>().material.color = Color.red;
                 ring3.SetActive(true);
             }
             if (point2 == 2)
             { //FFF308 original yellow of rings
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints2.transform.localScale = scaleChange;
+                checkpoints.transform.localScale = scaleChange;
                 ring1.GetComponent<Renderer>().material.color = Color.blue;
                 ring2.SetActive(true);
             }
             if (point2 == 3)
             {
                 scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints2.transform.localScale = scaleChange;
+                checkpoints.transform.localScale = scaleChange;
                 ring2.GetComponent<Renderer>().material.color = Color.blue;
                 ring3.SetActive(true);
+            }
+
+            if (point1 == 2 && point2 == 2)
+            {
+                checkpoints2.SetActive(false);
+            }
+            if (point1 == 3 && point2 == 3)
+            {
+                checkpoints2.SetActive(false);
             }
         }
-        if (first)
+        if (first) //for if player 2 is winning
         {
             if (point1 == 2)
             { //FFF308 original yellow of rings
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints2.transform.localScale = scaleChange;
+                checkpoints.transform.localScale = scaleChange;
                 ring1.GetComponent<Renderer>().material.color = Color.red;
                 ring2.SetActive(true);
             }
             if (point1 == 3)
             {
                 scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints2.transform.localScale = scaleChange;
+                checkpoints.transform.localScale = scaleChange;
                 ring2.GetComponent<Renderer>().material.color = Color.red;
                 ring3.SetActive(true);
             }
             if (point2 == 2)
             { //FFF308 original yellow of rings
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints3.transform.localScale = scaleChange;
                 ring1.GetComponent<Renderer>().material.color = Color.blue;
                 ring2.SetActive(true);
             }
             if (point2 == 3)
             {
                 scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints3.transform.localScale = scaleChange;
                 ring2.GetComponent<Renderer>().material.color = Color.blue;
                 ring3.SetActive(true);
+            }
+            if (point1 == 2 && point2 == 2)
+            {
+                checkpoints2.SetActive(false);
+            }
+            if (point1 == 3 && point2 == 3)
+            {
+                checkpoints2.SetActive(false);
             }
         }
     }
