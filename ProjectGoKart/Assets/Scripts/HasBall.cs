@@ -153,10 +153,12 @@ public class HasBall : MonoBehaviour
             if (point1 == 2 && point2 == 2)
             {
                 checkpoints2.SetActive(false);
+                bob = false;
             }
             if (point1 == 3 && point2 == 3)
             {
                 checkpoints2.SetActive(false);
+                bob = false;
             }
         }
         if (first) //for if player 2 is winning
@@ -191,11 +193,13 @@ public class HasBall : MonoBehaviour
             }
             if (point1 == 2 && point2 == 2)
             {
-                checkpoints2.SetActive(false);
+                checkpoints3.SetActive(false);
+                bob = false;
             }
             if (point1 == 3 && point2 == 3)
             {
-                checkpoints2.SetActive(false);
+                checkpoints3.SetActive(false);
+                bob = false;
             }
         }
     }
