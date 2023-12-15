@@ -13070,6 +13070,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.99
       objectReference: {fileID: 0}
+    - target: {fileID: 3375667835485577777, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3376360489276481880, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: multi
       value: 1
@@ -13109,6 +13113,10 @@ PrefabInstance:
     - target: {fileID: 4107815300533228890, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: multi
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311585506224353895, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4388108342343690943, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: timer
