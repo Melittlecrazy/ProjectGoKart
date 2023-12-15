@@ -111,12 +111,14 @@ public class HasBall : MonoBehaviour
             checkpoints2.SetActive(true);
             first = false;
             bob = true;
+            point1 = point1 + 1;
         }
         if (isPlayer2 = true && points.GetComponent<Scoring>().player2score == 17 && bob == false)
         {
             checkpoints3.SetActive(true);
             first = true;
             bob = true;
+            point2 = point2 + 1;
         }
 
         if (!first) // for if player 1 is winning

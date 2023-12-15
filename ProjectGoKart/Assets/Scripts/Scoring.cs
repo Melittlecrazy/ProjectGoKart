@@ -6,6 +6,8 @@ public class Scoring : MonoBehaviour
 {
     public int player1score,player2score;
 
+    public GameObject checkpoint,checkpoint2,checkpoint3;
+
     //private HasBall HasBall;
 
 

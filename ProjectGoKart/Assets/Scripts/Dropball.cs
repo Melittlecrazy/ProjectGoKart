@@ -37,12 +37,29 @@ public class Dropball : MonoBehaviour
         }
         if ((col.gameObject.tag == "Enemy" && tut==false)|| (col.gameObject.tag == "Player" && tut==false))
         {
-            //hasball = new GetComponent<HasBall>().hasball = true;
+            col.gameObject.GetComponent<HasBall>().hasBall = true;
             StartCoroutine(Arrowed());
             tut = true;
         }
     }
-    IEnumerator Arrowed()
+    private void OnCollisionStay(Collision col)
+    {
+        if ((col.gameObject.tag == "Enemy") || (col.gameObject.tag == "Player"))
+        {
+            col.gameObject.GetComponent<HasBall>().hasBall = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if ((col.gameObject.tag == "Enemy") || (col.gameObject.tag == "Player"))
+        {
+            col.gameObject.GetComponent<HasBall>().hasBall = false;
+        }
+        
+    }
+
+        IEnumerator Arrowed()
     {
         arrow.SetActive(true);
         yield return new WaitForSeconds(3);
