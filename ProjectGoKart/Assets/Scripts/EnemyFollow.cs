@@ -7,6 +7,7 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject target;
     [SerializeField] private float speed;
+    [SerializeField] private float targetTimer;
 
     HasBall hasBall;
 
