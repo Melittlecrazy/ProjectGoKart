@@ -41,7 +41,8 @@ public class HasBall : MonoBehaviour
         points.GetComponent<Scoring>();
         Respawn();
         //teamcolor color = gameObject.GetComponent<teamcolor>();
-        
+        first = false;
+        bob = false;
         //color.Gray();
         
         //score1.text = "Score: " + point1;
@@ -61,6 +62,55 @@ public class HasBall : MonoBehaviour
                 point1 = point1 + 1;
                 Reset(); 
 
+                if (bob == false)
+                {
+                    checkpoints2.SetActive(true);
+                    first = false;
+                    bob = true;
+                    //point1 = point1 + 1;
+                }
+            }
+            if (first == false) // for if player 1 is winning
+            {
+                if (point1 == 2)
+                { //FFF308 original yellow of rings
+                    scaleChange = new Vector3(1.4f, 1, 1.4f);
+                    checkpoints2.transform.localScale = scaleChange;
+                    ring1.GetComponent<Renderer>().material.color = Color.red;
+                    ring2.SetActive(true);
+                }
+                if (point1 == 3)
+                {
+                    scaleChange = new Vector3(2f, 1, 2f);
+                    checkpoints2.transform.localScale = scaleChange;
+                    ring2.GetComponent<Renderer>().material.color = Color.red;
+                    ring3.SetActive(true);
+                }
+                if (point2 == 2)
+                { //FFF308 original yellow of rings
+                    scaleChange = new Vector3(1.4f, 1, 1.4f);
+                    checkpoints.transform.localScale = scaleChange;
+                    ring1.GetComponent<Renderer>().material.color = Color.blue;
+                    ring2.SetActive(true);
+                }
+                if (point2 == 3)
+                {
+                    scaleChange = new Vector3(2f, 1, 2f);
+                    checkpoints.transform.localScale = scaleChange;
+                    ring2.GetComponent<Renderer>().material.color = Color.blue;
+                    ring3.SetActive(true);
+                }
+
+                if (point1 == 2 && point2 == 2)
+                {
+                    checkpoints2.SetActive(false);
+                    bob = false;
+                }
+                if (point1 == 3 && point2 == 3)
+                {
+                    checkpoints2.SetActive(false);
+                    bob = false;
+                }
             }
 
             if (endlessMode == false)
@@ -91,6 +141,14 @@ public class HasBall : MonoBehaviour
                 //    score1.text = "LOSE";
                 point2 = point2 + 1;
                 Reset();
+                
+                if (bob == false)
+                {
+                    checkpoints3.SetActive(true);
+                    first = true;
+                    bob = true;
+                    //point2 = point2 + 1;
+                }
             }
             if (endlessMode == false)
             {
@@ -104,66 +162,7 @@ public class HasBall : MonoBehaviour
             }
             //if (point2 == 9) { score2.text = "Score: 2"; Reset(); point2 = point2 + 1; }
             //if (point2 == 14) { score2.text = "Winner"; score1.text = "Lose"; trail.SetActive(true); }
-        }
-
-        if (isPlayer1 = true && points.GetComponent<Scoring>().player1score == 17  && bob == false)
-        {
-            checkpoints2.SetActive(true);
-            first = false;
-            bob = true;
-            point1 = point1 + 1;
-        }
-        if (isPlayer2 = true && points.GetComponent<Scoring>().player2score == 17 && bob == false)
-        {
-            checkpoints3.SetActive(true);
-            first = true;
-            bob = true;
-            point2 = point2 + 1;
-        }
-
-        if (!first) // for if player 1 is winning
-        {
-            if (point1 == 2)
-            { //FFF308 original yellow of rings
-                scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints2.transform.localScale = scaleChange;
-                ring1.GetComponent<Renderer>().material.color = Color.red;
-                ring2.SetActive(true);
-            }
-            if (point1 == 3)
-            {
-                scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints2.transform.localScale = scaleChange;
-                ring2.GetComponent<Renderer>().material.color = Color.red;
-                ring3.SetActive(true);
-            }
-            if (point2 == 2)
-            { //FFF308 original yellow of rings
-                scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints.transform.localScale = scaleChange;
-                ring1.GetComponent<Renderer>().material.color = Color.blue;
-                ring2.SetActive(true);
-            }
-            if (point2 == 3)
-            {
-                scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints.transform.localScale = scaleChange;
-                ring2.GetComponent<Renderer>().material.color = Color.blue;
-                ring3.SetActive(true);
-            }
-
-            if (point1 == 2 && point2 == 2)
-            {
-                checkpoints2.SetActive(false);
-                bob = false;
-            }
-            if (point1 == 3 && point2 == 3)
-            {
-                checkpoints2.SetActive(false);
-                bob = false;
-            }
-        }
-        if (first) //for if player 2 is winning
+        if (first == true) //for if player 2 is winning
         {
             if (point1 == 2)
             { //FFF308 original yellow of rings
@@ -204,6 +203,12 @@ public class HasBall : MonoBehaviour
                 bob = false;
             }
         }
+        }
+
+        // tutorial when touches ball
+        
+
+        
     }
         private void OnCollisionEnter(Collision col)
     {
