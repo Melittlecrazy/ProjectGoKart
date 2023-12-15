@@ -2480,6 +2480,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: points
+      value: 
+      objectReference: {fileID: 1016909547}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: score1
       value: 
       objectReference: {fileID: 318907245}
@@ -2507,6 +2511,14 @@ PrefabInstance:
       propertyPath: endlessMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: checkpoints2
+      value: 
+      objectReference: {fileID: 1016909546}
+    - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1016909545}
     - target: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: spawns.Array.size
       value: 4
@@ -3379,6 +3391,21 @@ MonoBehaviour:
   worldPoint2: {fileID: 1193642345}
   miniMap: {fileID: 616995228}
   playerWorld: {fileID: 0}
+--- !u!1 &1016909545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4311585506224353895, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+  m_PrefabInstance: {fileID: 2329861373507216965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1016909546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 657468945561573150, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+  m_PrefabInstance: {fileID: 2329861373507216965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1016909547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7808034718790470329, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+  m_PrefabInstance: {fileID: 2329861373507216965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092995018
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,7 +6478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729716289}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab999d73e6d5384b98a1938678e59dc, type: 3}
   m_Name: 
@@ -9277,7 +9304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565862463641833513, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3405153849596144106, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: m_Mesh
@@ -9408,6 +9435,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: points
+      value: 
+      objectReference: {fileID: 1016909547}
+    - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: score1
       value: 
       objectReference: {fileID: 318907245}
@@ -9435,6 +9466,14 @@ PrefabInstance:
       propertyPath: endlessMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: checkpoints2
+      value: 
+      objectReference: {fileID: 1016909546}
+    - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1016909545}
     - target: {fileID: 7054987822075461931, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: spawns.Array.size
       value: 4
@@ -9514,7 +9553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3192501571705418075, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3375667835485577777, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3376360489276481880, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: single
@@ -9574,6 +9617,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7530222164356169536, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       propertyPath: single
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808034718790470329, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149958806763139161, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8419468394656273870, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -9774,6 +9825,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: points
+      value: 
+      objectReference: {fileID: 1016909547}
+    - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: score1
       value: 
       objectReference: {fileID: 318907245}
@@ -9805,6 +9860,14 @@ PrefabInstance:
       propertyPath: endlessMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: checkpoints2
+      value: 
+      objectReference: {fileID: 1016909546}
+    - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: checkpoints3
+      value: 
+      objectReference: {fileID: 1016909545}
     - target: {fileID: 3333607763499774729, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: spawns.Array.size
       value: 4
