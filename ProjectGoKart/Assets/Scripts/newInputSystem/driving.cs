@@ -84,7 +84,7 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Turning"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
