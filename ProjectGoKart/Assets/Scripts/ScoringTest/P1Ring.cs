@@ -30,33 +30,17 @@ public class P1Ring : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true)
             {
-                checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score + 1;
+                checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score + 1f - 1f;
                 kart.material.color = Color.red;
                 p1activated = true;
             }
             //if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<HasBall>().hasBall == true)
             //{
-            //    kart.material.color = Color.blue;
-            //    p2activated = true;
-            //    checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score - 1;
+            //    kart.material.color = Color.white;
+            //    //    p2activated = true;
+            //    checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score - .5f;
             //}
-        }
-
-        if (!p2activated)
-        {
-            if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<HasBall>().hasBall == true)
-            {
-                kart.material.color = Color.blue;
-                p2activated = true;
-                checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score + 1;
-            }
-            //    if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true)
-            //    {
-            //        checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score - 1;
-            //        kart.material.color = Color.red;
-            //        p1activated = true;
-            //    }
-        }
+    }
     }
     public IEnumerator Gray()
     {

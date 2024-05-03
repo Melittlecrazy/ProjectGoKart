@@ -65,7 +65,7 @@ public class HasBall : MonoBehaviour
 
                 if (bob == false)
                 {
-                    checkpoints3.SetActive(true);
+                    checkpoints.SetActive(true);
                     first = 1;
                     bob = true;
                     //point1 = point1 + 1;
@@ -75,46 +75,39 @@ public class HasBall : MonoBehaviour
             {
                 if (point1 == 2)
                 { //FFF308 original yellow of rings
+                    checkpoints.SetActive(false);
+                    checkpoints2.SetActive(true);
+                    checkpoints3.SetActive(true);
                     scaleChange = new Vector3(1.4f, 1, 1.4f);
-                    checkpoints.transform.localScale = scaleChange;
+                    checkpoints2.transform.localScale = scaleChange;
                     ring1.GetComponent<Renderer>().material.color = Color.red;
                     ring2.SetActive(true);
                 }
                 if (point1 == 3)
                 {
                     scaleChange = new Vector3(2f, 1, 2f);
-                    checkpoints.transform.localScale = scaleChange;
+                    checkpoints2.transform.localScale = scaleChange;
                     ring2.GetComponent<Renderer>().material.color = Color.red;
-                    ring3.SetActive(true);
-                }
-                if (point2 == 2)
-                { //FFF308 original yellow of rings
-                    scaleChange = new Vector3(1.4f, 1, 1.4f);
-                    checkpoints3.transform.localScale = scaleChange;
-                    ring1.GetComponent<Renderer>().material.color = Color.blue;
-                    ring2.SetActive(true);
-                }
-                if (point2 == 3)
-                {
-                    scaleChange = new Vector3(2f, 1, 2f);
-                    checkpoints3.transform.localScale = scaleChange;
-                    ring2.GetComponent<Renderer>().material.color = Color.blue;
                     ring3.SetActive(true);
                 }
 
                 if (point1 == 2 && point2 == 2)
                 {
+                    checkpoints.SetActive(true);
                     checkpoints2.SetActive(false);
+                    checkpoints3.SetActive(false);
                     bob = false;
                     scaleChange = new Vector3(1.4f, 1, 1.4f);
-                    checkpoints3.transform.localScale = scaleChange;
+                    checkpoints.transform.localScale = scaleChange;
                 }
                 if (point1 == 3 && point2 == 3)
                 {
+                    checkpoints.SetActive(true);
                     checkpoints2.SetActive(false);
+                    checkpoints3.SetActive(false);
                     bob = false;
                     scaleChange = new Vector3(2f, 1, 2f);
-                    checkpoints3.transform.localScale = scaleChange;
+                    checkpoints.transform.localScale = scaleChange;
                 }
             }
 
@@ -149,7 +142,7 @@ public class HasBall : MonoBehaviour
                 
                 if (bob == false)
                 {
-                    checkpoints2.SetActive(true);
+                    checkpoints.SetActive(true);
                     first = 2;
                     bob = true;
                     //point2 = point2 + 1;
@@ -170,44 +163,50 @@ public class HasBall : MonoBehaviour
 
         if (first == 2) //for if player 2 is winning
         {
-            if (point1 == 2)
-            { //FFF308 original yellow of rings
-                scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints2.transform.localScale = scaleChange;
-                ring1.GetComponent<Renderer>().material.color = Color.red;
-                ring2.SetActive(true);
-            }
-            if (point1 == 3)
-            {
-                scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints2.transform.localScale = scaleChange;
-                ring2.GetComponent<Renderer>().material.color = Color.red;
-                ring3.SetActive(true);
-            }
+            //if (point1 == 2)
+            //{ //FFF308 original yellow of rings
+            //    scaleChange = new Vector3(1.4f, 1, 1.4f);
+            //    checkpoints3.transform.localScale = scaleChange;
+            //    ring1.GetComponent<Renderer>().material.color = Color.red;
+            //    ring2.SetActive(true);
+            //}
+            //if (point1 == 3)
+            //{
+            //    scaleChange = new Vector3(2f, 1, 2f);
+            //    checkpoints3.transform.localScale = scaleChange;
+            //    ring2.GetComponent<Renderer>().material.color = Color.red;
+            //    ring3.SetActive(true);
+            //}
             if (point2 == 2)
             { //FFF308 original yellow of rings
+                checkpoints3.SetActive(true);
+                checkpoints3.SetActive(true);
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints3.transform.localScale = scaleChange;
                 ring1.GetComponent<Renderer>().material.color = Color.blue;
                 ring2.SetActive(true);
             }
             if (point2 == 3)
             {
                 scaleChange = new Vector3(2f, 1, 2f);
-                checkpoints.transform.localScale = scaleChange;
+                checkpoints3.transform.localScale = scaleChange;
                 ring2.GetComponent<Renderer>().material.color = Color.blue;
                 ring3.SetActive(true);
             }
             if (point1 == 2 && point2 == 2)
             {
+                checkpoints.SetActive(true);
                 checkpoints2.SetActive(false);
+                checkpoints3.SetActive(false);
                 bob = false;
                 scaleChange = new Vector3(1.4f, 1, 1.4f);
                 checkpoints.transform.localScale = scaleChange;
             }
             if (point1 == 3 && point2 == 3)
             {
+                checkpoints.SetActive(true);
                 checkpoints2.SetActive(false);
+                checkpoints3.SetActive(false);
                 bob = false;
                 scaleChange = new Vector3(2f, 1, 2f);
                 checkpoints.transform.localScale = scaleChange;

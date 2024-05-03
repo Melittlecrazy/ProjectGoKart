@@ -21,12 +21,13 @@ public class titleScreenstuff : MonoBehaviour
     }
     public void StartGame() 
     {
-        EventSystem.current.SetSelectedGameObject(p1);
-        p1.SetActive(true);
-        p2.SetActive(true);
-        if (sin == true) SceneManager.LoadScene(single);
-        if (mul == true) SceneManager.LoadScene(multi);
+        //EventSystem.current.SetSelectedGameObject(p1);
+        //p1.SetActive(true);
+        //p2.SetActive(true);
+        //if (sin == true) SceneManager.LoadScene(single);
+        //if (mul == true) SceneManager.LoadScene(multi);
 
+        SceneManager.LoadScene(multi);
     }
 
     public void Single()
