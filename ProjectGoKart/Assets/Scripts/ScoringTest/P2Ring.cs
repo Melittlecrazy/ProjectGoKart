@@ -35,13 +35,16 @@ public class P2Ring : MonoBehaviour
                 p2activated = true;
                 checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score + 1;
             }
-            //if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true)
-            //{
-            //    checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score - 1;
-            //    kart.material.color = Color.white;
-            //    //p1activated = true;
-            //}
-    }
+        }
+            if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true && p2activated == true)
+            {
+                if (checkpoints.GetComponent<Scoring>().player1score == 1) checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score - 0;
+                
+                else checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score - 1;
+                //checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score + 1;
+                kart.material.color = Color.white;
+                p2activated = false;
+            }
     }
     public IEnumerator Gray()
     {

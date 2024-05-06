@@ -713,7 +713,7 @@ MonoBehaviour:
   kart: {fileID: 95586979}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &98801458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658456}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &287574268
 GameObject:
@@ -2046,7 +2046,7 @@ MonoBehaviour:
   kart: {fileID: 395118435}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &411351344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3018,7 @@ MonoBehaviour:
   kart: {fileID: 690178517}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &704889343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 529440870838169492, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -3044,7 +3044,7 @@ MonoBehaviour:
   kart: {fileID: 704889347}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &714041981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8748460613585263089, guid: 42c612832770f9c488bcfea74d019d50, type: 3}
@@ -4048,7 +4048,7 @@ MonoBehaviour:
   kart: {fileID: 839530342}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &858621248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9185,7 +9185,7 @@ MonoBehaviour:
   kart: {fileID: 900677931}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!43 &911727468
 Mesh:
   m_ObjectHideFlags: 0
@@ -9565,7 +9565,7 @@ MonoBehaviour:
   kart: {fileID: 952371891}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &957364811
 GameObject:
   m_ObjectHideFlags: 0
@@ -9701,7 +9701,7 @@ MonoBehaviour:
   kart: {fileID: 961252217}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &978511274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9908,7 +9908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658450}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1017133246 stripped
 GameObject:
@@ -10015,7 +10015,7 @@ MonoBehaviour:
   kart: {fileID: 1030901127}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &1041045889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2584767375733741467, guid: 98d5ee2b83692174c9028d37dbcf2029, type: 3}
@@ -10358,7 +10358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658440}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1070689435 stripped
 GameObject:
@@ -10530,7 +10530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658452}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1108783002
 GameObject:
@@ -10845,7 +10845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658444}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!65 &1148153431
 BoxCollider:
@@ -10893,7 +10893,7 @@ MonoBehaviour:
   kart: {fileID: 1174657817}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &1193642341
 GameObject:
   m_ObjectHideFlags: 0
@@ -11242,7 +11242,7 @@ MonoBehaviour:
   kart: {fileID: 1257363150}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &1272847448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4687807839147866161, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -11762,7 +11762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658442}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1384861038
 GameObject:
@@ -12224,7 +12224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658448}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1485108517
 GameObject:
@@ -12496,7 +12496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658438}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!114 &1526620068
 MonoBehaviour:
@@ -12512,7 +12512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658446}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1526961966
 GameObject:
@@ -12671,7 +12671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658436}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1607169344 stripped
 GameObject:
@@ -12703,7 +12703,7 @@ MonoBehaviour:
   kart: {fileID: 1623700949}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &1628796633
 GameObject:
   m_ObjectHideFlags: 0
@@ -13132,7 +13132,7 @@ MonoBehaviour:
   kart: {fileID: 1659698165}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &1660818756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 657468945561573150, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -13163,7 +13163,7 @@ MonoBehaviour:
   kart: {fileID: 1662837799}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!43 &1665910818
 Mesh:
   m_ObjectHideFlags: 0
@@ -13553,7 +13553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658434}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1699684767
 GameObject:
@@ -14633,6 +14633,38 @@ PrefabInstance:
     - {fileID: 1462629817500709084, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
     - {fileID: 7309247319793333340, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
     - {fileID: 3830537961917059714, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 7952260548029064749, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 5539317686521609208, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 6024533353468200566, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 1170561629664386903, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 3312932724881469770, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 1583572315046977912, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 1557790188451313295, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 3542496537392936042, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 8293019562311040771, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 801684636527267614, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 5208453417299137119, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 2812835825944625926, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 4079060132618787972, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 7488595194160525793, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 3365530363475668738, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 2824738984426852431, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 6794029268842907807, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 7092261977111680971, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 4504183248427245371, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 5604575279290016843, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 2135840491081525596, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 2670943501968600245, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 6350622918658954683, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 3239991438297171687, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 7433701974229882751, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 83877377307200452, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 4554574003959287513, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 6975515918335546952, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 1602112457936111189, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 6500261264309595871, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 8501923797424467856, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
+    - {fileID: 7410397286274638981, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3853052468997492549, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
     - {fileID: 208114502442692765, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -14657,52 +14689,52 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 616376632}
     - targetCorrespondingSourceObject: {fileID: 2904480082282796077, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 900677933}
     - targetCorrespondingSourceObject: {fileID: 7924290094084812437, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 690178519}
     - targetCorrespondingSourceObject: {fileID: 795995424308611907, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1257363152}
     - targetCorrespondingSourceObject: {fileID: 3306438432796150111, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 2118778059}
     - targetCorrespondingSourceObject: {fileID: 3591027903064125801, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1866360277}
     - targetCorrespondingSourceObject: {fileID: 9162642045747318399, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 839530344}
     - targetCorrespondingSourceObject: {fileID: 529440870838169492, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 704889349}
     - targetCorrespondingSourceObject: {fileID: 7882254938960130753, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 95586981}
     - targetCorrespondingSourceObject: {fileID: 1388364842129108336, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1623700951}
     - targetCorrespondingSourceObject: {fileID: 6579069507285486251, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 952371893}
     - targetCorrespondingSourceObject: {fileID: 3910430746028789173, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1030901129}
     - targetCorrespondingSourceObject: {fileID: 1057981065007359721, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 961252219}
     - targetCorrespondingSourceObject: {fileID: 5716460481568731190, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1174657819}
     - targetCorrespondingSourceObject: {fileID: 1142241623940218080, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1659698167}
     - targetCorrespondingSourceObject: {fileID: 5347829645835950471, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 1662837801}
     - targetCorrespondingSourceObject: {fileID: 4591522998447644073, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
-      insertIndex: 4
+      insertIndex: 3
       addedObject: {fileID: 395118437}
     - targetCorrespondingSourceObject: {fileID: 4491980572178288544, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
       insertIndex: -1
@@ -14932,7 +14964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658458}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!114 &1704658464
 MonoBehaviour:
@@ -14948,7 +14980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658460}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!114 &1704658465
 MonoBehaviour:
@@ -14964,7 +14996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658462}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1724546912 stripped
 GameObject:
@@ -15171,7 +15203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658454}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &1775589253 stripped
 GameObject:
@@ -15477,7 +15509,7 @@ MonoBehaviour:
   kart: {fileID: 1866360275}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!114 &1906919868 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5520807409816050208, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
@@ -15827,7 +15859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kart: {fileID: 1704658432}
   checkpoints: {fileID: 830318135}
-  p1activated: 0
+  p1activated: 1
   p2activated: 0
 --- !u!1 &2007142783
 GameObject:
@@ -16284,7 +16316,7 @@ MonoBehaviour:
   kart: {fileID: 2118778057}
   checkpoints: {fileID: 830318135}
   p1activated: 0
-  p2activated: 0
+  p2activated: 1
 --- !u!1 &2130885620
 GameObject:
   m_ObjectHideFlags: 0
