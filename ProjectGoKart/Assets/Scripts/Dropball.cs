@@ -16,6 +16,7 @@ public class Dropball : MonoBehaviour
     {
         //hasball = GetComponent<HasBall>();
         tut = false;
+        
     }
 
     void Update()
@@ -65,4 +66,6 @@ public class Dropball : MonoBehaviour
         yield return new WaitForSeconds(3);
         arrow.SetActive(false);
     }
+
+
 }

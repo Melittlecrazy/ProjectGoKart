@@ -35,6 +35,8 @@ public class HasBall : MonoBehaviour
 
     string credits = "Credits";
 
+    public GameObject vCam;
+
     Vector3 scaleChange;
 
     void Start()
@@ -49,6 +51,7 @@ public class HasBall : MonoBehaviour
         //score1.text = "Score: " + point1;
         //score2.text = "Score: " + point2;
         quadMan.SetActive(true);
+        StartCoroutine(Look());
     }
 
     // Update is called once per frame
@@ -247,7 +250,7 @@ public class HasBall : MonoBehaviour
         trail.SetActive(false);
 
         //teamcolor color = gameObject.GetComponent<teamcolor>();
-        
+        StartCoroutine(Look());
         //color.Gray();
 
 
@@ -286,5 +289,14 @@ public class HasBall : MonoBehaviour
     {
             selectedCharacter = Random.Range(0, spawns.Length);
             ball.transform.position = spawns[selectedCharacter].transform.position;
+    }
+
+    IEnumerator Look()
+    {
+        vCam.SetActive(true);
+        //Vcam2.SetActive(true);
+        yield return new WaitForSeconds(3);
+        vCam.SetActive(false);
+        //Vcam2.SetActive(false);
     }
 }
