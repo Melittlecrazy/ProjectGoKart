@@ -31,6 +31,7 @@ public class teamcolor : MonoBehaviour
             if (other.gameObject.CompareTag("Player") && other.gameObject.GetComponent<HasBall>().hasBall == true)
             {
                 checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score + 1;
+                //other.GetComponent<HasBall>().first = false;
                 kart.material.color = Color.red;
                 p1activated = true;
                 if (p2activated == true) checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score - 1;
@@ -51,6 +52,7 @@ public class teamcolor : MonoBehaviour
                 kart.material.color = Color.blue;
                 p2activated = true;
                 if (p1activated== true) checkpoints.GetComponent<Scoring>().player1score = checkpoints.GetComponent<Scoring>().player1score - 1;
+                //other.GetComponent<HasBall>().first = false;
                 p1activated = false;
                 checkpoints.GetComponent<Scoring>().player2score = checkpoints.GetComponent<Scoring>().player2score + 1;
             }

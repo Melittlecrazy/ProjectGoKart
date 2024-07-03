@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class TinkernTom : MonoBehaviour
 {
-    public float powerUp = 0;
+    public float powerUp = 0, dash =0;
     public int datime,explosion;
     public GameObject tathrow, boom;
     public GameObject icon1, icon2,icon3;
@@ -15,6 +16,9 @@ public class TinkernTom : MonoBehaviour
 
     private BasicKartMove kart;
 
+    public GameObject dashu, spuke;
+
+    public int ani;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PowerUp" && enoughSlices == true) { powerUp = powerUp + 1; }
@@ -23,10 +27,11 @@ public class TinkernTom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUp == 0) { icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); StartCoroutine(Always()); }
-        if (powerUp >= 2) 
-        { 
-            icon1.SetActive(true);
+        if (powerUp == 0) { LeanTween.moveX(spuke, -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
+        if (dash ==0) { StartCoroutine(Always()); }
+        if (dash >= 2) 
+        {
+            //LeanTween.moveX(dashu, 0, 1);
             if (isPlayer1 == true)
             {
                 if (Input.GetAxis("Dash") > 0)
@@ -61,11 +66,12 @@ public class TinkernTom : MonoBehaviour
         //        }
         //    }
         //}
-        if (powerUp == 4)
+        if (powerUp == 1) { LeanTween.moveX(spuke, -125, 3); }
+        if (powerUp == 2)
         {
-            icon3.SetActive(true);
+            //icon3.SetActive(true);
             enoughSlices = false;
-
+            LeanTween.moveX(spuke, 0, ani);
             if (isPlayer1 == true)
             {
                 if (Input.GetAxis("Tier2") == 1)
@@ -84,29 +90,32 @@ public class TinkernTom : MonoBehaviour
         
         
         //if (powerUp == 0) { icon1.SetActive(false);  }
-        if (powerUp > 4) { powerUp = 4; }
+        if (powerUp > 2) { powerUp = 2; }
 
     }
 
     IEnumerator Always()
     {
         yield return new WaitForSeconds(3);
-        powerUp = 1;
+        dash = 1;
+        LeanTween.moveX(dashu,-125f,ani);
         yield return new WaitForSeconds(3);
-        powerUp = 2;
+        dash = 2;
+        LeanTween.moveX(dashu, 0, ani);
     }
     IEnumerator Passive()//Button RB
     {
 
         //on
         boom.SetActive(true);
-        powerUp = powerUp - 2;
+        dash = dash - 2;
         StartCoroutine(this.GetComponent<BasicKartMove>().Dash());
         enoughSlices = true;
+        LeanTween.moveX(dashu, -250f, ani);
         yield return new WaitForSeconds(explosion);
         //off
         //this.GetComponent<BasicKartMove>().speed = 50;
-        icon1.SetActive(false);
+        //icon1.SetActive(false);
         boom.SetActive(false);
     }
     IEnumerator Lasso()//button x
@@ -122,7 +131,7 @@ public class TinkernTom : MonoBehaviour
         //off
 
         print("boop");
-        icon3.SetActive(false);
+        //icon3.SetActive(false);
         //tathrow.SetActive(false);
 
     }
@@ -136,8 +145,9 @@ public class TinkernTom : MonoBehaviour
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
-        icon2.SetActive(false); 
-        icon3.SetActive(false);
+        LeanTween.moveX(spuke, -250, ani);
+        //icon2.SetActive(false); 
+        //icon3.SetActive(false);
         tathrow.SetActive(false);
     }
 }

@@ -69,6 +69,7 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   speed: 1.5
+  targetTimer: 0
 --- !u!1 &2579661582452599790
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +137,7 @@ GameObject:
   - component: {fileID: 8968947585910426670}
   - component: {fileID: 8881961516528757320}
   - component: {fileID: 5088456514826667856}
+  - component: {fileID: 5088909954679777409}
   - component: {fileID: 1453899443}
   m_Layer: 11
   m_Name: NPCKart
@@ -297,7 +299,10 @@ MonoBehaviour:
   trail: {fileID: 0}
   quadMan: {fileID: 0}
   daball: {fileID: 0}
+  points: {fileID: 0}
   checkpoints: {fileID: 0}
+  checkpoints2: {fileID: 0}
+  checkpoints3: {fileID: 0}
   spawns: []
   ring1: {fileID: 0}
   ring2: {fileID: 0}
@@ -312,7 +317,10 @@ MonoBehaviour:
   isPlayer1: 0
   isPlayer2: 1
   endlessMode: 1
---- !u!114 &1453899443
+  bob: 0
+  first: 0
+  vCam: {fileID: 0}
+--- !u!114 &5088909954679777409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,12 +329,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8968947585910426671}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7feb77a7907959942a1eb8d778228ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1453899443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968947585910426671}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01d15e8e7877634d8ac9be0c756c948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   target: {fileID: 0}
   speed: 10
+  targetTimer: 0
 --- !u!1001 &535639234613830536
 PrefabInstance:
   m_ObjectHideFlags: 0
