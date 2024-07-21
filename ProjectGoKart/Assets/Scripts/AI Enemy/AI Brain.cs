@@ -10,7 +10,7 @@ public class AIBrain : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float targetTimer;
 
-    HasBall hasBall;
+    public HasBall hasBall;
 
     // Update is called once per frame
     void Update()
@@ -26,15 +26,37 @@ public class AIBrain : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             transform.forward = target.transform.position - transform.position;
         }
+
+        if (hasBall.gameObject.GetComponent<HasBall>().hasBall == true)
+        {
+            //target.gameObject = player.gameObject;
+            //pick a random number out of a list and follow it a round in a circle
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ball") jeff = false;
         else jeff = true;
-        
-        //if (other.tag. player) stop moving 
 
-        //if has the ball then try to score.
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player") StartCoroutine(Boing());
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player") speed = 5;
+    }
+
+    IEnumerator Boing()
+    {
+        yield return new WaitForSeconds(1);
+        speed = 0;
+        yield return new WaitForSeconds(3);
+        speed = 5;
     }
 }

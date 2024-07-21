@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pause;
     public GameObject resumeButton;
+    public GameObject errorPage;
 
     // Update is called once per frame
     void Update()
@@ -17,7 +18,14 @@ public class PauseMenu : MonoBehaviour
         {
             pause.SetActive(true);
             EventSystem.current.SetSelectedGameObject(resumeButton);
+            //errorPage.SetActive(false);
         }
+        //else
+        //{
+        //    //Time.deltaTime{ 0
+        //    errorPage.SetActive(true);
+        //} //this should bring up an error
+        //if (Gamepad.current.) ;//errorPage = deactive;
     }
 
     public void Resume()
