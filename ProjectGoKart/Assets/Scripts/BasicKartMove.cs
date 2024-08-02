@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -89,11 +90,26 @@ public class BasicKartMove : MonoBehaviour
     {
         body.AddForce(transform.forward * currentSpeed1, ForceMode.Acceleration);
         body2.AddForce(transform.forward * currentSpeed2, ForceMode.Acceleration);
-        
 
+        //thanks to Toyful Games on Youtube for the code
+        //if (rayDidHit)
+        //{
+        //    Vector3 springDir = tireTransform.up;
+
+        //    Vector3 tireWorldVel = carRidgidBody.GetPointVelocity(tireTransform.position);
+
+        //    float offset = suspensionResDist - tireRay.distiance;
+
+        //    float vel = Vector3.Dot(springDir, tireWorldVel);
+
+        //    float force = (offset * spingStrength) - (vel - springDamper);
+
+        //    carRigidBody.AddForceAtPosition(springDir * force, tireTransform.position);
+        //}
 
     }
 
+    
     private void Drive()
     {
         //currentSpeed = forwardAmount *= speed;
