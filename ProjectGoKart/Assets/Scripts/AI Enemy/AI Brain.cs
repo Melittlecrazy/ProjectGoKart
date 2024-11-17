@@ -31,6 +31,7 @@ public class AIBrain : MonoBehaviour
         {
             //target.gameObject = player.gameObject;
             //pick a random number out of a list and follow it a round in a circle
+            //hasBall.gameObject.GetComponent<HasBall>().point2 = hasBall.gameObject.GetComponent<HasBall>().point2 + 1;
         }
     }
 

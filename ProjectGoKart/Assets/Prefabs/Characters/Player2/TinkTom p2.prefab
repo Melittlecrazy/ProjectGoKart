@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp: 0
+  dash: 0
   datime: 0
   explosion: 0
   tathrow: {fileID: 0}
@@ -534,6 +535,9 @@ MonoBehaviour:
   icon3: {fileID: 0}
   isPlayer1: 0
   isPlayer2: 1
+  dashu: {fileID: 0}
+  spuke: {fileID: 0}
+  ani: 0
 --- !u!54 &8168023429234987608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -582,7 +586,7 @@ MonoBehaviour:
   currentSpeed2: 0
   speed: 50
   deeps: 1
-  turnSpeed: 100
+  turnSpeed: 200
   canDash: 1
   isDashing: 0
   dashSpeed: 0
@@ -607,7 +611,10 @@ MonoBehaviour:
   trail: {fileID: 0}
   quadMan: {fileID: 0}
   daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+  points: {fileID: 0}
   checkpoints: {fileID: 0}
+  checkpoints2: {fileID: 0}
+  checkpoints3: {fileID: 0}
   spawns: []
   ring1: {fileID: 0}
   ring2: {fileID: 0}
@@ -622,6 +629,9 @@ MonoBehaviour:
   isPlayer1: 1
   isPlayer2: 0
   endlessMode: 1
+  bob: 0
+  first: 0
+  vCam: {fileID: 0}
 --- !u!114 &3653139061040694950
 MonoBehaviour:
   m_ObjectHideFlags: 0

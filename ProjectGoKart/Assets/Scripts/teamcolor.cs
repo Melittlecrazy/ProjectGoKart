@@ -47,7 +47,7 @@ public class teamcolor : MonoBehaviour
 
         if (!p2activated)
         {
-            if (other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<HasBall>().hasBall == true)
+            if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<HasBall>().hasBall == true)
             {
                 kart.material.color = Color.blue;
                 p2activated = true;

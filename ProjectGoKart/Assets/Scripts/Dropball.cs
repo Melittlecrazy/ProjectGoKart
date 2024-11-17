@@ -9,7 +9,7 @@ public class Dropball : MonoBehaviour
     [SerializeField] GameObject bob;
     //public HasBall hasball;
 
-    public GameObject arrow;
+    //public GameObject arrow;
     bool tut;
 
     void Start()
@@ -39,7 +39,7 @@ public class Dropball : MonoBehaviour
         if ((col.gameObject.tag == "Enemy" && tut==false)|| (col.gameObject.tag == "Player" && tut==false))
         {
             col.gameObject.GetComponent<HasBall>().hasBall = true;
-            StartCoroutine(Arrowed());
+            //StartCoroutine(Arrowed());
             tut = true;
         }
     }
@@ -60,12 +60,12 @@ public class Dropball : MonoBehaviour
         
     }
 
-        IEnumerator Arrowed()
-    {
-        arrow.SetActive(true);
-        yield return new WaitForSeconds(3);
-        arrow.SetActive(false);
-    }
+    //    IEnumerator Arrowed()
+    //{
+    //    arrow.SetActive(true);
+    //    yield return new WaitForSeconds(3);
+    //    arrow.SetActive(false);
+    //}
 
 
 }

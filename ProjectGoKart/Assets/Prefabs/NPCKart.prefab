@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1453899443}
   m_Layer: 11
   m_Name: NPCKart
-  m_TagString: Enemy
+  m_TagString: AI Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 0
   targetTimer: 0
+  hasBall: {fileID: 0}
 --- !u!114 &1453899443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +318,10 @@ PrefabInstance:
     - target: {fileID: 433207558050329520, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433207558050329520, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2021936221420201084, guid: 82890f4cfd1944c47a7a840535b1c955, type: 3}
       propertyPath: icon1
@@ -561,6 +566,10 @@ PrefabInstance:
     - target: {fileID: 2565862463641833513, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565862463641833513, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3405153849596144106, guid: fc42b62bab45c4c468735dc46090da5e, type: 3}
       propertyPath: m_VersionIndex
@@ -825,6 +834,10 @@ PrefabInstance:
     - target: {fileID: 3178045034627474142, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178045034627474142, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3336222457276893856, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_Materials.Array.data[0]

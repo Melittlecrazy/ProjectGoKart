@@ -561,6 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp: 0
+  dash: 0
   datime: 0
   explosion: 0
   tathrow: {fileID: 0}
@@ -570,6 +571,9 @@ MonoBehaviour:
   icon3: {fileID: 0}
   isPlayer1: 1
   isPlayer2: 0
+  dashu: {fileID: 0}
+  spuke: {fileID: 0}
+  ani: 0
 --- !u!54 &810741543100340920
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -618,7 +622,7 @@ MonoBehaviour:
   currentSpeed2: 0
   speed: 69
   deeps: 1
-  turnSpeed: 150
+  turnSpeed: 200
   canDash: 1
   isDashing: 0
   dashSpeed: 0
@@ -643,7 +647,10 @@ MonoBehaviour:
   trail: {fileID: 0}
   quadMan: {fileID: 0}
   daball: {fileID: 2100000, guid: e3d0dfa6682e1f34e8432c7d0bb4d139, type: 2}
+  points: {fileID: 0}
   checkpoints: {fileID: 0}
+  checkpoints2: {fileID: 0}
+  checkpoints3: {fileID: 0}
   spawns: []
   ring1: {fileID: 0}
   ring2: {fileID: 0}
@@ -658,6 +665,9 @@ MonoBehaviour:
   isPlayer1: 1
   isPlayer2: 0
   endlessMode: 1
+  bob: 0
+  first: 0
+  vCam: {fileID: 0}
 --- !u!114 &5356371975380871648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,8 +784,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4002407136292822188}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10521498, y: -0, z: -0, w: 0.9944495}
-  m_LocalPosition: {x: 0, y: 1.7, z: -5}
+  m_LocalRotation: {x: 0.10521504, y: -0, z: -0, w: 0.9944495}
+  m_LocalPosition: {x: 0, y: 1.7, z: -4.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -959,6 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715108079343001051}
   - component: {fileID: 6741590936940596841}
+  - component: {fileID: 7734675561211914580}
   m_Layer: 3
   m_Name: spew
   m_TagString: Untagged
@@ -974,13 +985,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5805481572534861748}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3024531, y: 0, z: 0, w: 0.9531643}
-  m_LocalPosition: {x: 0, y: 0.611, z: -0.527}
+  m_LocalRotation: {x: -0.38590598, y: 0, z: 0, w: 0.92253816}
+  m_LocalPosition: {x: 0, y: 1.19, z: -2.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7879841235319601981}
-  m_LocalEulerAnglesHint: {x: -35.21, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45.4, y: 0, z: 0}
 --- !u!114 &6741590936940596841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1013,27 @@ MonoBehaviour:
   - {fileID: 984526266126239938, guid: 92ab7832356c4824594baf583d60d0a8, type: 3}
   fireplace: {fileID: 1715108079343001051}
   daforce: 2
+--- !u!65 &7734675561211914580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805481572534861748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 136
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.52005637, z: 1}
+  m_Center: {x: 0, y: -0.3404704, z: -0.00000005991418}
 --- !u!1 &8579029814817385197
 GameObject:
   m_ObjectHideFlags: 0
