@@ -24,10 +24,11 @@ public class TinkernTom : MonoBehaviour
         if (other.tag == "PowerUp" && enoughSlices == true) { powerUp = powerUp + 1; }
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if (powerUp == 0) { LeanTween.moveX(spuke, -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
+        if (powerUp == 0) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
         if (dash ==0) { StartCoroutine(Always()); }
         if (dash >= 2) 
         {
@@ -66,12 +67,12 @@ public class TinkernTom : MonoBehaviour
         //        }
         //    }
         //}
-        if (powerUp == 1) { LeanTween.moveX(spuke, -125, 3); }
+        if (powerUp == 1) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -125, ani); }
         if (powerUp == 2)
         {
             //icon3.SetActive(true);
             enoughSlices = false;
-            LeanTween.moveX(spuke, 0, ani);
+            LeanTween.moveX(spuke.GetComponent<RectTransform>(), 0, ani);
             if (isPlayer1 == true)
             {
                 if (Input.GetAxis("Tier2") == 1)
@@ -98,10 +99,10 @@ public class TinkernTom : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         dash = 1;
-        LeanTween.moveX(dashu,-125f,ani);
+        LeanTween.moveX(dashu.GetComponent<RectTransform>(), -125,ani);
         yield return new WaitForSeconds(3);
         dash = 2;
-        LeanTween.moveX(dashu, 0, ani);
+        LeanTween.moveX(dashu.GetComponent<RectTransform>(), 0, ani);
     }
     IEnumerator Passive()//Button RB
     {
@@ -111,7 +112,7 @@ public class TinkernTom : MonoBehaviour
         dash = dash - 2;
         StartCoroutine(this.GetComponent<BasicKartMove>().Dash());
         enoughSlices = true;
-        LeanTween.moveX(dashu, -250f, ani);
+        LeanTween.moveX(dashu.GetComponent<RectTransform>(), -250f, ani);
         yield return new WaitForSeconds(explosion);
         //off
         //this.GetComponent<BasicKartMove>().speed = 50;
@@ -145,7 +146,7 @@ public class TinkernTom : MonoBehaviour
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
-        LeanTween.moveX(spuke, -250, ani);
+        LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani);
         //icon2.SetActive(false); 
         //icon3.SetActive(false);
         tathrow.SetActive(false);
