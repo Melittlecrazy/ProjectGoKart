@@ -26,9 +26,9 @@ public class TinkernTom : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (powerUp == 0) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
+        //if (powerUp == 0) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
         if (dash ==0) { StartCoroutine(Always()); }
         if (dash >= 2) 
         {

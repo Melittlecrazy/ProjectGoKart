@@ -9913,6 +9913,11 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
+--- !u!54 &1718444058 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1252841643638414606, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+  m_PrefabInstance: {fileID: 7672351925707231845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724546912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8609773242726818244, guid: ff5e7fa660c217d42bc455ff9ab41b08, type: 3}
@@ -13861,6 +13866,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 4922307602321618113, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922307602321618113, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922307602321618113, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922307602321618113, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922307602321618113, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5237834772389150291, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -13923,7 +13948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801760621831209857, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
       propertyPath: ani
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5801760621831209857, guid: da22f4a53bf8e504196f10a3293d11e7, type: 3}
       propertyPath: boom
@@ -14276,7 +14301,7 @@ PrefabInstance:
     - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: body2
       value: 
-      objectReference: {fileID: 6649388855169737977}
+      objectReference: {fileID: 1718444058}
     - target: {fileID: 2700565291024311428, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: speed
       value: 50
