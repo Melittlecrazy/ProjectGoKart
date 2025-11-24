@@ -99,7 +99,7 @@ public class HasBall : MonoBehaviour
 
             if (endlessMode == false)
             {
-                if (point1 == 4)
+                if (point1 >= 4)
                 {
                     score1.text = "WIN";
                     ring3.GetComponent<Renderer>().material.color = Color.red;
@@ -115,9 +115,9 @@ public class HasBall : MonoBehaviour
         //}
 
         if (point1 == 2 && point2 == 2)
-        { point1 = 2.5f; point2 = 2.5f; }
-            if (point1 == 2.5 && point2 == 2.5f)
-                { 
+        { //point1 = 2.5f; point2 = 2.5f; }
+            //if (point1 == 2.5 && point2 == 2.5f)
+                //{ 
                     checkpoints.SetActive(true);
                     checkpoints2.SetActive(false);
                     checkpoints3.SetActive(false);
@@ -127,9 +127,9 @@ public class HasBall : MonoBehaviour
                     checkpoints.transform.localScale = scaleChange;
                 }
         if (point1 == 3 && point2 == 3)
-        { point1 = 3.5f; point2 = 3.5f; }
-        if (point1 == 3.5f && point2 == 3.5f)
-                {
+        { //point1 = 3.5f; point2 = 3.5f; }
+       // if (point1 == 3.5f && point2 == 3.5f)
+                //{
                     checkpoints.SetActive(true);
                     checkpoints2.SetActive(false);
                     checkpoints3.SetActive(false);
@@ -163,7 +163,7 @@ public class HasBall : MonoBehaviour
             }
             if (endlessMode == false)
             {
-                if (point2 == 4)
+                if (point2 >= 4)
                 {
                     score2.text = "WIN";
                     ring3.GetComponent<Renderer>().material.color = Color.blue;
