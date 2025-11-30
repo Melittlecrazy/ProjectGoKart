@@ -161,7 +161,7 @@ public class BasicKartMove : MonoBehaviour
                 StartCoroutine(Stun());
             }
         }
-        return null;
+        yield return new WaitForSeconds(3);
     }
     IEnumerator Stun()
     {
