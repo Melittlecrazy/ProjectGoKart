@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
         if (Gamepad.current.startButton.isPressed)
         {
             pause.SetActive(true);
+            Time.timeScale = 0f;
             EventSystem.current.SetSelectedGameObject(resumeButton);
             //errorPage.SetActive(false);
         }
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pause.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 
