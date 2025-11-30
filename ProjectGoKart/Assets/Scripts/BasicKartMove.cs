@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -140,8 +141,28 @@ public class BasicKartMove : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Tool") StartCoroutine(Stun());
+        if (col.gameObject.tag == "Player") StartCoroutine(PlayerCrash(col.gameObject));
     }
 
+    IEnumerator PlayerCrash(GameObject kart)
+    {
+        BasicKartMove script = kart.GetComponent<BasicKartMove>();
+        if(isPlayer1 == true)
+        {
+            if (currentSpeed1 < script.currentSpeed2)
+            {
+                StartCoroutine(Stun());
+            }
+        } 
+        if (isPlayer2 == true)
+        {
+            if (currentSpeed2 < script.currentSpeed1)
+            {
+                StartCoroutine(Stun());
+            }
+        }
+        return null;
+    }
     IEnumerator Stun()
     {
         if (isPlayer1 == true) speed = 0;
