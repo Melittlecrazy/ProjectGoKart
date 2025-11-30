@@ -141,7 +141,7 @@ public class BasicKartMove : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Tool") StartCoroutine(Stun());
-        if (col.gameObject.tag == "Player") StartCoroutine(PlayerCrash(col.gameObject));
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy") StartCoroutine(PlayerCrash(col.gameObject));
     }
 
     IEnumerator PlayerCrash(GameObject kart)
