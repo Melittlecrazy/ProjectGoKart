@@ -246,7 +246,7 @@ Material:
     - _shadow_brightness: 0.5
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.78039217}
-    - _Color: {r: 1, g: 1, b: 1, a: 0.78039217}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0.09362746, g: 0.09362746, b: 0.09362746, a: 1}
     - _FaceFrontDirection: {r: 0, g: 0, b: 1, a: 0}
     - _FaceRightDirection: {r: 1, g: 0, b: 0, a: 0}

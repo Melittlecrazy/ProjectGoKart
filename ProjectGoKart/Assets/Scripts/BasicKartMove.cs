@@ -11,11 +11,11 @@ using UnityEngine.InputSystem.XInput;
 
 public class BasicKartMove : MonoBehaviour
 {
-    [SerializeField] private Rigidbody body,body2;
+    [SerializeField] private Rigidbody body, body2;
     [SerializeField] private LayerMask ground;
 
     PlayerManager playerManager;
-    
+
     private float forwardAmount;
     public float currentSpeed1, currentSpeed2;
     [SerializeField] public float speed;
@@ -27,10 +27,12 @@ public class BasicKartMove : MonoBehaviour
     [SerializeField] private bool isDashing;
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
-    
-    public bool isPlayer1,isPlayer2;
 
-    public int stun;
+    [SerializeField] private GameObject stunEffect;
+    public bool isPlayer1, isPlayer2;
+
+    public float stun;
+    private bool isStunned = false;
 
     private void Start()
     {
@@ -40,8 +42,8 @@ public class BasicKartMove : MonoBehaviour
 
     private void Update()
     {
-        
-        
+
+
 
         //forwardAmount = Input.GetAxis("Vertical");
 
@@ -49,13 +51,13 @@ public class BasicKartMove : MonoBehaviour
         //string joystickName = Input.GetJoystickNames().First();
         //if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space)) Drive();
 
-        if (isPlayer1 == true )//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
+        if (isPlayer1 == true)//&& playerManager.controllerTypeConnected == PlayerManager.ControllerTypeConnected.Xbox)
         {
             transform.position = body.transform.position;
             turnAmount = Input.GetAxis("Horizontal");
             if (Input.GetAxis("Go") > 0) Drive();
             else currentSpeed1 = 0f;
-            
+
 
             if (Input.GetAxis("Go1") > 0) DriveNowhere();
             //if (Gamepad.current.leftStick.left.) //Gamepad.current.buttonSouth.isPressed //Gamepad.current.buttonEast.isPressed
@@ -75,11 +77,11 @@ public class BasicKartMove : MonoBehaviour
             transform.position = body2.transform.position;
             turnAmount = Input.GetAxis("Horizontal2");
             if (Input.GetAxis("Jump") > 0) { currentSpeed2 = speed; }
-                //Drive();
+            //Drive();
             else currentSpeed2 = 0f;
 
             if (Input.GetAxis("Jump2") > 0) { currentSpeed2 = -speed * deeps; }
-                //DriveNowhere();
+            //DriveNowhere();
 
             //Input.GetKeyDown(KeyCode.LeftShift) 
             Turning();
@@ -110,24 +112,24 @@ public class BasicKartMove : MonoBehaviour
 
     }
 
-    
+
     private void Drive()
     {
         //currentSpeed = forwardAmount *= speed;
         currentSpeed1 = speed;
-        
+
     }
     void DriveNowhere()
     {
         currentSpeed1 = -speed * deeps;
-        
+
     }
     //This is for tighter controls, might add it later.
 
     void Turning()
     {
         float newRotation = turnAmount * turnSpeed * Time.deltaTime;
-        transform.Rotate(xAngle:0, yAngle:newRotation, zAngle:0, relativeTo:Space.World);
+        transform.Rotate(xAngle: 0, yAngle: newRotation, zAngle: 0, relativeTo: Space.World);
     }
     void GroundHandler()
     {
@@ -147,19 +149,18 @@ public class BasicKartMove : MonoBehaviour
     IEnumerator PlayerCrash(GameObject kart)
     {
         BasicKartMove script = kart.GetComponent<BasicKartMove>();
-        if(isPlayer1 == true)
+
+        if (currentSpeed1 < script.currentSpeed2 && isPlayer1 && !isStunned)
         {
-            if (currentSpeed1 < script.currentSpeed2)
-            {
-                StartCoroutine(Stun());
-            }
-        } 
-        if (isPlayer2 == true)
+            isStunned = true;
+            stunEffect.SetActive(true);
+            StartCoroutine(Stun());
+        }
+        if (currentSpeed2 < script.currentSpeed1 && isPlayer2 == true && !isStunned)
         {
-            if (currentSpeed2 < script.currentSpeed1)
-            {
-                StartCoroutine(Stun());
-            }
+            isStunned = true;
+            stunEffect.SetActive(true);
+            StartCoroutine(Stun());
         }
         yield return new WaitForSeconds(3);
     }
@@ -168,8 +169,18 @@ public class BasicKartMove : MonoBehaviour
         if (isPlayer1 == true) speed = 0;
         if (isPlayer2 == true) speed = 0;
         yield return new WaitForSeconds(stun);
-        if (isPlayer1 == true) speed = 50;
-        if (isPlayer2 == true) speed= 50;
+        if (isPlayer1 == true)
+        {
+            isStunned = false;
+            speed = 50;
+            stunEffect.SetActive(false);
+        }
+        if (isPlayer2 == true)
+        {
+            isStunned = false;
+            speed = 50;
+            stunEffect.SetActive(false);
+        }
     }
 
     public IEnumerator Dash()
@@ -177,16 +188,16 @@ public class BasicKartMove : MonoBehaviour
         float startTime = Time.time;
 
 
-        while(Time.time < startTime + dashTime)
+        while (Time.time < startTime + dashTime)
         {
             if (isPlayer1)
-            currentSpeed1 = speed * dashSpeed;
-            if(isPlayer2)
-            currentSpeed2 = speed * dashSpeed;
+                currentSpeed1 = speed * dashSpeed;
+            if (isPlayer2)
+                currentSpeed2 = speed * dashSpeed;
 
             yield return null;
-        } 
-        
-    
+        }
+
+
     }
 }

@@ -628,6 +628,7 @@ MonoBehaviour:
   isDashing: 0
   dashSpeed: 0
   dashTime: 0
+  stunEffect: {fileID: 791085863011080848}
   isPlayer1: 1
   isPlayer2: 0
   stun: 0
@@ -1569,11 +1570,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dizzy
       objectReference: {fileID: 0}
+    - target: {fileID: 7825585418599114180, guid: da2a8c8bcff4bdd44af80fdbf853e620, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da2a8c8bcff4bdd44af80fdbf853e620, type: 3}
+--- !u!1 &791085863011080848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825585418599114180, guid: da2a8c8bcff4bdd44af80fdbf853e620, type: 3}
+  m_PrefabInstance: {fileID: 7377054653802381140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7479189802700363010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 120466207293155926, guid: da2a8c8bcff4bdd44af80fdbf853e620, type: 3}
