@@ -6,6 +6,16 @@ It is in Unity 2022.2.1.
 
 The font used- Grape Soda : https://www.dafont.com/grapesoda-2.font
 
-### modelers 
-Sophie 
-Alexis Hays
+### People who worked on the game:
+
+Marc Gutierrez - Game Designer
+
+Alexis Hays - 2D artist/3D modeler
+
+Sophie Wimmer - 3D/VFX Artist
+
+Joshua Cheeffee - Programmer
+
+Adolfo Nava - Programmer
+
+a Soon Existent game.
