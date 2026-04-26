@@ -75,22 +75,22 @@ public class CDS : MonoBehaviour
     }
 
 
-    //private void OnCollisionEnter(Collision col)
-    //{
-    //    foreach (GameObject clown in clowns)
-    //    {
-    //        if(isPlayer1 == true)
-    //        {
-    //            if (col.gameObject.tag == "Enemy")
-    //            Instantiate(clown, box.transform.position, box.transform.rotation);
-    //        }
-    //        if (isPlayer2 == true)
-    //        {
-    //            if (col.gameObject.tag == "Player")
-    //            Instantiate(clown, box.transform.position, box.transform.rotation);
-    //        }
-    //    }
-    //}
+    private void OnCollisionEnter(Collision col)
+    {
+        foreach (GameObject clown in clowns)
+        {
+            if (isPlayer1 == true)
+            {
+                if (col.gameObject.tag == "Enemy")
+                    Instantiate(clown, box.transform.position, box.transform.rotation);
+            }
+            if (isPlayer2 == true)
+            {
+                if (col.gameObject.tag == "Player")
+                    Instantiate(clown, box.transform.position, box.transform.rotation);
+            }
+        }
+    }
     IEnumerator Always()
     {
         yield return new WaitForSeconds(3);
