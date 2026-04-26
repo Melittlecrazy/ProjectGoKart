@@ -39,5 +39,6 @@ public class PauseMenu : MonoBehaviour
     public void QuittoTitle()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 }
