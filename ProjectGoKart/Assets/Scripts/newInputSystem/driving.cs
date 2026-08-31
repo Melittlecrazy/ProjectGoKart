@@ -49,7 +49,7 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""name"": ""Turning"",
                     ""type"": ""Value"",
                     ""id"": ""cd172ec5-ef02-4fc8-8ea1-616b60d01c35"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -60,9 +60,9 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""f392d8d6-7982-4a8a-8e62-61e042a09a27"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Forward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -71,9 +71,9 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""82d5e91f-fd2c-4fae-80b0-107f383a2eb3"",
                     ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Backward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

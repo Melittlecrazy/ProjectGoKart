@@ -7,7 +7,7 @@ using UnityEngine.ProBuilder.Shapes;
 public class KArtDrive : MonoBehaviour
 {
     Driving driving;
-    Vector2 move;
+    Vector3 move;
     public Rigidbody rb;
     float currentSpeed;
     [SerializeField] float speed, turnAmount,turnSpeed;
@@ -76,13 +76,13 @@ public class KArtDrive : MonoBehaviour
     {
         driving.Drive.Forward.performed += cont =>
         {
-            currentSpeed = speed;
+            currentSpeed = speed * 5;
         };
 
-        driving.Drive.Forward.canceled += cont =>
-        {
-            currentSpeed = speed * 0;
-        };
+        //driving.Drive.Forward.canceled += cont =>
+        //{
+        //    currentSpeed = speed * 0;
+        //};
 
         //press.action.performed += cntxt => move = cntxt.ReadValue<Vector2>();
         //press.action.canceled += cntxt => move = Vector2.zero;
@@ -99,10 +99,10 @@ public class KArtDrive : MonoBehaviour
             currentSpeed = -speed;
         };
 
-        driving.Drive.Backward.canceled += cont =>
-        {
-            currentSpeed = 0;
-        };
+        //driving.Drive.Backward.canceled += cont =>
+        //{
+        //    currentSpeed = 0;
+        //};
 
 
     }
