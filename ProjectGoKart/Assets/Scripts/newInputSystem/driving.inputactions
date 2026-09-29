@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "driving",
     "maps": [
         {
@@ -9,19 +10,21 @@
                     "name": "Forward",
                     "type": "Button",
                     "id": "7e1f315d-99fd-4615-8130-4275eb10cb32",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": true
+                    "interactions": "Hold",
+                    "initialStateCheck": true,
+                    "priority": 0
                 },
                 {
                     "name": "Backward",
                     "type": "Button",
                     "id": "48ccca87-db6c-4eab-8e33-be81270794c4",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": true
+                    "interactions": "Hold",
+                    "initialStateCheck": true,
+                    "priority": 0
                 },
                 {
                     "name": "Turning",
@@ -30,7 +33,48 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "8f7e0326-3192-4197-aa85-16bab2b35cb7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Action 1",
+                    "type": "Button",
+                    "id": "2c7acca7-f8cc-43fc-b89c-03e75f8622b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "e3fe6bdd-55d5-48df-93b7-ca2a63616c7e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Action 2",
+                    "type": "Button",
+                    "id": "e754c364-6fdf-4cfb-b4e4-f1d38fdf8991",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -64,6 +108,50 @@
                     "processors": "",
                     "groups": "Xbox",
                     "action": "Turning",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2848fe9-ff8c-4582-a73b-021b45aeacef",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "164e583e-8847-4a79-9804-95c1a9413a70",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d18e9a50-a905-4121-ab4c-d705e8809945",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b44bfbad-6320-423b-8ab7-0a1fec3ea468",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

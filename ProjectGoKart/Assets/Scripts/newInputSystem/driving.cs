@@ -96,9 +96,9 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""name"": ""Forward"",
                     ""type"": ""Button"",
                     ""id"": ""7e1f315d-99fd-4615-8130-4275eb10cb32"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true,
                     ""priority"": 0
                 },
@@ -106,9 +106,9 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""name"": ""Backward"",
                     ""type"": ""Button"",
                     ""id"": ""48ccca87-db6c-4eab-8e33-be81270794c4"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true,
                     ""priority"": 0
                 },
@@ -120,6 +120,46 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f7e0326-3192-4197-aa85-16bab2b35cb7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Action 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c7acca7-f8cc-43fc-b89c-03e75f8622b0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3fe6bdd-55d5-48df-93b7-ca2a63616c7e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Action 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""e754c364-6fdf-4cfb-b4e4-f1d38fdf8991"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
                     ""priority"": 0
                 }
             ],
@@ -156,6 +196,50 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                     ""action"": ""Turning"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2848fe9-ff8c-4582-a73b-021b45aeacef"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""164e583e-8847-4a79-9804-95c1a9413a70"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d18e9a50-a905-4121-ab4c-d705e8809945"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b44bfbad-6320-423b-8ab7-0a1fec3ea468"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -179,6 +263,10 @@ public partial class @Driving: IInputActionCollection2, IDisposable
         m_Drive_Forward = m_Drive.FindAction("Forward", throwIfNotFound: true);
         m_Drive_Backward = m_Drive.FindAction("Backward", throwIfNotFound: true);
         m_Drive_Turning = m_Drive.FindAction("Turning", throwIfNotFound: true);
+        m_Drive_Pause = m_Drive.FindAction("Pause", throwIfNotFound: true);
+        m_Drive_Action1 = m_Drive.FindAction("Action 1", throwIfNotFound: true);
+        m_Drive_Dash = m_Drive.FindAction("Dash", throwIfNotFound: true);
+        m_Drive_Action2 = m_Drive.FindAction("Action 2", throwIfNotFound: true);
     }
 
     ~@Driving()
@@ -262,6 +350,10 @@ public partial class @Driving: IInputActionCollection2, IDisposable
     private readonly InputAction m_Drive_Forward;
     private readonly InputAction m_Drive_Backward;
     private readonly InputAction m_Drive_Turning;
+    private readonly InputAction m_Drive_Pause;
+    private readonly InputAction m_Drive_Action1;
+    private readonly InputAction m_Drive_Dash;
+    private readonly InputAction m_Drive_Action2;
     /// <summary>
     /// Provides access to input actions defined in input action map "Drive".
     /// </summary>
@@ -285,6 +377,22 @@ public partial class @Driving: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Drive/Turning".
         /// </summary>
         public InputAction @Turning => m_Wrapper.m_Drive_Turning;
+        /// <summary>
+        /// Provides access to the underlying input action "Drive/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Drive_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Drive/Action1".
+        /// </summary>
+        public InputAction @Action1 => m_Wrapper.m_Drive_Action1;
+        /// <summary>
+        /// Provides access to the underlying input action "Drive/Dash".
+        /// </summary>
+        public InputAction @Dash => m_Wrapper.m_Drive_Dash;
+        /// <summary>
+        /// Provides access to the underlying input action "Drive/Action2".
+        /// </summary>
+        public InputAction @Action2 => m_Wrapper.m_Drive_Action2;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -320,6 +428,18 @@ public partial class @Driving: IInputActionCollection2, IDisposable
             @Turning.started += instance.OnTurning;
             @Turning.performed += instance.OnTurning;
             @Turning.canceled += instance.OnTurning;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Action1.started += instance.OnAction1;
+            @Action1.performed += instance.OnAction1;
+            @Action1.canceled += instance.OnAction1;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+            @Action2.started += instance.OnAction2;
+            @Action2.performed += instance.OnAction2;
+            @Action2.canceled += instance.OnAction2;
         }
 
         /// <summary>
@@ -340,6 +460,18 @@ public partial class @Driving: IInputActionCollection2, IDisposable
             @Turning.started -= instance.OnTurning;
             @Turning.performed -= instance.OnTurning;
             @Turning.canceled -= instance.OnTurning;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Action1.started -= instance.OnAction1;
+            @Action1.performed -= instance.OnAction1;
+            @Action1.canceled -= instance.OnAction1;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+            @Action2.started -= instance.OnAction2;
+            @Action2.performed -= instance.OnAction2;
+            @Action2.canceled -= instance.OnAction2;
         }
 
         /// <summary>
@@ -414,5 +546,33 @@ public partial class @Driving: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTurning(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Action 1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAction1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Dash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Action 2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAction2(InputAction.CallbackContext context);
     }
 }
