@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class NewInputDriving : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float speed, turnSpeed;
     Rigidbody rb;
     private bool isAccelerating,isReversing;
     private Vector2 moveInput;
@@ -13,13 +13,15 @@ public class NewInputDriving : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody>();
+        //moveInput = new Vector2(0,0);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
         Debug.Log($"Move Input: {moveInput}");
-
+        //var rotate = moveInput.Player
+        //transform.Rotate.y = moveInput;
     }
 
     public void OnForward(InputAction.CallbackContext context)
@@ -56,5 +58,14 @@ public class NewInputDriving : MonoBehaviour
         {
             rb.AddForce(transform.forward * -speed, ForceMode.Acceleration);
         }
+        if (moveInput.x > 0)
+        {
+            transform.Rotate(new Vector2(0, turnSpeed));
+        }
+        if (moveInput.x < 0)
+        {
+            transform.Rotate(new Vector2(0,-turnSpeed));
+        }
+
     }
 }
