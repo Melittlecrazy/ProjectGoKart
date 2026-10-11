@@ -3663,7 +3663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6741590936940596841, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: tools.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6741590936940596841, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: 'tools.Array.data[0]'
@@ -3673,6 +3673,10 @@ PrefabInstance:
       propertyPath: 'tools.Array.data[5]'
       value: 
       objectReference: {fileID: 984526266126239938, guid: 92ab7832356c4824594baf583d60d0a8, type: 3}
+    - target: {fileID: 6741590936940596841, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
+      propertyPath: 'tools.Array.data[6]'
+      value: 
+      objectReference: {fileID: 4666782974662746236, guid: baefb887a159bf041a66799b7f8d3df7, type: 3}
     - target: {fileID: 6911147455057692481, guid: a9e8283c08cd790458ec62dc2bf927e8, type: 3}
       propertyPath: m_Mesh
       value: 
