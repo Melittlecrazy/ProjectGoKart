@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 
@@ -14,7 +15,7 @@ public class TinkernTom : MonoBehaviour
 
     public bool isPlayer1,isPlayer2;
 
-    private BasicKartMove kart;
+    public NewInputDriving kart;
 
     public GameObject dashu, spuke;
 
@@ -23,32 +24,44 @@ public class TinkernTom : MonoBehaviour
     {
         if (other.tag == "PowerUp" && enoughSlices == true) { powerUp = powerUp + 1; }
     }
+    private void Start()
+    {
+        kart = GetComponent<NewInputDriving>();
+    }
 
-
+    public void OnPowerOne(InputAction.CallbackContext context)
+    {
+        if (context.started) Debug.Log($"Boom");
+    }
+    public void OnPowerTwo(InputAction.CallbackContext context)
+    {
+        if (context.started) Debug.Log($"You see me?");
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         //if (powerUp == 0) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani); }//icon1.SetActive(false); icon2.SetActive(false); icon3.SetActive(false); }
-        if (dash ==0) { StartCoroutine(Always()); }
-        if (dash >= 2) 
-        {
-            //LeanTween.moveX(dashu, 0, 1);
-            if (isPlayer1 == true)
-            {
-                if (Input.GetAxis("Dash") > 0)
-                {
-                    StartCoroutine(Passive());
-                }
-            }
-            if (isPlayer2 == true)
-            {
-                if (Input.GetAxis("Passive2") == 1)
-                {
-                    StartCoroutine(Passive());
-                }
-            }
-        }
-        //if (powerUp >= 4) 
+        if (dash == 0) { StartCoroutine(Always()); }
+        //if (dash >= 2) 
+        //{
+        //    //LeanTween.moveX(dashu, 0, 1);
+        //    if (isPlayer1 == true)
+        //    {
+        //       if (Input.GetAxis("Dash") > 0)
+        //        {
+        //            StartCoroutine(Passive());
+        //        }
+        //    }
+        //    //if (InputAction.)
+        //    if (isPlayer2 == true)
+        //    {
+        //        if (Input.GetAxis("Passive2") == 1)
+        //        {
+        //            StartCoroutine(Passive());
+        //        }
+        //    }
+        //}
+        //if (powerUp >= 4) for 2nd power up
         //{ 
         //    icon2.SetActive(true);
 
@@ -67,12 +80,12 @@ public class TinkernTom : MonoBehaviour
         //        }
         //    }
         //}
-        if (powerUp == 1) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -125, ani); }
+        //if (powerUp == 1) { LeanTween.moveX(spuke.GetComponent<RectTransform>(), -125, ani); }
         if (powerUp == 2)
         {
             //icon3.SetActive(true);
             enoughSlices = false;
-            LeanTween.moveX(spuke.GetComponent<RectTransform>(), 0, ani);
+            //LeanTween.moveX(spuke.GetComponent<RectTransform>(), 0, ani);
             if (isPlayer1 == true)
             {
                 if (Input.GetAxis("Tier2") == 1)
@@ -99,25 +112,26 @@ public class TinkernTom : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         dash = 1;
-        LeanTween.moveX(dashu.GetComponent<RectTransform>(), -125,ani);
+        //LeanTween.moveX(dashu.GetComponent<RectTransform>(), -125,ani);
         yield return new WaitForSeconds(3);
         dash = 2;
-        LeanTween.moveX(dashu.GetComponent<RectTransform>(), 0, ani);
+        //LeanTween.moveX(dashu.GetComponent<RectTransform>(), 0, ani);
     }
-    IEnumerator Passive()//Button RB
+    public IEnumerator Passive()//Button RB
     {
 
         //on
         boom.SetActive(true);
         dash = dash - 2;
-        StartCoroutine(this.GetComponent<BasicKartMove>().Dash());
+        StartCoroutine(this.GetComponent<NewInputDriving>().Dash());
         enoughSlices = true;
-        LeanTween.moveX(dashu.GetComponent<RectTransform>(), -250f, ani);
+        //LeanTween.moveX(dashu.GetComponent<RectTransform>(), -250f, ani);
         yield return new WaitForSeconds(explosion);
         //off
         //this.GetComponent<BasicKartMove>().speed = 50;
         //icon1.SetActive(false);
         boom.SetActive(false);
+        this.GetComponent<NewInputDriving>().currentSpeed1 = this.GetComponent<NewInputDriving>().speed;
     }
     IEnumerator Lasso()//button x
     {
@@ -146,7 +160,7 @@ public class TinkernTom : MonoBehaviour
         enoughSlices = true;
         yield return new WaitForSeconds(datime);
         //off
-        LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani);
+        //LeanTween.moveX(spuke.GetComponent<RectTransform>(), -250, ani);
         //icon2.SetActive(false); 
         //icon3.SetActive(false);
         tathrow.SetActive(false);

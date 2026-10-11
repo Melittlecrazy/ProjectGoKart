@@ -7,7 +7,7 @@ public class AIBrain : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject target;
     bool jeff;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed, turnspeed;
     [SerializeField] private float targetTimer;
 
     public HasBall hasBall;

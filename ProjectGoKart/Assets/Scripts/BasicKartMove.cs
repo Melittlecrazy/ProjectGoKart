@@ -141,7 +141,7 @@ public class BasicKartMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Tool") StartCoroutine(Stun());
+        //if (col.gameObject.tag == "Tool") StartCoroutine(Stun());
         if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy" || col.gameObject.tag == "AI Enemy") StartCoroutine(PlayerCrash(col.gameObject));
     }
 
@@ -153,34 +153,34 @@ public class BasicKartMove : MonoBehaviour
         {
             isStunned = true;
             stunEffect.SetActive(true);
-            StartCoroutine(Stun());
+            //StartCoroutine(Stun());
         }
         if (currentSpeed2 < script.currentSpeed1 && isPlayer2 == true && !isStunned)
         {
             isStunned = true;
             stunEffect.SetActive(true);
-            StartCoroutine(Stun());
+            //StartCoroutine(Stun());
         }
         yield return new WaitForSeconds(3);
     }
-    IEnumerator Stun()
-    {
-        if (isPlayer1 == true) speed = 0;
-        if (isPlayer2 == true) speed = 0;
-        yield return new WaitForSeconds(stun);
-        if (isPlayer1 == true)
-        {
-            isStunned = false;
-            speed = 50;
-            stunEffect.SetActive(false);
-        }
-        if (isPlayer2 == true)
-        {
-            isStunned = false;
-            speed = 50;
-            stunEffect.SetActive(false);
-        }
-    }
+    //IEnumerator Stun()
+    //{
+    //    if (isPlayer1 == true) speed = 0;
+    //    if (isPlayer2 == true) speed = 0;
+    //    yield return new WaitForSeconds(stun);
+    //    if (isPlayer1 == true)
+    //    {
+    //        isStunned = false;
+    //        speed = 50;
+    //        stunEffect.SetActive(false);
+    //    }
+    //    if (isPlayer2 == true)
+    //    {
+    //        isStunned = false;
+    //        speed = 50;
+    //        stunEffect.SetActive(false);
+    //    }
+    //}
 
     public IEnumerator Dash()
     {

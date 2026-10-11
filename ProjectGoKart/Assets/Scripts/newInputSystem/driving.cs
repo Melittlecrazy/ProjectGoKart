@@ -210,8 +210,8 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""164e583e-8847-4a79-9804-95c1a9413a70"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""id"": ""b44bfbad-6320-423b-8ab7-0a1fec3ea468"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -221,23 +221,23 @@ public partial class @Driving: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d18e9a50-a905-4121-ab4c-d705e8809945"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""id"": ""164e583e-8847-4a79-9804-95c1a9413a70"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""Action 2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b44bfbad-6320-423b-8ab7-0a1fec3ea468"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""d18e9a50-a905-4121-ab4c-d705e8809945"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Action 2"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
