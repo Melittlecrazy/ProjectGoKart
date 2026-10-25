@@ -9,6 +9,7 @@ public class NewInputDriving : MonoBehaviour
     Rigidbody rb;
     private bool isAccelerating,isReversing;
     private Vector2 moveInput;
+    public GameObject pauseMenu;
 
     //for knockback, I think
     public float currentSpeed1, currentSpeed2;
@@ -80,7 +81,8 @@ public class NewInputDriving : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.started) Debug.Log($"Pause");
+        if (context.started) pauseMenu.GetComponent<PauseMenu>().Pause();
+        
     }
     void FixedUpdate()
     {
