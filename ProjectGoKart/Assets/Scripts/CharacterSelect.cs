@@ -8,7 +8,10 @@ public class CharacterSelect : MonoBehaviour
 {
     public GameObject[] characters1, characters2; 
     public int selectedCharacter1 = 0, selectedCharacter2 = 0;
-    string single = "TitleScreen",p1 = "SinglePlayer",p2 = "Track1";
+    string single = "TitleScreen",p1 = "SinglePlayer",p2 = "Track2";
+
+    //open character select
+    //public GameObject p1Models, p2Models, titleCard;
 
     public void NextCharacter()
     {
@@ -45,6 +48,8 @@ public class CharacterSelect : MonoBehaviour
     {
         PlayerPrefs.SetInt("selectedCharacter1", selectedCharacter1);
         SceneManager.LoadScene(p1);
+        //titleCard.SetActive(false);
+        //p1Models.SetActive(true);
     }
 
     public void OnMult()
@@ -52,6 +57,9 @@ public class CharacterSelect : MonoBehaviour
         PlayerPrefs.SetInt("selectedCharacter1", selectedCharacter1);
         PlayerPrefs.SetInt("selectedCharacter2", selectedCharacter2);
         SceneManager.LoadScene(p2);
+        //titleCard.SetActive(false);
+        //p1Models.SetActive(true);
+        //p2Models.SetActive(true);
     }
     public void Back()
     {

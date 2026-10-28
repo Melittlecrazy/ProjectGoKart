@@ -81,7 +81,7 @@ public class NewInputDriving : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.started) pauseMenu.GetComponent<PauseMenu>().Pause();
+        if (context.started) pauseMenu.GetComponent<PauseMenu>().StartCoroutine(pauseMenu.GetComponent<PauseMenu>().Pause());
         
     }
     void FixedUpdate()

@@ -13,10 +13,16 @@ public class titleScreenstuff : MonoBehaviour
     public GameObject title,singleP,multiP, multiCam,singlecam;
     public bool sin,mul;
 
+    //open character select
+    public GameObject p1Models, p2Models, titleCard;
+
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(button);
+        titleCard.SetActive(true);
+        p1Models.SetActive(false);
+        p2Models.SetActive(false);
     }
     public void StartGame() 
     {
@@ -37,6 +43,8 @@ public class titleScreenstuff : MonoBehaviour
         singlecam.SetActive(true);
 
         sin = true;
+        titleCard.SetActive(false);
+        p1Models.SetActive(true);
     }
 
     public void Multi()
@@ -47,6 +55,9 @@ public class titleScreenstuff : MonoBehaviour
         multiCam.SetActive(true);
 
         mul = true;
+        titleCard.SetActive(false);
+        p1Models.SetActive(true);
+        p2Models.SetActive(true);
     }
 
     public void Credits()

@@ -22,12 +22,15 @@ public class PauseMenu : MonoBehaviour
         //if (Gamepad.current.) ;//errorPage = deactive;
     }
 
-    public void Pause()
+    public IEnumerator Pause()
     {
-           pause.SetActive(true);
-            Time.timeScale = 0f;
-        eventSystem.SetSelectedGameObject(resumeButton);
-            //current.;
+        pause.SetActive(true);
+        Time.timeScale = 0f;
+        //eventSystem.
+        yield return new WaitForSeconds(0);
+        //EventSystem.current.SetSelectedGameObject(;
+        EventSystem.current.firstSelectedGameObject = resumeButton;
+        //current.;
         //errorPage.SetActive(false);
         //EventSystem.current.m_FirstSelected.SetActive(true);
     }
