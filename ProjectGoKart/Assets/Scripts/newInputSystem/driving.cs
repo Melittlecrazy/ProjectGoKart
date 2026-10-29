@@ -249,7 +249,7 @@ public partial class @Driving: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Select move"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""5f47f99a-642e-425c-818f-dc52242170ca"",
                     ""expectedControlType"": """",
                     ""processors"": """",
@@ -281,7 +281,18 @@ public partial class @Driving: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""c91fe0d5-99ce-4d5f-be4d-da202f502e8f"",
+                    ""id"": ""40e0fb58-d8c3-4338-8424-1377e1acf0ac"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60afee2c-f073-4b91-8c16-bccc8cce6b5b"",
                     ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
                     ""processors"": """",

@@ -1,0 +1,32 @@
+:root {
+    width: 1920px;
+    height: 1080px;
+    aspect-ratio: 1.777778;
+}
+
+
+
+
+
+.button {
+    align-self: auto;
+    width: 140px;
+    height: 140px;
+    align-content: auto;
+    justify-content: space-evenly;
+    align-items: auto;
+    flex-direction: column;
+    border-top-color: rgb(197, 83, 83);
+    border-left-color: rgb(197, 83, 83);
+    border-right-color: rgb(197, 83, 83);
+    border-bottom-color: rgb(197, 83, 83);
+    background-color: rgb(255, 255, 255);
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
+}
+
+.unity-button:focus {
+    background-color: rgb(255, 0, 0);
+}

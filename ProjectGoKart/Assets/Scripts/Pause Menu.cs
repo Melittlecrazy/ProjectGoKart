@@ -25,11 +25,11 @@ public class PauseMenu : MonoBehaviour
     public IEnumerator Pause()
     {
         pause.SetActive(true);
+        //EventSystem.current.firstSelectedGameObject = resumeButton;
         Time.timeScale = 0f;
         //eventSystem.
         yield return new WaitForSeconds(0);
         //EventSystem.current.SetSelectedGameObject(;
-        EventSystem.current.firstSelectedGameObject = resumeButton;
         //current.;
         //errorPage.SetActive(false);
         //EventSystem.current.m_FirstSelected.SetActive(true);

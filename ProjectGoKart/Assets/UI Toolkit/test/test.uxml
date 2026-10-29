@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/test/test.uss?fileID=7433441132597879392&amp;guid=3264c49bdb51fb645b3a39015de91073&amp;type=3#test"/>
+    <Style src="project://database/Assets/UI%20Toolkit/test/multi.uss?fileID=7433441132597879392&amp;guid=7539a2b53673ce54d9d76ac27c801b61&amp;type=3#multi"/>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; position: absolute; height: 503px; width: 764px; top: 577px; align-items: auto; justify-content: center; align-self: auto; flex-direction: column; align-content: auto; border-left-width: 172px; border-top-width: 0; flex-wrap: nowrap;">
+            <ui:Button text="Start" name="Start" selectable="false" parse-escape-sequences="true" focusable="false" class="button" style="width: 355px; height: 124px; white-space: pre; -unity-text-align: middle-center; position: absolute; top: 0; left: 0; font-size: 20px; right: 0; bottom: 0; align-content: auto; align-items: auto;"/>
+            <ui:Button text="Credits" name="Credits" class="button unity-button" style="position: absolute; top: auto; left: auto; align-self: auto; font-size: 20px; width: 351px; height: 119px; right: auto; bottom: auto; align-content: auto; align-items: auto;"/>
+            <ui:Button text="Quit" name="Quit" class="button unity-button" style="position: absolute; top: 359px; left: 0; font-size: 20px; width: 339px; height: 119px; right: 0; bottom: 0; align-self: auto; align-content: auto; align-items: auto;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

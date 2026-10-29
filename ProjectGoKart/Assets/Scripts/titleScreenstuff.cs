@@ -18,15 +18,15 @@ public class titleScreenstuff : MonoBehaviour
 
     void Start()
     {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(button);
+        //EventSystem.current.SetSelectedGameObject(null);
+        //EventSystem.current.SetSelectedGameObject(button);
         titleCard.SetActive(true);
         p1Models.SetActive(false);
         p2Models.SetActive(false);
     }
     public void StartGame() 
     {
-        EventSystem.current.SetSelectedGameObject(p1);
+        //EventSystem.current.SetSelectedGameObject(p1);
         p1.SetActive(true);
         p2.SetActive(true);
         if (sin == true) SceneManager.LoadScene(single);
@@ -37,7 +37,7 @@ public class titleScreenstuff : MonoBehaviour
 
     public void Single()
     {
-        EventSystem.current.SetSelectedGameObject(play);
+        //EventSystem.current.SetSelectedGameObject(play);
         title.SetActive(false);
         singleP.SetActive(true);
         singlecam.SetActive(true);
@@ -49,7 +49,7 @@ public class titleScreenstuff : MonoBehaviour
 
     public void Multi()
     {
-        EventSystem.current.SetSelectedGameObject(play2);
+        //EventSystem.current.SetSelectedGameObject(play2);
         title.SetActive(false);
         multiP.SetActive(true);
         multiCam.SetActive(true);
